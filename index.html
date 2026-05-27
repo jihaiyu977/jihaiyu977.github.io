@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系方式 | 二维码与电话</title>
+    <!-- 引入Tailwind CSS简化样式编写 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- 自定义配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF', // 主色调（蓝色）
+                        secondary: '#667085', // 次要色调（灰色）
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .contact-card {
+                @apply bg-white rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+            }
+            .qr-code-container {
+                @apply flex justify-center items-center mb-4;
+            }
+            .qr-code {
+                @apply w-48 h-48 md:w-56 md:h-56 object-cover rounded-md border-2 border-gray-100;
+            }
+            .contact-phone {
+                @apply text-center text-xl md:text-2xl font-medium text-primary flex items-center justify-center gap-2;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen py-10 px-4">
+    <!-- 页面标题 -->
+    <header class="text-center mb-10">
+        <h1 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800 mb-2">联系方式</h1>
+        <p class="text-secondary text-lg">扫描二维码或直接拨打电话联系我们</p>
+    </header>
+
+    <!-- 联系方式卡片容器 -->
+    <main class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- 联系方式1 -->
+            <div class="contact-card">
+                <div class="qr-code-container">
+                    <!-- 替换为你的二维码图片地址 -->
+                    <img src="https://picsum.photos/200/200?random=1" alt="联系方式1二维码" class="qr-code">
+                </div>
+                <div class="contact-phone">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>138-0000-0001</span>
+                </div>
+            </div>
+
+            <!-- 联系方式2 -->
+            <div class="contact-card">
+                <div class="qr-code-container">
+                    <!-- 替换为你的二维码图片地址 -->
+                    <img src="https://picsum.photos/200/200?random=2" alt="联系方式2二维码" class="qr-code">
+                </div>
+                <div class="contact-phone">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>138-0000-0002</span>
+                </div>
+            </div>
+
+            <!-- 联系方式3 -->
+            <div class="contact-card">
+                <div class="qr-code-container">
+                    <!-- 替换为你的二维码图片地址 -->
+                    <img src="https://picsum.photos/200/200?random=3" alt="联系方式3二维码" class="qr-code">
+                </div>
+                <div class="contact-phone">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>138-0000-0003</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="mt-16 text-center text-secondary text-sm">
+        <p>© 2026 联系方式展示页 | 保留所有权利</p>
+    </footer>
+</body>
+</html>
