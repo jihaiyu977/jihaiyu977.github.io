@@ -1,544 +1,800 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SolarFlow — Solar Pumping Systems</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --gold:#C8962A;--gold-light:#E8B84B;--dark:#0A1628;--dark2:#112240;
-  --steel:#1E3A5F;--light:#F4F1EB;--muted:#8A9BB0;--white:#FFFFFF;
-}
-body{font-family:'Barlow',sans-serif;background:var(--dark);color:var(--white);overflow-x:hidden}
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="SolarFlow Technology — Professional Solar Water Pump Manufacturer. Flow Rate, Head, Power optimized for agriculture, irrigation and clean water supply worldwide."/>
+  <title>SolarFlow Technology Co., Ltd. — Solar Water Pump Manufacturer</title>
 
-/* NAV */
-nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;border-bottom:1px solid rgba(200,150,42,0.2);background:rgba(10,22,40,0.97);position:sticky;top:0;z-index:100}
-.logo{font-family:'Playfair Display',serif;font-size:1.5rem;letter-spacing:2px;color:var(--gold)}
-.logo span{color:var(--white);font-weight:300}
-.nav-links{display:flex;gap:2.5rem;list-style:none}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s}
-.nav-links a:hover{color:var(--gold)}
-.nav-cta{background:var(--gold);color:var(--dark);padding:.55rem 1.5rem;font-size:.8rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s;font-family:'Barlow',sans-serif}
-.nav-cta:hover{background:var(--gold-light)}
-
-/* HERO */
-.hero{position:relative;padding:5rem 3rem 4rem;overflow:hidden;background:linear-gradient(135deg,#0A1628 0%,#112240 50%,#0A1628 100%)}
-.hero::before{content:'';position:absolute;top:-20%;right:-10%;width:60%;height:140%;background:radial-gradient(ellipse,rgba(200,150,42,0.08) 0%,transparent 70%);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1100px;margin:0 auto}
-.hero-tag{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;display:flex;align-items:center;gap:.75rem}
-.hero-tag::before{content:'';display:block;width:30px;height:1px;background:var(--gold)}
-.hero h1{font-family:'Playfair Display',serif;font-size:3.2rem;line-height:1.2;margin-bottom:1.5rem;color:var(--white)}
-.hero h1 em{color:var(--gold);font-style:normal}
-.hero-desc{color:var(--muted);line-height:1.8;font-size:1rem;margin-bottom:2.5rem;font-weight:300}
-.hero-btns{display:flex;gap:1rem}
-.btn-primary{background:var(--gold);color:var(--dark);padding:.8rem 2rem;font-weight:600;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s;font-family:'Barlow',sans-serif}
-.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px)}
-.btn-outline{background:transparent;color:var(--white);padding:.8rem 2rem;font-weight:500;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.3);cursor:pointer;transition:all .3s;font-family:'Barlow',sans-serif}
-.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
-.hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
-
-/* STATS BAR */
-.stats-bar{background:var(--steel);padding:1.5rem 3rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;border-top:2px solid var(--gold)}
-.stat{text-align:center;padding:.5rem}
-.stat-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);display:block}
-.stat-label{font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
-
-/* SECTION HEADER */
-.section-header{text-align:center;margin-bottom:3.5rem}
-.section-tag{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
-.section-title{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--white);margin-bottom:1rem}
-.section-line{width:60px;height:2px;background:var(--gold);margin:0 auto}
-
-/* FEATURED */
-.featured-section{padding:5rem 3rem;max-width:1200px;margin:0 auto}
-.featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--dark2);border:1px solid rgba(200,150,42,0.2);padding:3rem}
-.featured-label{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
-.featured-label::before{content:'★';font-size:.6rem}
-.featured-title{font-family:'Playfair Display',serif;font-size:2rem;color:var(--white);margin-bottom:1rem}
-.featured-desc{color:var(--muted);line-height:1.8;font-size:.95rem;margin-bottom:2rem}
-.featured-params{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem}
-.param-box{background:var(--dark);border:1px solid rgba(200,150,42,0.12);padding:1rem;position:relative}
-.param-box::after{content:'';position:absolute;top:0;left:0;width:2px;height:100%;background:var(--gold)}
-.param-label{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
-.param-value{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--white)}
-.param-unit{font-size:.75rem;color:var(--gold);font-family:'Barlow',sans-serif;font-weight:500}
-.featured-img-area{height:340px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a1628,#1a3055);position:relative}
-
-/* PRODUCTS SECTION */
-.products-section{background:var(--dark2);padding:5rem 0}
-.products-inner{max-width:1200px;margin:0 auto;padding:0 3rem}
-.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
-.product-card{background:var(--dark);border:1px solid rgba(200,150,42,0.15);cursor:pointer;transition:all .4s;position:relative;overflow:hidden}
-.product-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .4s}
-.product-card:hover{border-color:rgba(200,150,42,0.5);transform:translateY(-4px)}
-.product-card:hover::before{transform:scaleX(1)}
-.card-img{height:200px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0d1f3c,#1a3055);position:relative;overflow:hidden}
-.card-img svg{transition:transform .4s}
-.product-card:hover .card-img svg{transform:scale(1.08)}
-.pump-badge{position:absolute;top:12px;right:12px;background:var(--gold);color:var(--dark);font-size:.65rem;font-weight:700;letter-spacing:1.5px;padding:.3rem .7rem;text-transform:uppercase}
-.card-body{padding:1.5rem}
-.card-model{font-size:.7rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:.5rem}
-.card-name{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white);margin-bottom:.75rem}
-.card-desc{font-size:.85rem;color:var(--muted);line-height:1.6;margin-bottom:1.2rem}
-.card-specs-preview{display:flex;gap:1rem;margin-bottom:1.2rem;flex-wrap:wrap}
-.spec-chip{font-size:.72rem;color:var(--muted);border:1px solid rgba(138,155,176,0.2);padding:.2rem .6rem}
-.card-btn{width:100%;background:transparent;border:1px solid rgba(200,150,42,0.3);color:var(--gold);padding:.65rem;font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .3s;font-family:'Barlow',sans-serif;font-weight:500}
-.card-btn:hover{background:var(--gold);color:var(--dark)}
-
-/* MODAL */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999;align-items:center;justify-content:center;padding:2rem}
-.modal-overlay.active{display:flex}
-.modal{background:var(--dark2);border:1px solid rgba(200,150,42,0.3);width:100%;max-width:680px;position:relative;animation:modalIn .35s ease}
-@keyframes modalIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.modal-header{padding:2rem 2rem 1rem;border-bottom:1px solid rgba(200,150,42,0.15);display:flex;justify-content:space-between;align-items:flex-start}
-.modal-model{font-size:.7rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:.4rem}
-.modal-title{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--white)}
-.modal-close{background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer;padding:.2rem;line-height:1;transition:color .2s}
-.modal-close:hover{color:var(--gold)}
-.modal-body{padding:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.modal-img{height:220px;background:linear-gradient(135deg,#0a1628,#1a3055);display:flex;align-items:center;justify-content:center;grid-column:1/3}
-.specs-grid{grid-column:1/3;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.spec-box{background:var(--dark);border:1px solid rgba(200,150,42,0.15);padding:1.2rem;text-align:center;position:relative;overflow:hidden}
-.spec-box::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);opacity:.5}
-.spec-icon{font-size:1.4rem;color:var(--gold);margin-bottom:.6rem;display:block}
-.spec-name{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
-.spec-val{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--white)}
-.spec-u{font-size:.75rem;color:var(--gold-light);font-family:'Barlow',sans-serif}
-.modal-extra{grid-column:1/3}
-.extra-title{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
-.extra-list{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem}
-.extra-list li{font-size:.8rem;color:var(--muted);background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);padding:.35rem .8rem;display:flex;align-items:center;gap:.4rem}
-.extra-list li::before{content:'✓';color:var(--gold);font-size:.75rem}
-.modal-footer{padding:1.5rem 2rem;border-top:1px solid rgba(200,150,42,0.15);display:flex;gap:1rem;justify-content:flex-end}
-.modal-btn-primary{background:var(--gold);color:var(--dark);padding:.7rem 2rem;font-weight:600;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;font-family:'Barlow',sans-serif;transition:all .3s}
-.modal-btn-primary:hover{background:var(--gold-light)}
-.modal-btn-sec{background:transparent;color:var(--muted);padding:.7rem 1.5rem;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.15);cursor:pointer;font-family:'Barlow',sans-serif;transition:all .3s}
-.modal-btn-sec:hover{color:var(--white);border-color:rgba(255,255,255,0.4)}
-
-/* FOOTER */
-.site-footer{background:#060f1e;padding:3rem;border-top:1px solid rgba(200,150,42,0.2);text-align:center}
-.footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold);letter-spacing:2px;margin-bottom:1rem}
-.footer-tagline{font-size:.8rem;color:var(--muted);letter-spacing:1px}
-.footer-divider{width:40px;height:1px;background:var(--gold);margin:1.5rem auto}
-.footer-copy{font-size:.75rem;color:rgba(138,155,176,0.5)}
-
-@media(max-width:900px){
-  .hero-grid,.featured-grid{grid-template-columns:1fr}
-  .hero-visual{display:none}
-  .products-grid{grid-template-columns:repeat(2,1fr)}
-  nav{padding:1rem 1.5rem}
-  .nav-links{display:none}
-  .featured-section,.products-inner{padding-left:1.5rem;padding-right:1.5rem}
-  .stats-bar{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:600px){
-  .products-grid{grid-template-columns:1fr}
-  .hero{padding:3rem 1.5rem}
-  .hero h1{font-size:2.2rem}
-}
-</style>
+  <!-- Bootstrap 3 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
 
-<nav>
-  <div class="logo">SOLAR<span>FLOW</span></div>
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Products</a></li>
-    <li><a href="#">Technology</a></li>
-    <li><a href="#">About</a></li>
-  </ul>
-  <button class="nav-cta">Get Quote</button>
+<!-- ========== TOP BAR ========== -->
+<div id="topbar">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 topbar-info">
+        <span><i class="fa fa-envelope-o"></i> info@solarflowtech.com</span>
+        <span><i class="fa fa-phone"></i> +86-755-8888-0000</span>
+        <span><i class="fa fa-map-marker"></i> Shenzhen, Guangdong, China</span>
+      </div>
+      <div class="col-sm-4 text-right">
+        <div class="topbar-social">
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-youtube-play"></i></a>
+          <a href="#"><i class="fa fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar navbar-default" id="mainNav">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navCollapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        SOLAR<span>FLOW</span>
+        <small>Technology Co., Ltd.</small>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="navCollapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#applications">Applications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-grid">
-    <div>
-      <div class="hero-tag">Solar Pumping Systems</div>
-      <h1>Powering Water<br>Through <em>Solar Energy</em></h1>
-      <p class="hero-desc">Professional solar-powered water pumping solutions for agriculture, irrigation, and clean water supply. Engineered for reliability in the most demanding environments worldwide.</p>
-      <div class="hero-btns">
-        <button class="btn-primary">Explore Products</button>
-        <button class="btn-outline">Download Catalog</button>
+<!-- ========== HERO ========== -->
+<section id="hero">
+  <div id="heroSlider">
+
+    <!-- Slide 1 -->
+    <div class="hero-slide hero-slide-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 col-sm-8">
+            <div class="hero-content animate__animated animate__fadeInLeft">
+              <div class="hero-tag">Est. 2008 · ISO 9001 Certified</div>
+              <h1>Solar-Powered<br><em>Water Pump</em><br>Solutions</h1>
+              <p>Professional solar water pump manufacturer for agriculture, irrigation, and clean water supply — serving 80+ countries worldwide.</p>
+              <a href="#products" class="btn-hero-primary">Explore Products</a>
+              <a href="#contact" class="btn-hero-outline">Request Quote</a>
+            </div>
+          </div>
+          <div class="col-md-5 col-sm-4 hidden-xs hero-visual">
+            <svg width="300" height="340" viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="20" width="240" height="120" rx="4" fill="#1a3a5c" stroke="#F0A500" stroke-width="1.5"/>
+              <line x1="30" y1="60" x2="270" y2="60" stroke="#F0A500" stroke-width=".8" opacity=".4"/>
+              <line x1="30" y1="100" x2="270" y2="100" stroke="#F0A500" stroke-width=".8" opacity=".4"/>
+              <line x1="110" y1="20" x2="110" y2="140" stroke="#F0A500" stroke-width=".8" opacity=".4"/>
+              <line x1="190" y1="20" x2="190" y2="140" stroke="#F0A500" stroke-width=".8" opacity=".4"/>
+              <rect x="38" y="28" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
+              <rect x="118" y="28" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
+              <rect x="198" y="28" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
+              <rect x="38" y="68" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
+              <rect x="118" y="68" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
+              <rect x="198" y="68" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
+              <rect x="38" y="108" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
+              <rect x="118" y="108" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
+              <rect x="198" y="108" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
+              <line x1="150" y1="140" x2="150" y2="168" stroke="#F0A500" stroke-width="2"/>
+              <rect x="110" y="168" width="80" height="40" rx="4" fill="#1a3a5c" stroke="#F0A500" stroke-width="1.2"/>
+              <rect x="120" y="176" width="24" height="10" rx="2" fill="#0d2035" stroke="#F0A500" stroke-width=".7"/>
+              <circle cx="166" cy="181" r="8" fill="#0d2035" stroke="#F0A500" stroke-width="1"/>
+              <circle cx="166" cy="181" r="4" fill="#F0A500" opacity=".7"/>
+              <rect x="95" y="208" width="110" height="70" rx="6" fill="#1a3a5c" stroke="#F0A500" stroke-width="1.5"/>
+              <circle cx="150" cy="243" r="24" fill="#0d2035" stroke="#F0A500" stroke-width="1.5"/>
+              <circle cx="150" cy="243" r="14" fill="#1a3a5c" stroke="#F0A500" stroke-width="1"/>
+              <circle cx="150" cy="243" r="6" fill="#F0A500" opacity=".7"/>
+              <rect x="138" y="278" width="24" height="50" rx="3" fill="#1a3a5c" stroke="#F0A500" stroke-width="1"/>
+              <ellipse cx="150" cy="332" rx="35" ry="7" fill="#1B5E8A" opacity=".4"/>
+              <path d="M130,325 Q140,318 150,325 Q160,318 170,325" fill="none" stroke="#1B5E8A" stroke-width="1.5" opacity=".5"/>
+              <line x1="150" y1="5" x2="150" y2="14" stroke="#F0A500" stroke-width="1.5" opacity=".6"/>
+              <line x1="35" y1="10" x2="40" y2="17" stroke="#F0A500" stroke-width="1.2" opacity=".4"/>
+              <line x1="265" y1="10" x2="260" y2="17" stroke="#F0A500" stroke-width="1.2" opacity=".4"/>
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="hero-visual">
-      <svg width="260" height="260" viewBox="0 0 260 260">
-        <g opacity="0.25" stroke="#C8962A" stroke-width="1.5">
-          <line x1="130" y1="20" x2="130" y2="5"/>
-          <line x1="130" y1="240" x2="130" y2="255"/>
-          <line x1="20" y1="130" x2="5" y2="130"/>
-          <line x1="240" y1="130" x2="255" y2="130"/>
-          <line x1="47" y1="47" x2="36" y2="36"/>
-          <line x1="213" y1="47" x2="224" y2="36"/>
-          <line x1="47" y1="213" x2="36" y2="224"/>
-          <line x1="213" y1="213" x2="224" y2="224"/>
-        </g>
-        <rect x="50" y="45" width="160" height="90" rx="4" fill="#112240" stroke="#C8962A" stroke-width="1.5"/>
-        <line x1="50" y1="75" x2="210" y2="75" stroke="#C8962A" stroke-width="0.8" opacity="0.4"/>
-        <line x1="50" y1="105" x2="210" y2="105" stroke="#C8962A" stroke-width="0.8" opacity="0.4"/>
-        <line x1="103" y1="45" x2="103" y2="135" stroke="#C8962A" stroke-width="0.8" opacity="0.4"/>
-        <line x1="157" y1="45" x2="157" y2="135" stroke="#C8962A" stroke-width="0.8" opacity="0.4"/>
-        <rect x="58" y="52" width="38" height="16" rx="2" fill="#1E3A5F" opacity="0.8"/>
-        <rect x="111" y="52" width="38" height="16" rx="2" fill="#1E3A5F" opacity="0.8"/>
-        <rect x="164" y="52" width="38" height="16" rx="2" fill="#1E3A5F" opacity="0.8"/>
-        <rect x="58" y="82" width="38" height="16" rx="2" fill="#1E3A5F" opacity="0.8"/>
-        <rect x="111" y="82" width="38" height="16" rx="2" fill="#1E3A5F" opacity="0.8"/>
-        <rect x="164" y="82" width="38" height="16" rx="2" fill="#1E3A5F" opacity="0.8"/>
-        <rect x="58" y="112" width="38" height="16" rx="2" fill="#1E3A5F" opacity="0.8"/>
-        <rect x="111" y="112" width="38" height="16" rx="2" fill="#1E3A5F" opacity="0.8"/>
-        <rect x="164" y="112" width="38" height="16" rx="2" fill="#1E3A5F" opacity="0.8"/>
-        <line x1="130" y1="135" x2="130" y2="155" stroke="#C8962A" stroke-width="2"/>
-        <rect x="85" y="155" width="90" height="55" rx="6" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.5"/>
-        <circle cx="130" cy="182" r="18" fill="#112240" stroke="#C8962A" stroke-width="1.5"/>
-        <circle cx="130" cy="182" r="9" fill="#C8962A" opacity="0.7"/>
-        <rect x="118" y="210" width="24" height="35" rx="3" fill="#1E3A5F" stroke="#C8962A" stroke-width="1"/>
-        <ellipse cx="130" cy="248" rx="28" ry="6" fill="#378ADD" opacity="0.4"/>
-        <text x="130" y="30" text-anchor="middle" font-size="10" fill="#C8962A" font-family="Barlow,sans-serif" letter-spacing="2" opacity="0.7">SOLAR ENERGY</text>
-      </svg>
+
+    <!-- Slide 2 -->
+    <div class="hero-slide hero-slide-2" style="display:none">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 col-sm-8">
+            <div class="hero-content">
+              <div class="hero-tag">High Efficiency · Low Maintenance</div>
+              <h1>Deep Well<br><em>Submersible</em><br>Solar Pumps</h1>
+              <p>From 100m to 200m borehole depth. MPPT intelligent control, brushless DC motor, IP68 waterproof — built for the harshest environments.</p>
+              <a href="#products" class="btn-hero-primary">View Deep Well Series</a>
+              <a href="#contact" class="btn-hero-outline">Get Catalog</a>
+            </div>
+          </div>
+          <div class="col-md-5 hidden-xs hero-visual">
+            <svg width="220" height="340" viewBox="0 0 220 340" xmlns="http://www.w3.org/2000/svg">
+              <rect x="80" y="0" width="60" height="280" rx="4" fill="#1a3a5c" stroke="#F0A500" stroke-width="1.2" opacity=".25"/>
+              <rect x="72" y="180" width="76" height="22" rx="4" fill="#1a3a5c" stroke="#F0A500" stroke-width="1.5"/>
+              <rect x="72" y="207" width="76" height="22" rx="4" fill="#1a3a5c" stroke="#F0A500" stroke-width="1.5"/>
+              <rect x="72" y="234" width="76" height="22" rx="4" fill="#1a3a5c" stroke="#F0A500" stroke-width="1.5"/>
+              <rect x="82" y="50" width="56" height="125" rx="6" fill="#1a3a5c" stroke="#F0A500" stroke-width="1.5"/>
+              <rect x="90" y="60" width="40" height="22" rx="3" fill="#0d2035" stroke="#F0A500" stroke-width=".8"/>
+              <circle cx="110" cy="115" r="22" fill="#0d2035" stroke="#F0A500" stroke-width="1.5"/>
+              <circle cx="110" cy="115" r="12" fill="#1a3a5c" stroke="#F0A500" stroke-width="1"/>
+              <circle cx="110" cy="115" r="5" fill="#F0A500" opacity=".8"/>
+              <path d="M82,80 C60,85 52,130 65,160" fill="none" stroke="#F0A500" stroke-width="1" stroke-dasharray="4,3" opacity=".5"/>
+              <rect x="98" y="10" width="24" height="40" rx="3" fill="#1a3a5c" stroke="#F0A500" stroke-width="1"/>
+              <path d="M98,20 L70,15 L70,5 L98,10Z" fill="#F0A500" opacity=".7"/>
+              <path d="M50,18 Q40,25 35,35" fill="none" stroke="#1B5E8A" stroke-width="2.5" opacity=".6"/>
+              <path d="M50,18 Q45,30 42,42" fill="none" stroke="#1B5E8A" stroke-width="1.5" opacity=".4"/>
+              <text x="110" y="315" text-anchor="middle" font-size="9" fill="#F0A500" font-family="Oswald,sans-serif" letter-spacing="2">DEEP WELL SERIES</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="hero-slide hero-slide-3" style="display:none">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 col-sm-8">
+            <div class="hero-content">
+              <div class="hero-tag">Agricultural · Irrigation · Village Supply</div>
+              <h1>Complete Solar<br><em>Pumping Systems</em><br>Worldwide</h1>
+              <p>7 product series, 50+ models. From 400W surface pumps to 3000W deep-well industrial systems — OEM/ODM available for global distributors.</p>
+              <a href="#products" class="btn-hero-primary">Full Product Range</a>
+              <a href="#contact" class="btn-hero-outline">Become Distributor</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero-dots">
+    <div class="hero-dot active" onclick="goSlide(0)"></div>
+    <div class="hero-dot" onclick="goSlide(1)"></div>
+    <div class="hero-dot" onclick="goSlide(2)"></div>
+  </div>
+</section>
+
+<!-- ========== FEATURES STRIP ========== -->
+<section id="features-strip">
+  <div class="container-fluid" style="padding:0">
+    <div class="row" style="margin:0">
+      <div class="col-md-3 col-sm-6" style="padding:0">
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fa fa-leaf"></i></div>
+          <div class="feature-text"><h4>100% Solar Powered</h4><p>No electricity bills, zero carbon emissions</p></div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6" style="padding:0">
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fa fa-cogs"></i></div>
+          <div class="feature-text"><h4>MPPT Controller</h4><p>Maximum power point tracking built-in</p></div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6" style="padding:0">
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fa fa-globe"></i></div>
+          <div class="feature-text"><h4>Global Export</h4><p>Shipped to 80+ countries, CE &amp; ISO certified</p></div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6" style="padding:0">
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fa fa-shield"></i></div>
+          <div class="feature-text"><h4>3–5 Year Warranty</h4><p>Professional after-sales service team</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about" class="section-pad">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-sm-12">
+        <div class="about-img-wrap">
+          <div class="about-img-main">
+            <svg width="280" height="250" viewBox="0 0 280 250" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="80" width="220" height="140" rx="4" fill="#0d2035" stroke="#F0A500" stroke-width="1"/>
+              <polygon points="20,80 140,20 260,80" fill="#1a3a5c" stroke="#F0A500" stroke-width="1"/>
+              <rect x="50" y="100" width="36" height="36" rx="2" fill="#1a3a5c" stroke="#F0A500" stroke-width=".8"/>
+              <rect x="122" y="100" width="36" height="36" rx="2" fill="#1a3a5c" stroke="#F0A500" stroke-width=".8"/>
+              <rect x="194" y="100" width="36" height="36" rx="2" fill="#1a3a5c" stroke="#F0A500" stroke-width=".8"/>
+              <rect x="112" y="168" width="56" height="52" rx="2" fill="#1a3a5c" stroke="#F0A500" stroke-width=".8"/>
+              <rect x="100" y="38" width="80" height="30" rx="2" fill="#1B5E8A" stroke="#F0A500" stroke-width=".8"/>
+              <line x1="100" y1="53" x2="180" y2="53" stroke="#F0A500" stroke-width=".5" opacity=".5"/>
+              <line x1="127" y1="38" x2="127" y2="68" stroke="#F0A500" stroke-width=".5" opacity=".5"/>
+              <line x1="153" y1="38" x2="153" y2="68" stroke="#F0A500" stroke-width=".5" opacity=".5"/>
+              <text x="140" y="235" text-anchor="middle" font-size="9" fill="#F0A500" opacity=".7" font-family="Oswald,sans-serif" letter-spacing="2">SOLARFLOW HQ · SHENZHEN</text>
+            </svg>
+          </div>
+          <div class="about-badge">
+            <span class="num">15+</span>
+            <span class="lbl">Years of<br>Excellence</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7 col-sm-12">
+        <div class="about-content">
+          <p class="section-subtitle">Who We Are</p>
+          <h2 class="section-title">Leading Solar Pump<br>Manufacturer Since 2008</h2>
+          <div class="divider"></div>
+          <p style="color:#4A5568;line-height:1.8;">SolarFlow Technology Co., Ltd. is a vertically integrated manufacturer specializing in solar-powered water pumping systems. With a 15,000 m² production facility and 200+ R&amp;D engineers, we design, manufacture, and export complete solar pump solutions to agricultural, industrial, and residential markets worldwide.</p>
+          <ul class="check-list">
+            <li>Full product range: surface, submersible, deep-well, floating, and agricultural pumps</li>
+            <li>ISO 9001:2015, CE, RoHS, TÜV, and UL certifications</li>
+            <li>OEM / ODM services with 30-day lead time</li>
+            <li>Dedicated export team supporting 80+ countries</li>
+            <li>24/7 technical support and global spare parts supply</li>
+          </ul>
+          <a href="#products" class="btn-primary-solid">Our Products</a>
+          <a href="#contact" class="btn-outline-dark">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRODUCTS ========== -->
+<section id="products" class="section-pad bg-light-theme">
+  <div class="container">
+    <div class="row" style="margin-bottom:50px">
+      <div class="col-md-6 col-sm-8">
+        <p class="section-subtitle">Product Range</p>
+        <h2 class="section-title">Complete Solar Pump Series</h2>
+        <div class="divider"></div>
+        <p style="color:#4A5568;font-size:.92rem;">Click any product card to view full specifications — flow rate, max head, and power rating.</p>
+      </div>
+    </div>
+    <div class="row">
+
+      <!-- Product 1: Deep Well -->
+      <div class="col-md-4 col-sm-6" style="margin-bottom:28px">
+        <div class="product-card" onclick="openProductModal('p1')">
+          <div class="product-img">
+            <div class="product-badge hot">Best Seller</div>
+            <svg width="160" height="190" viewBox="0 0 160 190" xmlns="http://www.w3.org/2000/svg">
+              <rect x="56" y="8" width="48" height="140" rx="7" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.5"/>
+              <rect x="64" y="18" width="32" height="20" rx="3" fill="#0d2035" stroke="#1B5E8A" stroke-width=".8"/>
+              <circle cx="80" cy="75" r="20" fill="#0d2035" stroke="#1B5E8A" stroke-width="1.5"/>
+              <circle cx="80" cy="75" r="11" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
+              <circle cx="80" cy="75" r="5" fill="#F0A500" opacity=".8"/>
+              <rect x="64" y="104" width="32" height="10" rx="2" fill="#0d2035" stroke="#1B5E8A" stroke-width=".7"/>
+              <rect x="64" y="120" width="32" height="10" rx="2" fill="#0d2035" stroke="#1B5E8A" stroke-width=".7"/>
+              <rect x="48" y="148" width="64" height="18" rx="4" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.2"/>
+              <rect x="48" y="170" width="64" height="18" rx="4" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.2"/>
+              <path d="M56,30 C38,36 32,70 44,100" fill="none" stroke="#F0A500" stroke-width="1" stroke-dasharray="3,3" opacity=".6"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-model">Model SF-D750</div>
+            <div class="product-name">Deep Well Submersible Pump</div>
+            <div class="product-desc">High-performance brushless DC submersible pump for agricultural wells. MPPT built-in, IP68 rated.</div>
+            <div class="product-specs">
+              <div class="spec-cell"><span class="s-label">Flow Rate</span><span class="s-value">18 <span class="s-unit">m³/h</span></span></div>
+              <div class="spec-cell"><span class="s-label">Max Head</span><span class="s-value">120 <span class="s-unit">m</span></span></div>
+              <div class="spec-cell"><span class="s-label">Power</span><span class="s-value">3000 <span class="s-unit">W</span></span></div>
+            </div>
+            <button class="btn-product">View Specifications</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2: Surface -->
+      <div class="col-md-4 col-sm-6" style="margin-bottom:28px">
+        <div class="product-card" onclick="openProductModal('p2')">
+          <div class="product-img">
+            <div class="product-badge new">New 2024</div>
+            <svg width="160" height="190" viewBox="0 0 160 190" xmlns="http://www.w3.org/2000/svg">
+              <rect x="35" y="20" width="90" height="38" rx="3" fill="#0d2035" stroke="#1B5E8A" stroke-width="1"/>
+              <line x1="35" y1="39" x2="125" y2="39" stroke="#F0A500" stroke-width=".6" opacity=".5"/>
+              <line x1="65" y1="20" x2="65" y2="58" stroke="#F0A500" stroke-width=".6" opacity=".5"/>
+              <line x1="95" y1="20" x2="95" y2="58" stroke="#F0A500" stroke-width=".6" opacity=".5"/>
+              <line x1="80" y1="58" x2="80" y2="68" stroke="#F0A500" stroke-width="1.5"/>
+              <rect x="25" y="68" width="110" height="68" rx="8" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.5"/>
+              <circle cx="80" cy="102" r="26" fill="#0d2035" stroke="#1B5E8A" stroke-width="1.5"/>
+              <circle cx="80" cy="102" r="15" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
+              <circle cx="80" cy="102" r="6" fill="#F0A500" opacity=".8"/>
+              <rect x="33" y="78" width="22" height="10" rx="2" fill="#0d2035" stroke="#1B5E8A" stroke-width=".7"/>
+              <rect x="135" y="81" width="18" height="54" rx="3" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
+              <rect x="7" y="91" width="18" height="18" rx="2" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
+              <ellipse cx="80" cy="158" rx="50" ry="9" fill="#1B5E8A" opacity=".2"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-model">Model SF-S250</div>
+            <div class="product-name">Surface Centrifugal Pump</div>
+            <div class="product-desc">Compact solar surface pump with integrated panel. For small farms and domestic water supply.</div>
+            <div class="product-specs">
+              <div class="spec-cell"><span class="s-label">Flow Rate</span><span class="s-value">5 <span class="s-unit">m³/h</span></span></div>
+              <div class="spec-cell"><span class="s-label">Max Head</span><span class="s-value">45 <span class="s-unit">m</span></span></div>
+              <div class="spec-cell"><span class="s-label">Power</span><span class="s-value">550 <span class="s-unit">W</span></span></div>
+            </div>
+            <button class="btn-product">View Specifications</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3: High Head -->
+      <div class="col-md-4 col-sm-6" style="margin-bottom:28px">
+        <div class="product-card" onclick="openProductModal('p3')">
+          <div class="product-img">
+            <svg width="160" height="190" viewBox="0 0 160 190" xmlns="http://www.w3.org/2000/svg">
+              <rect x="52" y="15" width="56" height="130" rx="7" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.5"/>
+              <rect x="60" y="25" width="40" height="22" rx="3" fill="#0d2035" stroke="#1B5E8A" stroke-width=".8"/>
+              <circle cx="80" cy="85" r="22" fill="#0d2035" stroke="#1B5E8A" stroke-width="1.5"/>
+              <circle cx="80" cy="85" r="12" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
+              <circle cx="80" cy="85" r="5" fill="#F0A500" opacity=".8"/>
+              <rect x="48" y="125" width="64" height="16" rx="3" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.2"/>
+              <rect x="60" y="145" width="40" height="40" rx="3" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
+              <line x1="48" y1="85" x2="36" y2="85" stroke="#1B5E8A" stroke-width="1.5"/>
+              <line x1="112" y1="85" x2="124" y2="85" stroke="#1B5E8A" stroke-width="1.5"/>
+              <circle cx="32" cy="85" r="6" fill="#0d2035" stroke="#1B5E8A" stroke-width="1"/>
+              <circle cx="128" cy="85" r="6" fill="#0d2035" stroke="#1B5E8A" stroke-width="1"/>
+              <ellipse cx="80" cy="188" rx="40" ry="7" fill="#1B5E8A" opacity=".2"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-model">Model SF-H1200</div>
+            <div class="product-name">High-Head Multistage Pump</div>
+            <div class="product-desc">5-stage impeller for mountain terrain, tall buildings, and long-distance water transfer.</div>
+            <div class="product-specs">
+              <div class="spec-cell"><span class="s-label">Flow Rate</span><span class="s-value">6 <span class="s-unit">m³/h</span></span></div>
+              <div class="spec-cell"><span class="s-label">Max Head</span><span class="s-value">95 <span class="s-unit">m</span></span></div>
+              <div class="spec-cell"><span class="s-label">Power</span><span class="s-value">1200 <span class="s-unit">W</span></span></div>
+            </div>
+            <button class="btn-product">View Specifications</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4: Floating -->
+      <div class="col-md-4 col-sm-6" style="margin-bottom:28px">
+        <div class="product-card" onclick="openProductModal('p4')">
+          <div class="product-img">
+            <svg width="160" height="190" viewBox="0 0 160 190" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="30" width="120" height="42" rx="3" fill="#0d2035" stroke="#1B5E8A" stroke-width="1"/>
+              <line x1="20" y1="51" x2="140" y2="51" stroke="#F0A500" stroke-width=".6" opacity=".5"/>
+              <line x1="55" y1="30" x2="55" y2="72" stroke="#F0A500" stroke-width=".6" opacity=".5"/>
+              <line x1="87" y1="30" x2="87" y2="72" stroke="#F0A500" stroke-width=".6" opacity=".5"/>
+              <line x1="80" y1="72" x2="80" y2="80" stroke="#F0A500" stroke-width="1.5"/>
+              <ellipse cx="80" cy="140" rx="60" ry="16" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.2"/>
+              <rect x="55" y="78" width="50" height="68" rx="6" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.5"/>
+              <circle cx="80" cy="112" r="18" fill="#0d2035" stroke="#1B5E8A" stroke-width="1.5"/>
+              <circle cx="80" cy="112" r="10" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
+              <circle cx="80" cy="112" r="4" fill="#F0A500" opacity=".8"/>
+              <path d="M20,155 Q50,148 80,155 Q110,162 140,155" fill="none" stroke="#1B5E8A" stroke-width="1.5" opacity=".4"/>
+              <path d="M20,165 Q50,158 80,165 Q110,172 140,165" fill="none" stroke="#1B5E8A" stroke-width="1" opacity=".25"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-model">Model SF-F800</div>
+            <div class="product-name">Floating Solar Pump System</div>
+            <div class="product-desc">All-in-one floating system with integrated 800W solar panel for ponds, lakes, and reservoirs.</div>
+            <div class="product-specs">
+              <div class="spec-cell"><span class="s-label">Flow Rate</span><span class="s-value">8 <span class="s-unit">m³/h</span></span></div>
+              <div class="spec-cell"><span class="s-label">Max Head</span><span class="s-value">20 <span class="s-unit">m</span></span></div>
+              <div class="spec-cell"><span class="s-label">Power</span><span class="s-value">800 <span class="s-unit">W</span></span></div>
+            </div>
+            <button class="btn-product">View Specifications</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5: Agricultural -->
+      <div class="col-md-4 col-sm-6" style="margin-bottom:28px">
+        <div class="product-card" onclick="openProductModal('p5')">
+          <div class="product-img">
+            <svg width="160" height="190" viewBox="0 0 160 190" xmlns="http://www.w3.org/2000/svg">
+              <rect x="50" y="18" width="60" height="28" rx="3" fill="#1a3a5c" stroke="#F0A500" stroke-width=".8"/>
+              <rect x="58" y="24" width="18" height="8" rx="1" fill="#0d2035" stroke="#F0A500" stroke-width=".5"/>
+              <circle cx="95" cy="32" r="5" fill="#0d2035" stroke="#F0A500" stroke-width=".8"/>
+              <circle cx="95" cy="32" r="2.5" fill="#F0A500" opacity=".7"/>
+              <line x1="80" y1="46" x2="80" y2="55" stroke="#F0A500" stroke-width="1.2"/>
+              <rect x="30" y="55" width="100" height="78" rx="8" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.5"/>
+              <circle cx="80" cy="94" r="28" fill="#0d2035" stroke="#1B5E8A" stroke-width="2"/>
+              <circle cx="80" cy="94" r="16" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.2"/>
+              <circle cx="80" cy="94" r="6" fill="#F0A500" opacity=".8"/>
+              <line x1="80" y1="78" x2="80" y2="66" stroke="#F0A500" stroke-width="1.2" opacity=".6"/>
+              <line x1="96" y1="94" x2="108" y2="94" stroke="#F0A500" stroke-width="1.2" opacity=".6"/>
+              <line x1="80" y1="110" x2="80" y2="122" stroke="#F0A500" stroke-width="1.2" opacity=".6"/>
+              <line x1="64" y1="94" x2="52" y2="94" stroke="#F0A500" stroke-width="1.2" opacity=".6"/>
+              <rect x="5" y="84" width="25" height="16" rx="3" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
+              <rect x="130" y="84" width="25" height="16" rx="3" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
+              <path d="M30,155 Q55,150 80,155 Q105,160 130,155" fill="none" stroke="#1B5E8A" stroke-width="1.5" opacity=".35"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-model">Model SF-A1500</div>
+            <div class="product-name">Agricultural Booster Pump</div>
+            <div class="product-desc">Heavy-duty horizontal pump for wide-area irrigation, drip and sprinkler systems. AC/DC hybrid.</div>
+            <div class="product-specs">
+              <div class="spec-cell"><span class="s-label">Flow Rate</span><span class="s-value">12 <span class="s-unit">m³/h</span></span></div>
+              <div class="spec-cell"><span class="s-label">Max Head</span><span class="s-value">50 <span class="s-unit">m</span></span></div>
+              <div class="spec-cell"><span class="s-label">Power</span><span class="s-value">1500 <span class="s-unit">W</span></span></div>
+            </div>
+            <button class="btn-product">View Specifications</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6: Village -->
+      <div class="col-md-4 col-sm-6" style="margin-bottom:28px">
+        <div class="product-card" onclick="openProductModal('p6')">
+          <div class="product-img">
+            <svg width="160" height="190" viewBox="0 0 160 190" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="80,14 112,52 48,52" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.2"/>
+              <rect x="62" y="52" width="36" height="62" rx="4" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.5"/>
+              <rect x="70" y="60" width="20" height="12" rx="2" fill="#0d2035" stroke="#1B5E8A" stroke-width=".8"/>
+              <circle cx="80" cy="95" r="14" fill="#0d2035" stroke="#1B5E8A" stroke-width="1.5"/>
+              <circle cx="80" cy="95" r="7" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
+              <circle cx="80" cy="95" r="3" fill="#F0A500" opacity=".8"/>
+              <rect x="42" y="114" width="76" height="55" rx="5" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.2"/>
+              <rect x="58" y="122" width="44" height="14" rx="2" fill="#0d2035" stroke="#1B5E8A" stroke-width=".8"/>
+              <rect x="52" y="169" width="14" height="18" rx="2" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
+              <rect x="94" y="169" width="14" height="18" rx="2" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
+              <rect x="50" y="136" width="6" height="22" rx="1" fill="#0d2035" stroke="#1B5E8A" stroke-width=".5"/>
+              <rect x="50" y="146" width="6" height="12" rx="1" fill="#1B5E8A" opacity=".5"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-model">Model SF-V550</div>
+            <div class="product-name">Village Water Supply System</div>
+            <div class="product-desc">Complete village water solution with GSM monitoring, auto tank-fill, and dry-run protection.</div>
+            <div class="product-specs">
+              <div class="spec-cell"><span class="s-label">Flow Rate</span><span class="s-value">4 <span class="s-unit">m³/h</span></span></div>
+              <div class="spec-cell"><span class="s-label">Max Head</span><span class="s-value">45 <span class="s-unit">m</span></span></div>
+              <div class="spec-cell"><span class="s-label">Power</span><span class="s-value">550 <span class="s-unit">W</span></span></div>
+            </div>
+            <button class="btn-product">View Specifications</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-xs-12 text-center" style="margin-top:10px">
+        <a href="#contact" class="btn-primary-solid" style="font-size:.85rem;padding:13px 36px">Request Full Product Catalog</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STATS ========== -->
+<section id="stats">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6"><div class="stat-box"><span class="stat-number">15<span class="stat-unit">+</span></span><span class="stat-label">Years Manufacturing</span></div></div>
+      <div class="col-md-3 col-sm-6"><div class="stat-box"><span class="stat-number">80<span class="stat-unit">+</span></span><span class="stat-label">Countries Exported</span></div></div>
+      <div class="col-md-3 col-sm-6"><div class="stat-box"><span class="stat-number">50K<span class="stat-unit">+</span></span><span class="stat-label">Units Installed</span></div></div>
+      <div class="col-md-3 col-sm-6"><div class="stat-box"><span class="stat-number">200<span class="stat-unit">+</span></span><span class="stat-label">R&amp;D Engineers</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY US ========== -->
+<section id="why-us" class="section-pad">
+  <div class="container">
+    <div class="row" style="margin-bottom:50px">
+      <div class="col-md-6 col-sm-8">
+        <p class="section-subtitle">Why Choose Us</p>
+        <h2 class="section-title">The SolarFlow Advantage</h2>
+        <div class="divider"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-6" style="margin-bottom:24px"><div class="why-card"><div class="why-icon"><i class="fa fa-microchip"></i></div><h4>MPPT Technology</h4><p>Built-in Maximum Power Point Tracking ensures peak efficiency under all solar conditions including cloudy weather.</p></div></div>
+      <div class="col-md-3 col-sm-6" style="margin-bottom:24px"><div class="why-card"><div class="why-icon"><i class="fa fa-tachometer"></i></div><h4>High Efficiency Motor</h4><p>Permanent magnet brushless DC motors deliver ≥97% efficiency, extending pump lifespan to 10+ years.</p></div></div>
+      <div class="col-md-3 col-sm-6" style="margin-bottom:24px"><div class="why-card"><div class="why-icon"><i class="fa fa-certificate"></i></div><h4>International Certifications</h4><p>CE, ISO 9001, RoHS, TÜV, and UL certifications for seamless import compliance in all major markets.</p></div></div>
+      <div class="col-md-3 col-sm-6" style="margin-bottom:24px"><div class="why-card"><div class="why-icon"><i class="fa fa-wrench"></i></div><h4>OEM / ODM Service</h4><p>Custom branding, packaging, and technical specs available. 30-day lead time for standard OEM orders.</p></div></div>
+      <div class="col-md-3 col-sm-6" style="margin-bottom:24px"><div class="why-card"><div class="why-icon"><i class="fa fa-shield"></i></div><h4>Smart Protections</h4><p>Dry-run, over-voltage, over-current, low water level, and reverse polarity protection as standard.</p></div></div>
+      <div class="col-md-3 col-sm-6" style="margin-bottom:24px"><div class="why-card"><div class="why-icon"><i class="fa fa-cloud"></i></div><h4>Remote Monitoring</h4><p>Optional GSM/4G module for real-time flow, pressure, and status monitoring via mobile app.</p></div></div>
+      <div class="col-md-3 col-sm-6" style="margin-bottom:24px"><div class="why-card"><div class="why-icon"><i class="fa fa-ship"></i></div><h4>Global Logistics</h4><p>FOB, CIF, and DDP shipping terms. Experienced export team with HS code documentation support.</p></div></div>
+      <div class="col-md-3 col-sm-6" style="margin-bottom:24px"><div class="why-card"><div class="why-icon"><i class="fa fa-headphones"></i></div><h4>After-Sales Support</h4><p>Dedicated technical support engineers available 24/7 via email, WhatsApp, and video call.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== APPLICATIONS ========== -->
+<section id="applications" class="section-pad bg-dark-theme">
+  <div class="container">
+    <div class="row" style="margin-bottom:45px">
+      <div class="col-md-6 col-sm-8">
+        <p class="section-subtitle text-muted-light">Use Cases</p>
+        <h2 class="section-title text-white">Application Scenarios</h2>
+        <div class="divider"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6" style="margin-bottom:20px"><div class="app-card"><div class="app-card-img">🌾</div><div class="app-card-overlay"><div class="app-card-text"><h4>Agricultural Irrigation</h4><p>Large-scale farmland irrigation, drip systems, and sprinkler networks powered entirely by solar.</p></div></div></div></div>
+      <div class="col-md-4 col-sm-6" style="margin-bottom:20px"><div class="app-card"><div class="app-card-img">🏘️</div><div class="app-card-overlay"><div class="app-card-text"><h4>Village Water Supply</h4><p>Reliable clean water supply for rural communities without grid electricity access.</p></div></div></div></div>
+      <div class="col-md-4 col-sm-6" style="margin-bottom:20px"><div class="app-card"><div class="app-card-img">🐄</div><div class="app-card-overlay"><div class="app-card-text"><h4>Livestock Watering</h4><p>Automatic solar water stations for cattle, sheep, and poultry farms in remote pastures.</p></div></div></div></div>
+      <div class="col-md-4 col-sm-6" style="margin-bottom:20px"><div class="app-card"><div class="app-card-img">🏗️</div><div class="app-card-overlay"><div class="app-card-text"><h4>Construction Sites</h4><p>Temporary water supply for construction projects in areas without power infrastructure.</p></div></div></div></div>
+      <div class="col-md-4 col-sm-6" style="margin-bottom:20px"><div class="app-card"><div class="app-card-img">🌊</div><div class="app-card-overlay"><div class="app-card-text"><h4>Pond &amp; Lake Management</h4><p>Floating solar pumps for aquaculture aeration, algae control, and water circulation.</p></div></div></div></div>
+      <div class="col-md-4 col-sm-6" style="margin-bottom:20px"><div class="app-card"><div class="app-card-img">🏔️</div><div class="app-card-overlay"><div class="app-card-text"><h4>Mountain / Remote Areas</h4><p>High-head multistage pumps for elevated terrain, mountain villages, and off-grid resorts.</p></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CERTIFICATIONS ========== -->
+<section id="certs" class="section-pad-sm bg-light-theme">
+  <div class="container">
+    <div class="row" style="margin-bottom:35px;text-align:center">
+      <div class="col-xs-12">
+        <p class="section-subtitle">Quality Assurance</p>
+        <h2 class="section-title">Certifications &amp; Standards</h2>
+        <div class="divider center"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom:20px"><div class="cert-box"><span class="cert-icon">🏅</span><h5>ISO 9001</h5><p>Quality Management System</p></div></div>
+      <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom:20px"><div class="cert-box"><span class="cert-icon">🇪🇺</span><h5>CE Mark</h5><p>European Conformity</p></div></div>
+      <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom:20px"><div class="cert-box"><span class="cert-icon">♻️</span><h5>RoHS</h5><p>Hazardous Substances Free</p></div></div>
+      <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom:20px"><div class="cert-box"><span class="cert-icon">✅</span><h5>TÜV</h5><p>German Safety Certification</p></div></div>
+      <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom:20px"><div class="cert-box"><span class="cert-icon">🔬</span><h5>IP68 Rated</h5><p>Full Waterproof Protection</p></div></div>
+      <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom:20px"><div class="cert-box"><span class="cert-icon">⚡</span><h5>UL Listed</h5><p>US Safety Standards</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="section-pad bg-dark-theme">
+  <div class="container">
+    <div class="row" style="margin-bottom:50px">
+      <div class="col-xs-12 text-center">
+        <p class="section-subtitle text-muted-light">Get In Touch</p>
+        <h2 class="section-title text-white">Contact Us For Pricing &amp; Catalog</h2>
+        <div class="divider center"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-5">
+        <div class="contact-info-item">
+          <div class="ci-icon"><i class="fa fa-map-marker"></i></div>
+          <div class="ci-text"><h5>Head Office</h5><p>No. 88 Solar Industry Park,<br>Nanshan District, Shenzhen 518000,<br>Guangdong, China</p></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon"><i class="fa fa-phone"></i></div>
+          <div class="ci-text"><h5>Phone / WhatsApp</h5><p>+86-755-8888-0000<br>+86-138-0000-0000</p></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon"><i class="fa fa-envelope-o"></i></div>
+          <div class="ci-text"><h5>Email</h5><p>info@solarflowtech.com<br>sales@solarflowtech.com</p></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon"><i class="fa fa-clock-o"></i></div>
+          <div class="ci-text"><h5>Business Hours</h5><p>Mon–Fri: 09:00 – 18:00 (CST)<br>Reply within 24 hours</p></div>
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-7">
+        <div class="contact-form-wrap">
+          <div class="row">
+            <div class="col-sm-6"><div class="form-group"><label>Your Name *</label><input type="text" class="form-control" placeholder="Full name"/></div></div>
+            <div class="col-sm-6"><div class="form-group"><label>Company</label><input type="text" class="form-control" placeholder="Company name"/></div></div>
+            <div class="col-sm-6"><div class="form-group"><label>Email *</label><input type="email" class="form-control" placeholder="your@email.com"/></div></div>
+            <div class="col-sm-6"><div class="form-group"><label>Country</label><input type="text" class="form-control" placeholder="Your country"/></div></div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Product of Interest</label>
+                <select class="form-control">
+                  <option value="">Select a product...</option>
+                  <option>SF-D750 Deep Well Pump</option>
+                  <option>SF-S250 Surface Pump</option>
+                  <option>SF-H1200 High-Head Pump</option>
+                  <option>SF-F800 Floating Pump</option>
+                  <option>SF-A1500 Agricultural Pump</option>
+                  <option>SF-V550 Village System</option>
+                  <option>Multiple Products / OEM</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6"><div class="form-group"><label>Quantity (units)</label><input type="text" class="form-control" placeholder="e.g. 50 units"/></div></div>
+            <div class="col-xs-12"><div class="form-group"><label>Message / Requirements</label><textarea class="form-control" rows="4" placeholder="Describe your project requirements, installation conditions, or any questions..."></textarea></div></div>
+            <div class="col-xs-12">
+              <button type="submit" class="btn-submit"><i class="fa fa-paper-plane" style="margin-right:8px"></i>Send Inquiry</button>
+              <span style="font-size:.78rem;color:rgba(255,255,255,.35);margin-left:15px">We reply within 24 business hours</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-6" style="margin-bottom:30px">
+        <div class="footer-brand">SOLAR<span>FLOW</span></div>
+        <p class="footer-desc">SolarFlow Technology Co., Ltd. — Professional solar water pump manufacturer and exporter since 2008. Serving agriculture, industry, and communities worldwide with clean energy pumping solutions.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-youtube-play"></i></a>
+          <a href="#"><i class="fa fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-3 col-xs-6" style="margin-bottom:30px">
+        <div class="footer-title">Products</div>
+        <ul class="footer-links">
+          <li><a href="#">Deep Well Pumps</a></li>
+          <li><a href="#">Surface Pumps</a></li>
+          <li><a href="#">High-Head Pumps</a></li>
+          <li><a href="#">Floating Pumps</a></li>
+          <li><a href="#">Agricultural Pumps</a></li>
+          <li><a href="#">Village Systems</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-sm-3 col-xs-6" style="margin-bottom:30px">
+        <div class="footer-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Manufacturing</a></li>
+          <li><a href="#">Certifications</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Distributors</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 col-sm-12" style="margin-bottom:30px">
+        <div class="footer-title">Newsletter</div>
+        <p style="font-size:.82rem;color:rgba(255,255,255,.45);margin-bottom:14px">Subscribe for product updates, technical guides, and industry news.</p>
+        <div class="input-group">
+          <input type="email" class="form-control" placeholder="Your email address" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:#fff;border-radius:0;height:40px"/>
+          <span class="input-group-btn">
+            <button class="btn" style="background:var(--accent);color:var(--dark);border-radius:0;height:40px;font-family:Oswald,sans-serif;font-weight:600;font-size:.8rem;letter-spacing:1px;padding:0 16px;border:none">Subscribe</button>
+          </span>
+        </div>
+        <p style="font-size:.72rem;color:rgba(255,255,255,.25);margin-top:10px"><i class="fa fa-map-marker" style="color:var(--accent);margin-right:5px"></i>No. 88 Solar Industry Park, Shenzhen, China</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="row">
+        <div class="col-sm-8">© 2024 SolarFlow Technology Co., Ltd. All Rights Reserved.</div>
+        <div class="col-sm-4 text-right"><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Use</a></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== PRODUCT MODAL ========== -->
+<div class="modal fade product-modal" id="productModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">
+          <small id="modal-model-text"></small>
+          <span id="modal-name-text"></span>
+        </h4>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-area" id="modal-img-area">
+          <svg width="200" height="160" viewBox="0 0 200 160" id="modal-svg">
+            <text x="100" y="80" text-anchor="middle" font-size="12" fill="#1B5E8A" font-family="Oswald,sans-serif">Product Illustration</text>
+          </svg>
+        </div>
+        <div class="modal-specs-row">
+          <div class="modal-spec-box">
+            <span class="ms-icon">≋</span>
+            <span class="ms-label">Flow Rate</span>
+            <div class="ms-value"><span id="ms-flow"></span> <span class="ms-unit">m³/h</span></div>
+          </div>
+          <div class="modal-spec-box">
+            <span class="ms-icon">↑</span>
+            <span class="ms-label">Max Head</span>
+            <div class="ms-value"><span id="ms-head"></span> <span class="ms-unit">m</span></div>
+          </div>
+          <div class="modal-spec-box">
+            <span class="ms-icon">⚡</span>
+            <span class="ms-label">Power</span>
+            <div class="ms-value"><span id="ms-power"></span> <span class="ms-unit">W</span></div>
+          </div>
+        </div>
+        <div class="modal-features-title">Technical Specifications &amp; Key Features</div>
+        <ul class="modal-features-grid" id="ms-features"></ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-submit" style="padding:10px 24px;font-size:.82rem"><i class="fa fa-envelope-o" style="margin-right:6px"></i>Inquire About This Product</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius:0;font-family:Oswald,sans-serif;letter-spacing:1px;font-size:.82rem;text-transform:uppercase;padding:10px 20px">Close</button>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stat"><span class="stat-num">15+</span><div class="stat-label">Years Experience</div></div>
-  <div class="stat"><span class="stat-num">80+</span><div class="stat-label">Countries Served</div></div>
-  <div class="stat"><span class="stat-num">50K+</span><div class="stat-label">Units Installed</div></div>
-  <div class="stat"><span class="stat-num">ISO</span><div class="stat-label">9001 Certified</div></div>
-</div>
+<!-- Scroll to top -->
+<div id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fa fa-chevron-up"></i></div>
 
-<!-- FEATURED PRODUCT -->
-<div class="featured-section">
-  <div class="section-header">
-    <div class="section-tag">Flagship Model</div>
-    <div class="section-title">Industry-Leading Performance</div>
-    <div class="section-line"></div>
-  </div>
-  <div class="featured-grid">
-    <div>
-      <div class="featured-label">Best Seller 2024</div>
-      <div class="featured-title">SF-D750 Deep Well Series</div>
-      <p class="featured-desc">Our most powerful solar submersible pump, engineered for deep agricultural wells and large-scale irrigation projects. Brushless DC motor with MPPT controller delivers maximum efficiency under variable solar conditions.</p>
-      <div class="featured-params">
-        <div class="param-box">
-          <div class="param-label">Flow Rate</div>
-          <div class="param-value">18 <span class="param-unit">m³/h</span></div>
-        </div>
-        <div class="param-box">
-          <div class="param-label">Max Head</div>
-          <div class="param-value">120 <span class="param-unit">m</span></div>
-        </div>
-        <div class="param-box">
-          <div class="param-label">Power</div>
-          <div class="param-value">3000 <span class="param-unit">W</span></div>
-        </div>
-        <div class="param-box">
-          <div class="param-label">Efficiency</div>
-          <div class="param-value">≥97 <span class="param-unit">%</span></div>
-        </div>
-      </div>
-      <button class="btn-primary" onclick="openModal('sf-d750')">View Full Specifications</button>
-    </div>
-    <div class="featured-img-area">
-      <svg width="200" height="300" viewBox="0 0 200 300">
-        <rect x="75" y="20" width="50" height="130" rx="8" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.5"/>
-        <rect x="82" y="30" width="36" height="20" rx="3" fill="#112240" stroke="#C8962A" stroke-width="0.8"/>
-        <circle cx="100" cy="80" r="22" fill="#112240" stroke="#C8962A" stroke-width="2"/>
-        <circle cx="100" cy="80" r="12" fill="#1E3A5F" stroke="#C8962A" stroke-width="1"/>
-        <circle cx="100" cy="80" r="5" fill="#C8962A"/>
-        <rect x="82" y="110" width="36" height="12" rx="2" fill="#112240" stroke="#C8962A" stroke-width="0.8"/>
-        <rect x="82" y="130" width="36" height="12" rx="2" fill="#112240" stroke="#C8962A" stroke-width="0.8"/>
-        <rect x="68" y="150" width="64" height="20" rx="4" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.2"/>
-        <rect x="68" y="175" width="64" height="20" rx="4" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.2"/>
-        <rect x="68" y="200" width="64" height="20" rx="4" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.2"/>
-        <rect x="68" y="225" width="64" height="20" rx="4" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.2"/>
-        <rect x="90" y="245" width="20" height="45" rx="3" fill="#1E3A5F" stroke="#C8962A" stroke-width="1"/>
-        <path d="M75,50 C50,60 40,100 55,130" fill="none" stroke="#C8962A" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
-        <text x="100" y="295" text-anchor="middle" font-size="9" fill="#C8962A" font-family="Barlow,sans-serif" letter-spacing="1.5" opacity="0.8">SF-D750</text>
-      </svg>
-    </div>
-  </div>
-</div>
-
-<!-- PRODUCTS GRID -->
-<div class="products-section">
-  <div class="products-inner">
-    <div class="section-header">
-      <div class="section-tag">Product Range</div>
-      <div class="section-title">Complete Solar Pump Series</div>
-      <div class="section-line"></div>
-    </div>
-    <div class="products-grid">
-
-      <div class="product-card" onclick="openModal('sf-s150')">
-        <div class="card-img">
-          <div class="pump-badge">Surface</div>
-          <svg width="140" height="160" viewBox="0 0 140 160">
-            <rect x="30" y="50" width="80" height="55" rx="8" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.5"/>
-            <circle cx="70" cy="77" r="20" fill="#112240" stroke="#C8962A" stroke-width="1.5"/>
-            <circle cx="70" cy="77" r="10" fill="#1E3A5F" stroke="#C8962A" stroke-width="1"/>
-            <circle cx="70" cy="77" r="4" fill="#C8962A"/>
-            <rect x="38" y="58" width="20" height="8" rx="2" fill="#112240" stroke="#C8962A" stroke-width="0.7"/>
-            <rect x="110" y="60" width="18" height="45" rx="3" fill="#1E3A5F" stroke="#C8962A" stroke-width="1"/>
-            <rect x="12" y="70" width="18" height="15" rx="2" fill="#1E3A5F" stroke="#C8962A" stroke-width="1"/>
-            <rect x="25" y="105" width="90" height="8" rx="2" fill="#112240" stroke="#C8962A" stroke-width="0.7" opacity="0.6"/>
-            <ellipse cx="70" cy="130" rx="45" ry="8" fill="#378ADD" opacity="0.25"/>
-            <text x="70" y="148" text-anchor="middle" font-size="8" fill="#C8962A" font-family="Barlow,sans-serif" letter-spacing="1.5">SF-S150</text>
-          </svg>
-        </div>
-        <div class="card-body">
-          <div class="card-model">Model SF-S150</div>
-          <div class="card-name">Surface Centrifugal Pump</div>
-          <div class="card-desc">Compact surface-mounted solar pump ideal for small farms, garden irrigation, and livestock water supply.</div>
-          <div class="card-specs-preview">
-            <div class="spec-chip">≋ 3 m³/h</div>
-            <div class="spec-chip">↑ 35 m</div>
-            <div class="spec-chip">⚡ 400 W</div>
-          </div>
-          <button class="card-btn">View Specifications →</button>
-        </div>
-      </div>
-
-      <div class="product-card" onclick="openModal('sf-sub300')">
-        <div class="card-img">
-          <div class="pump-badge">Submersible</div>
-          <svg width="140" height="160" viewBox="0 0 140 160">
-            <rect x="52" y="10" width="36" height="95" rx="6" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.5"/>
-            <rect x="58" y="18" width="24" height="14" rx="3" fill="#112240" stroke="#C8962A" stroke-width="0.8"/>
-            <circle cx="70" cy="60" r="14" fill="#112240" stroke="#C8962A" stroke-width="1.5"/>
-            <circle cx="70" cy="60" r="7" fill="#1E3A5F" stroke="#C8962A" stroke-width="1"/>
-            <circle cx="70" cy="60" r="3" fill="#C8962A"/>
-            <rect x="48" y="105" width="44" height="14" rx="3" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.2"/>
-            <rect x="48" y="123" width="44" height="14" rx="3" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.2"/>
-            <rect x="60" y="137" width="20" height="18" rx="2" fill="#1E3A5F" stroke="#C8962A" stroke-width="1"/>
-            <path d="M52,30 C35,35 30,55 38,80" fill="none" stroke="#C8962A" stroke-width="1" stroke-dasharray="3,2.5" opacity="0.5"/>
-            <text x="70" y="158" text-anchor="middle" font-size="8" fill="#C8962A" font-family="Barlow,sans-serif" letter-spacing="1.5">SF-SUB300</text>
-          </svg>
-        </div>
-        <div class="card-body">
-          <div class="card-model">Model SF-SUB300</div>
-          <div class="card-name">Submersible Borehole Pump</div>
-          <div class="card-desc">4-inch submersible pump optimized for shallow to medium-depth boreholes with high flow efficiency.</div>
-          <div class="card-specs-preview">
-            <div class="spec-chip">≋ 6 m³/h</div>
-            <div class="spec-chip">↑ 60 m</div>
-            <div class="spec-chip">⚡ 750 W</div>
-          </div>
-          <button class="card-btn">View Specifications →</button>
-        </div>
-      </div>
-
-      <div class="product-card" onclick="openModal('sf-h500')">
-        <div class="card-img">
-          <div class="pump-badge">High Head</div>
-          <svg width="140" height="160" viewBox="0 0 140 160">
-            <rect x="48" y="15" width="44" height="110" rx="7" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.5"/>
-            <rect x="55" y="23" width="30" height="18" rx="3" fill="#112240" stroke="#C8962A" stroke-width="0.8"/>
-            <circle cx="70" cy="68" r="18" fill="#112240" stroke="#C8962A" stroke-width="1.5"/>
-            <circle cx="70" cy="68" r="9" fill="#1E3A5F" stroke="#C8962A" stroke-width="1"/>
-            <circle cx="70" cy="68" r="4" fill="#C8962A"/>
-            <rect x="44" y="105" width="52" height="14" rx="3" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.2"/>
-            <rect x="55" y="125" width="30" height="30" rx="3" fill="#1E3A5F" stroke="#C8962A" stroke-width="1"/>
-            <line x1="55" y1="68" x2="44" y2="68" stroke="#C8962A" stroke-width="1.5"/>
-            <line x1="96" y1="68" x2="107" y2="68" stroke="#C8962A" stroke-width="1.5"/>
-            <circle cx="40" cy="68" r="5" fill="#112240" stroke="#C8962A" stroke-width="1"/>
-            <circle cx="111" cy="68" r="5" fill="#112240" stroke="#C8962A" stroke-width="1"/>
-            <text x="70" y="158" text-anchor="middle" font-size="8" fill="#C8962A" font-family="Barlow,sans-serif" letter-spacing="1.5">SF-H500</text>
-          </svg>
-        </div>
-        <div class="card-body">
-          <div class="card-model">Model SF-H500</div>
-          <div class="card-name">High-Head Multistage Pump</div>
-          <div class="card-desc">Multi-stage design delivering exceptional head pressure for mountain terrain and tall building supply.</div>
-          <div class="card-specs-preview">
-            <div class="spec-chip">≋ 5 m³/h</div>
-            <div class="spec-chip">↑ 95 m</div>
-            <div class="spec-chip">⚡ 1200 W</div>
-          </div>
-          <button class="card-btn">View Specifications →</button>
-        </div>
-      </div>
-
-      <div class="product-card" onclick="openModal('sf-f800')">
-        <div class="card-img">
-          <div class="pump-badge">Float</div>
-          <svg width="140" height="160" viewBox="0 0 140 160">
-            <ellipse cx="70" cy="115" rx="48" ry="14" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.2"/>
-            <rect x="50" y="55" width="40" height="60" rx="6" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.5"/>
-            <circle cx="70" cy="85" r="14" fill="#112240" stroke="#C8962A" stroke-width="1.5"/>
-            <circle cx="70" cy="85" r="7" fill="#1E3A5F" stroke="#C8962A" stroke-width="1"/>
-            <circle cx="70" cy="85" r="3" fill="#C8962A"/>
-            <rect x="57" y="57" width="26" height="12" rx="2" fill="#112240" stroke="#C8962A" stroke-width="0.8"/>
-            <rect x="25" y="30" width="90" height="28" rx="3" fill="#112240" stroke="#C8962A" stroke-width="1"/>
-            <line x1="25" y1="44" x2="115" y2="44" stroke="#C8962A" stroke-width="0.5" opacity="0.5"/>
-            <line x1="55" y1="30" x2="55" y2="58" stroke="#C8962A" stroke-width="0.5" opacity="0.5"/>
-            <line x1="85" y1="30" x2="85" y2="58" stroke="#C8962A" stroke-width="0.5" opacity="0.5"/>
-            <path d="M22,120 Q45,115 68,120 Q91,125 118,120" fill="none" stroke="#378ADD" stroke-width="1.5" opacity="0.4"/>
-            <path d="M22,130 Q45,125 68,130 Q91,135 118,130" fill="none" stroke="#378ADD" stroke-width="1" opacity="0.25"/>
-            <text x="70" y="152" text-anchor="middle" font-size="8" fill="#C8962A" font-family="Barlow,sans-serif" letter-spacing="1.5">SF-F800</text>
-          </svg>
-        </div>
-        <div class="card-body">
-          <div class="card-model">Model SF-F800</div>
-          <div class="card-name">Floating Solar Pump</div>
-          <div class="card-desc">All-in-one floating solar pump system with integrated panel, perfect for ponds, lakes, and reservoirs.</div>
-          <div class="card-specs-preview">
-            <div class="spec-chip">≋ 8 m³/h</div>
-            <div class="spec-chip">↑ 20 m</div>
-            <div class="spec-chip">⚡ 800 W</div>
-          </div>
-          <button class="card-btn">View Specifications →</button>
-        </div>
-      </div>
-
-      <div class="product-card" onclick="openModal('sf-a1500')">
-        <div class="card-img">
-          <div class="pump-badge">Agriculture</div>
-          <svg width="140" height="160" viewBox="0 0 140 160">
-            <rect x="35" y="40" width="70" height="65" rx="8" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.5"/>
-            <circle cx="70" cy="72" r="22" fill="#112240" stroke="#C8962A" stroke-width="2"/>
-            <circle cx="70" cy="72" r="12" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.2"/>
-            <circle cx="70" cy="72" r="5" fill="#C8962A"/>
-            <line x1="70" y1="60" x2="70" y2="50" stroke="#C8962A" stroke-width="1" opacity="0.6"/>
-            <line x1="82" y1="72" x2="92" y2="72" stroke="#C8962A" stroke-width="1" opacity="0.6"/>
-            <line x1="70" y1="84" x2="70" y2="94" stroke="#C8962A" stroke-width="1" opacity="0.6"/>
-            <line x1="58" y1="72" x2="48" y2="72" stroke="#C8962A" stroke-width="1" opacity="0.6"/>
-            <rect x="5" y="60" width="30" height="12" rx="3" fill="#1E3A5F" stroke="#C8962A" stroke-width="1"/>
-            <rect x="105" y="60" width="30" height="12" rx="3" fill="#1E3A5F" stroke="#C8962A" stroke-width="1"/>
-            <rect x="42" y="105" width="56" height="10" rx="2" fill="#112240" stroke="#C8962A" stroke-width="0.8" opacity="0.7"/>
-            <ellipse cx="70" cy="130" rx="40" ry="7" fill="#378ADD" opacity="0.2"/>
-            <text x="70" y="150" text-anchor="middle" font-size="8" fill="#C8962A" font-family="Barlow,sans-serif" letter-spacing="1.5">SF-A1500</text>
-          </svg>
-        </div>
-        <div class="card-body">
-          <div class="card-model">Model SF-A1500</div>
-          <div class="card-name">Agricultural Booster Pump</div>
-          <div class="card-desc">Heavy-duty horizontal pump for wide-area irrigation, sprinkler systems, and drip irrigation networks.</div>
-          <div class="card-specs-preview">
-            <div class="spec-chip">≋ 12 m³/h</div>
-            <div class="spec-chip">↑ 50 m</div>
-            <div class="spec-chip">⚡ 1500 W</div>
-          </div>
-          <button class="card-btn">View Specifications →</button>
-        </div>
-      </div>
-
-      <div class="product-card" onclick="openModal('sf-v200')">
-        <div class="card-img">
-          <div class="pump-badge">Village</div>
-          <svg width="140" height="160" viewBox="0 0 140 160">
-            <polygon points="70,12 100,45 40,45" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.2"/>
-            <rect x="55" y="45" width="30" height="55" rx="4" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.5"/>
-            <rect x="62" y="52" width="16" height="10" rx="2" fill="#112240" stroke="#C8962A" stroke-width="0.8"/>
-            <circle cx="70" cy="82" r="12" fill="#112240" stroke="#C8962A" stroke-width="1.5"/>
-            <circle cx="70" cy="82" r="6" fill="#1E3A5F" stroke="#C8962A" stroke-width="1"/>
-            <circle cx="70" cy="82" r="3" fill="#C8962A"/>
-            <rect x="45" y="100" width="50" height="38" rx="5" fill="#1E3A5F" stroke="#C8962A" stroke-width="1.2"/>
-            <rect x="58" y="108" width="24" height="12" rx="2" fill="#112240" stroke="#C8962A" stroke-width="0.8"/>
-            <rect x="53" y="138" width="14" height="16" rx="2" fill="#1E3A5F" stroke="#C8962A" stroke-width="1"/>
-            <rect x="73" y="138" width="14" height="16" rx="2" fill="#1E3A5F" stroke="#C8962A" stroke-width="1"/>
-            <text x="70" y="158" text-anchor="middle" font-size="8" fill="#C8962A" font-family="Barlow,sans-serif" letter-spacing="1.5">SF-V200</text>
-          </svg>
-        </div>
-        <div class="card-body">
-          <div class="card-model">Model SF-V200</div>
-          <div class="card-name">Village Water Supply System</div>
-          <div class="card-desc">Complete village water solution with tank-filling capability, built-in MPPT and dry-run protection.</div>
-          <div class="card-specs-preview">
-            <div class="spec-chip">≋ 4 m³/h</div>
-            <div class="spec-chip">↑ 45 m</div>
-            <div class="spec-chip">⚡ 550 W</div>
-          </div>
-          <button class="card-btn">View Specifications →</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<div class="site-footer">
-  <div class="footer-logo">SOLARFLOW</div>
-  <div class="footer-tagline">Clean Energy · Reliable Water · Sustainable Future</div>
-  <div class="footer-divider"></div>
-  <div class="footer-copy">© 2024 SolarFlow Technology Co., Ltd. All rights reserved.</div>
-</div>
-
-<!-- MODAL -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
-  <div class="modal" id="modal">
-    <div class="modal-header">
-      <div>
-        <div class="modal-model" id="modal-model"></div>
-        <div class="modal-title" id="modal-title"></div>
-      </div>
-      <button class="modal-close" onclick="closeModal()">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-img" id="modal-img"></div>
-      <div class="specs-grid">
-        <div class="spec-box">
-          <span class="spec-icon">≋</span>
-          <div class="spec-name">Flow Rate</div>
-          <div class="spec-val"><span id="spec-flow"></span> <span class="spec-u">m³/h</span></div>
-        </div>
-        <div class="spec-box">
-          <span class="spec-icon">↑</span>
-          <div class="spec-name">Max Head</div>
-          <div class="spec-val"><span id="spec-head"></span> <span class="spec-u">m</span></div>
-        </div>
-        <div class="spec-box">
-          <span class="spec-icon">⚡</span>
-          <div class="spec-name">Power</div>
-          <div class="spec-val"><span id="spec-power"></span> <span class="spec-u">W</span></div>
-        </div>
-      </div>
-      <div class="modal-extra">
-        <div class="extra-title">Key Features</div>
-        <ul class="extra-list" id="modal-features"></ul>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button class="modal-btn-sec" onclick="closeModal()">Close</button>
-      <button class="modal-btn-primary">Request Quotation →</button>
-    </div>
-  </div>
-</div>
-
+<!-- ========== SCRIPTS ========== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
-const products={
-  'sf-d750':{model:'Model SF-D750',name:'SF-D750 Deep Well Series',flow:'18',head:'120',power:'3000',features:['MPPT Intelligent Controller','Brushless DC Motor','IP68 Waterproof Rating','Dry-Run Auto Protection','Anti-Sand Design','Remote Monitoring Ready','5-Year Warranty','CE & ISO Certified']},
-  'sf-s150':{model:'Model SF-S150',name:'Surface Centrifugal Pump',flow:'3',head:'35',power:'400',features:['Plug & Play Installation','Self-Priming Design','Corrosion-Resistant Body','Low Startup Voltage','Auto Pressure Switch','2-Year Warranty','IP55 Protection','RoHS Compliant']},
-  'sf-sub300':{model:'Model SF-SUB300',name:'Submersible Borehole Pump',flow:'6',head:'60',power:'750',features:['4-Inch Borehole Fit','Stainless Steel Shaft','Permanent Magnet Motor','Wide Voltage Input 24-72V','Overload Protection','IP68 Submersible','3-Year Warranty','TÜV Certified']},
-  'sf-h500':{model:'Model SF-H500',name:'High-Head Multistage Pump',flow:'5',head:'95',power:'1200',features:['5-Stage Impeller Design','High Efficiency ≥92%','Compact Vertical Layout','Silent Operation <45dB','Thermal Overload Protection','Anti-Freeze Design','3-Year Warranty','CE Certified']},
-  'sf-f800':{model:'Model SF-F800',name:'Floating Solar Pump System',flow:'8',head:'20',power:'800',features:['Integrated 800W Solar Panel','Floating Platform Included','HDPE Pontoon Body','360° Rotation Outlet','Algae Suppression Mode','Easy Assembly','2-Year Warranty','UL Listed']},
-  'sf-a1500':{model:'Model SF-A1500',name:'Agricultural Booster Pump',flow:'12',head:'50',power:'1500',features:['Twin Impeller Design','AC/DC Hybrid Input','Wide Flow Adjustment','Anti-Corrosion Coating','Smart Dry-Run Sensor','Field Serviceable','3-Year Warranty','ISO 9001 Certified']},
-  'sf-v200':{model:'Model SF-V200',name:'Village Water Supply System',flow:'4',head:'45',power:'550',features:['Built-in MPPT Controller','Tank Level Sensor','GSM Remote Monitoring','Auto Day/Night Switch','Lightning Protection','Stainless Impeller','3-Year Warranty','CE & RoHS']},
+var productData = {
+  p1:{model:'Model SF-D750',name:'Deep Well Submersible Pump',flow:'18',head:'120',power:'3000',features:['Brushless DC Permanent Magnet Motor','Built-in MPPT Controller (±2%)','Voltage Input: 48V–240V DC','IP68 Waterproof (submersible to 120m)','Anti-Sand Design (particles ≤0.5mm)','Dry-Run & Over-Current Protection','Stainless Steel SUS304/316 Body','5-Year Manufacturer Warranty','CE / ISO 9001 / TÜV Certified','Max. Efficiency ≥ 97%','Operating Temp: -10°C to +50°C','Optional GSM Remote Monitoring']},
+  p2:{model:'Model SF-S250',name:'Surface Centrifugal Pump',flow:'5',head:'45',power:'550',features:['Self-Priming Design (suction lift 6m)','Plug & Play Installation','Voltage Input: 24V–72V DC','IP55 Splash-Proof Housing','Auto Pressure Switch Included','Low Startup Voltage (100W min.)','Corrosion-Resistant Impeller','2-Year Manufacturer Warranty','CE / RoHS Certified','Max. Efficiency ≥ 85%','Lightweight: 4.2 kg','Optional Tank Level Float Switch']},
+  p3:{model:'Model SF-H1200',name:'High-Head Multistage Pump',flow:'6',head:'95',power:'1200',features:['5-Stage Impeller for High Pressure','Compact Vertical Inline Design','Voltage Input: 72V–180V DC','Silent Operation < 45 dB','Thermal Overload Auto-Reset','Anti-Freeze Drain Port','Cast Iron Housing, SS Impellers','3-Year Manufacturer Warranty','CE / ISO 9001 Certified','Max. Efficiency ≥ 92%','Max Ambient Temp: 55°C','Pressure Gauge Port Included']},
+  p4:{model:'Model SF-F800',name:'Floating Solar Pump System',flow:'8',head:'20',power:'800',features:['Integrated 800W Monocrystalline Panel','HDPE UV-Resistant Float Platform','Voltage Input: Solar Direct (MPPT)','360° Rotating Outlet Pipe','Algae Suppression / Aeration Mode','Anchor & Mooring Lines Included','All-in-One Assembly < 30 min','2-Year System Warranty','CE / UL Listed','Max. Panel Efficiency ≥ 21%','Float Load Rating: 120 kg','Optional Solar Tracker Upgrade']},
+  p5:{model:'Model SF-A1500',name:'Agricultural Booster Pump',flow:'12',head:'50',power:'1500',features:['Dual Impeller High-Volume Design','AC/DC Hybrid Input Supported','Voltage Input: 72V–240V DC or AC220V','Anti-Corrosion Impeller Coating','Smart Dry-Run Level Sensor','Wide Flow Adjustment (0–100%)','Field-Serviceable Design','3-Year Manufacturer Warranty','CE / ISO 9001 Certified','Max. Efficiency ≥ 88%','Handles Up to 3.5 kg/m³ Salinity','SCADA / Modbus RS485 Ready']},
+  p6:{model:'Model SF-V550',name:'Village Water Supply System',flow:'4',head:'45',power:'550',features:['Built-in MPPT Controller','GSM/4G Remote Monitoring','Voltage Input: 24V–96V DC','Auto Day/Night On/Off Switch','Tank Level Float Sensor Included','Lightning & Surge Protection','Stainless Steel 316 Impeller','3-Year System Warranty','CE / RoHS Certified','Max. Efficiency ≥ 87%','Low-Flow Alarm Alert','Compatible with 2″–4″ Boreholes']}
 };
-function openModal(id){
-  const p=products[id];if(!p)return;
-  document.getElementById('modal-model').textContent=p.model;
-  document.getElementById('modal-title').textContent=p.name;
-  document.getElementById('spec-flow').textContent=p.flow;
-  document.getElementById('spec-head').textContent=p.head;
-  document.getElementById('spec-power').textContent=p.power;
-  const fl=document.getElementById('modal-features');
-  fl.innerHTML=p.features.map(f=>`<li>${f}</li>`).join('');
-  document.getElementById('modalOverlay').classList.add('active');
-  document.body.style.overflow='hidden';
+
+function openProductModal(id){
+  var d=productData[id]; if(!d)return;
+  $('#modal-model-text').text(d.model);
+  $('#modal-name-text').text(d.name);
+  $('#ms-flow').text(d.flow);
+  $('#ms-head').text(d.head);
+  $('#ms-power').text(d.power);
+  var html=''; d.features.forEach(function(f){html+='<li>'+f+'</li>';});
+  $('#ms-features').html(html);
+  $('#productModal').modal('show');
 }
-function closeModal(){
-  document.getElementById('modalOverlay').classList.remove('active');
-  document.body.style.overflow='';
+
+// Hero slider
+var currentSlide=0;
+function goSlide(idx){
+  $('.hero-slide').hide();
+  $($('.hero-slide')[idx]).show();
+  $('.hero-dot').removeClass('active');
+  $($('.hero-dot')[idx]).addClass('active');
+  currentSlide=idx;
 }
-function closeModalOutside(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+setInterval(function(){goSlide((currentSlide+1)%3);},5000);
+
+// Smooth scroll
+$('a[href^="#"]').on('click',function(e){
+  var t=$(this.getAttribute('href'));
+  if(t.length){e.preventDefault();$('html,body').animate({scrollTop:t.offset().top-65},700);}
+});
+
+// Scroll top btn + active nav
+$(window).on('scroll',function(){
+  var s=$(this).scrollTop();
+  if(s>400)$('#scroll-top').addClass('visible'); else $('#scroll-top').removeClass('visible');
+  $('section[id]').each(function(){
+    var top=$(this).offset().top-80, bot=top+$(this).outerHeight(), id=$(this).attr('id');
+    if(s>=top&&s<bot){$('#mainNav .navbar-nav li').removeClass('active');$('#mainNav .navbar-nav li a[href="#'+id+'"]').parent().addClass('active');}
+  });
+});
+
+// Fade in on scroll
+function checkVis(){
+  $('.why-card,.product-card,.cert-box,.app-card').each(function(){
+    if($(window).scrollTop()+$(window).height()>$(this).offset().top+60)$(this).css('opacity','1');
+  });
+}
+$('.why-card,.product-card,.cert-box,.app-card').css({opacity:0,transition:'opacity .5s ease'});
+$(window).on('scroll',checkVis); checkVis();
 </script>
 </body>
 </html>
