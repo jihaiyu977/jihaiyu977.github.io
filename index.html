@@ -1,800 +1,996 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="SolarFlow Technology — Professional Solar Water Pump Manufacturer. Flow Rate, Head, Power optimized for agriculture, irrigation and clean water supply worldwide."/>
-  <title>SolarFlow Technology Co., Ltd. — Solar Water Pump Manufacturer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>圳市凯霖国际贸易有限公司 · 太阳能水利系统</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#050e1f;
+  --navy2:#071428;
+  --navy3:#0a1c38;
+  --navy4:#0d2448;
+  --blue:#1565c8;
+  --blue2:#1e7ae0;
+  --blue3:#3a9af8;
+  --sky:#6ec6ff;
+  --gold:#d4a843;
+  --gold2:#f0c96a;
+  --text:#e8eef8;
+  --text2:#8ea8cc;
+  --text3:#4a6080;
+  --border:rgba(30,122,224,0.15);
+  --border2:rgba(30,122,224,0.3);
+  --border3:rgba(30,122,224,0.5);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans SC',sans-serif;font-weight:300;background:var(--navy);color:var(--text);overflow-x:hidden;line-height:1.7}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:var(--blue2);border-radius:2px}
 
-  <!-- Bootstrap 3 CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css"/>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-  <!-- Animate.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="css/styles.css"/>
+/* ═══ NAV ═══ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 64px;height:76px;
+  background:rgba(5,14,31,0.94);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-brand{display:flex;flex-direction:column;gap:2px}
+.nav-brand-en{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px;letter-spacing:4px;color:var(--blue3);
+  line-height:1;
+}
+.nav-brand-cn{font-size:11px;letter-spacing:2px;color:var(--text2);font-weight:400}
+.nav-links{display:flex;gap:32px}
+.nav-links a{
+  font-size:13px;letter-spacing:1.5px;color:var(--text2);
+  text-decoration:none;transition:color .2s;position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;
+  background:var(--blue3);transition:width .25s;
+}
+.nav-links a:hover{color:var(--blue3)}
+.nav-links a:hover::after{width:100%}
+.nav-btn{
+  background:var(--blue);color:#fff;border:none;
+  padding:10px 24px;font-size:13px;letter-spacing:1.5px;
+  cursor:pointer;font-family:'Noto Sans SC',sans-serif;font-weight:500;
+  transition:background .2s;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);
+}
+.nav-btn:hover{background:var(--blue2)}
+
+/* ═══ HERO / VISION ═══ */
+#vision{
+  min-height:100vh;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;overflow:hidden;
+}
+.vision-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(5,14,31,0.3) 0%,rgba(5,14,31,0.6) 50%,rgba(5,14,31,0.95) 100%),
+    url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=1600&q=80') center/cover no-repeat;
+  filter:none;
+}
+.vision-bg::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(21,101,200,0.25),transparent 70%);
+}
+.vision-content{position:relative;z-index:1;padding:0 40px;max-width:900px}
+.vision-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(30,122,224,0.12);border:1px solid var(--border2);
+  padding:8px 20px;font-size:11px;letter-spacing:3px;color:var(--blue3);
+  margin-bottom:36px;text-transform:uppercase;
+}
+.vision-badge::before,.vision-badge::after{content:'';width:20px;height:1px;background:var(--blue3)}
+.vision-headline{
+  font-family:'Noto Serif SC',serif;
+  font-size:58px;font-weight:600;line-height:1.25;
+  color:#fff;margin-bottom:20px;letter-spacing:-0.5px;
+}
+.vision-headline em{
+  font-style:normal;
+  background:linear-gradient(135deg,var(--blue3),var(--sky));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.vision-sub{
+  font-size:18px;color:rgba(255,255,255,0.7);
+  letter-spacing:3px;margin-bottom:12px;font-weight:300;
+}
+.vision-divider{
+  width:80px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--blue3),transparent);
+  margin:28px auto;
+}
+.vision-tagline{
+  font-size:14px;color:var(--text2);letter-spacing:4px;text-transform:uppercase;
+  margin-bottom:48px;
+}
+.vision-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-p{
+  background:var(--blue);color:#fff;border:none;
+  padding:14px 36px;font-size:14px;letter-spacing:2px;cursor:pointer;
+  font-family:'Noto Sans SC',sans-serif;font-weight:500;
+  transition:background .2s,transform .15s;
+  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%);
+}
+.btn-p:hover{background:var(--blue2);transform:translateY(-2px)}
+.btn-o{
+  background:transparent;color:var(--blue3);
+  border:1px solid var(--border3);padding:14px 36px;
+  font-size:14px;letter-spacing:2px;cursor:pointer;
+  font-family:'Noto Sans SC',sans-serif;
+  transition:background .2s,color .2s;
+}
+.btn-o:hover{background:rgba(30,122,224,0.1)}
+.vision-scroll{
+  position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-size:10px;letter-spacing:3px;color:var(--text3);
+}
+.scroll-dot{
+  width:1px;height:40px;background:linear-gradient(to bottom,var(--blue3),transparent);
+  animation:scrollDot 2s ease-in-out infinite;
+}
+@keyframes scrollDot{0%,100%{opacity:.3;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.3)}}
+.vision-stats{
+  position:absolute;bottom:80px;left:64px;right:64px;
+  display:flex;justify-content:space-between;
+  border-top:1px solid var(--border);padding-top:28px;
+}
+.vstat{text-align:center}
+.vstat-n{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:42px;color:var(--blue3);letter-spacing:2px;line-height:1;
+}
+.vstat-u{font-size:14px;color:var(--blue3)}
+.vstat-l{font-size:11px;letter-spacing:2px;color:var(--text3);margin-top:4px;text-transform:uppercase}
+
+/* ═══ SECTION COMMON ═══ */
+.sec{padding:100px 64px}
+.sec-alt{background:var(--navy2)}
+.sec-head{margin-bottom:60px}
+.sec-eye{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;letter-spacing:3px;color:var(--blue3);
+  margin-bottom:14px;text-transform:uppercase;
+}
+.sec-eye::before{content:'';width:24px;height:1px;background:var(--blue3)}
+.sec-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:38px;font-weight:400;line-height:1.2;
+  color:var(--text);margin-bottom:14px;
+}
+.sec-title strong{color:var(--blue3);font-weight:600}
+.sec-sub{font-size:15px;color:var(--text2);max-width:520px;line-height:1.8}
+.gold-line{
+  width:100%;height:1px;margin:0 0 56px;
+  background:linear-gradient(90deg,transparent,var(--blue2),transparent);
+}
+
+/* ═══ COMPANY ═══ */
+#company .inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.co-img{position:relative}
+.co-img-frame{
+  width:100%;aspect-ratio:4/3;
+  background:var(--navy3);
+  border:1px solid var(--border2);
+  overflow:hidden;position:relative;
+  clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px));
+}
+.co-img-frame::before{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(135deg,rgba(21,101,200,0.3),transparent 50%),
+    url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=80') center/cover no-repeat;
+}
+.co-img-badge{
+  position:absolute;bottom:-16px;right:-16px;
+  background:var(--blue);padding:20px 24px;
+  text-align:center;border:1px solid var(--blue2);
+}
+.co-img-badge-n{font-family:'Bebas Neue',sans-serif;font-size:44px;color:#fff;line-height:1;letter-spacing:2px}
+.co-img-badge-l{font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.7);text-transform:uppercase}
+.co-text p{font-size:15px;color:var(--text2);line-height:1.9;margin-bottom:20px}
+.co-feats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.co-feat{
+  padding:18px;border:1px solid var(--border);
+  background:var(--navy3);transition:border-color .2s;
+}
+.co-feat:hover{border-color:var(--blue2)}
+.co-feat-icon{font-size:20px;margin-bottom:8px}
+.co-feat-t{font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px}
+.co-feat-d{font-size:12px;color:var(--text3);line-height:1.5}
+
+/* ═══ PRODUCTS ═══ */
+#products{background:var(--navy)}
+.prod-tabs{display:flex;gap:0;margin-bottom:44px;border-bottom:1px solid var(--border)}
+.tab-btn{
+  padding:14px 40px;font-size:13px;letter-spacing:2px;
+  cursor:pointer;background:transparent;border:none;
+  color:var(--text3);font-family:'Noto Sans SC',sans-serif;
+  position:relative;transition:color .2s;
+}
+.tab-btn.on{color:var(--blue3)}
+.tab-btn.on::after{
+  content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;
+  background:var(--blue3);
+}
+.tab-btn:hover:not(.on){color:var(--text2)}
+.tp{display:none}
+.tp.on{display:block}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1px;background:var(--border)}
+.pcard{
+  background:var(--navy2);cursor:pointer;
+  transition:background .2s;position:relative;overflow:hidden;
+}
+.pcard:hover{background:var(--navy3)}
+.pcard::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--blue),var(--blue3));
+  transform:scaleX(0);transition:transform .25s;
+}
+.pcard:hover::after{transform:scaleX(1)}
+.pcard-img{
+  height:180px;background:var(--navy3);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:60px;position:relative;overflow:hidden;
+}
+.pcard-glow{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at center,rgba(30,122,224,0.12),transparent 70%);
+}
+.pcard-body{padding:22px}
+.pcard-tag{font-size:10px;letter-spacing:2px;color:var(--blue3);text-transform:uppercase;margin-bottom:8px}
+.pcard-name{font-size:15px;font-weight:500;color:var(--text);margin-bottom:18px}
+.pcard-params{display:flex;flex-direction:column;gap:0}
+.prow{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:8px 0;border-top:1px solid var(--border);font-size:12px;
+}
+.pk{color:var(--text3)}
+.pv{color:var(--text);font-weight:500;font-size:13px}
+.pcard-more{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:18px;padding-top:14px;border-top:1px solid var(--border);
+  font-size:11px;letter-spacing:1.5px;color:var(--blue3);text-transform:uppercase;
+}
+.pcard-more::after{content:'→';font-size:13px}
+
+/* ═══ SOLUTIONS ═══ */
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.scard{
+  background:var(--navy2);padding:36px 28px;
+  position:relative;transition:background .2s;overflow:hidden;
+}
+.scard:hover{background:var(--navy3)}
+.scard::before{
+  content:attr(data-n);
+  position:absolute;top:16px;right:20px;
+  font-family:'Bebas Neue',sans-serif;font-size:64px;
+  color:var(--border2);line-height:1;pointer-events:none;
+}
+.scard-icon{
+  width:48px;height:48px;border:1px solid var(--border2);
+  background:var(--navy4);display:flex;align-items:center;justify-content:center;
+  font-size:20px;margin-bottom:20px;
+}
+.scard-title{font-size:17px;font-weight:500;color:var(--text);margin-bottom:10px}
+.scard-desc{font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:18px}
+.scard-tags{display:flex;gap:8px;flex-wrap:wrap}
+.stag{
+  font-size:10px;letter-spacing:1px;color:var(--blue3);
+  border:1px solid var(--border2);padding:3px 10px;
+}
+
+/* ═══ CASES ═══ */
+#cases{background:var(--navy)}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.ccard{
+  background:var(--navy2);cursor:pointer;
+  transition:background .2s;overflow:hidden;
+}
+.ccard:hover{background:var(--navy3)}
+.ccard-img{
+  height:200px;background:var(--navy3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:68px;border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.ccard-img::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%,rgba(5,14,31,0.6));
+}
+.ctag{
+  position:absolute;top:14px;left:14px;
+  background:var(--blue);color:#fff;
+  font-size:10px;letter-spacing:1.5px;padding:4px 12px;
+  text-transform:uppercase;
+}
+.ccard-body{padding:24px}
+.ccard-title{font-size:16px;font-weight:500;color:var(--text);margin-bottom:10px}
+.ccard-excerpt{font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:18px}
+.cmore{
+  font-size:11px;letter-spacing:2px;color:var(--blue3);
+  text-transform:uppercase;display:flex;align-items:center;gap:8px;
+}
+.cmore::after{content:'→';font-size:13px;transition:transform .2s}
+.ccard:hover .cmore::after{transform:translateX(4px)}
+
+/* ═══ CUSTOM ═══ */
+#custom{background:var(--navy2);position:relative;overflow:hidden}
+#custom::before{
+  content:'';position:absolute;top:-200px;right:-200px;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(21,101,200,0.06),transparent 70%);
+  pointer-events:none;
+}
+.custom-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+.custom-intro p{font-size:15px;color:var(--text2);line-height:1.9;margin-bottom:28px}
+.process{display:flex;flex-direction:column;gap:0}
+.proc-item{
+  display:flex;gap:20px;padding:22px 0;
+  border-bottom:1px solid var(--border);
+}
+.proc-item:first-child{border-top:1px solid var(--border)}
+.proc-n{
+  font-family:'Bebas Neue',sans-serif;font-size:36px;
+  color:var(--blue3);line-height:1;min-width:44px;
+}
+.proc-t{font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px}
+.proc-d{font-size:12px;color:var(--text3);line-height:1.6}
+.form-box{
+  background:var(--navy3);border:1px solid var(--border2);
+  padding:36px;position:relative;
+}
+.form-box::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--blue),var(--blue3));
+}
+.form-title{font-size:18px;font-weight:500;color:var(--text);margin-bottom:24px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ff{margin-bottom:14px}
+.ff label{
+  display:block;font-size:11px;letter-spacing:1.5px;
+  color:var(--text3);margin-bottom:7px;text-transform:uppercase;
+}
+.ff input,.ff select,.ff textarea{
+  width:100%;background:var(--navy4);border:1px solid var(--border);
+  color:var(--text);padding:11px 14px;font-size:14px;
+  font-family:'Noto Sans SC',sans-serif;outline:none;
+  transition:border-color .2s;-webkit-appearance:none;appearance:none;
+}
+.ff select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234a6080' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  padding-right:36px;cursor:pointer;
+}
+.ff select option{background:var(--navy3)}
+.ff textarea{resize:vertical;min-height:90px}
+.ff input:focus,.ff select:focus,.ff textarea:focus{border-color:var(--blue2)}
+.ff input::placeholder,.ff textarea::placeholder{color:var(--text3)}
+.fsub{
+  width:100%;background:var(--blue);color:#fff;border:none;
+  padding:13px;font-size:14px;font-weight:500;letter-spacing:2px;
+  cursor:pointer;font-family:'Noto Sans SC',sans-serif;
+  transition:background .2s;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);
+}
+.fsub:hover{background:var(--blue2)}
+.fsuccess{
+  display:none;background:rgba(30,122,224,0.1);
+  border:1px solid var(--border2);padding:14px;margin-top:14px;
+  font-size:14px;color:var(--blue3);text-align:center;
+}
+
+/* ═══ CONTACT ═══ */
+#contact{background:var(--navy3)}
+.cont-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:60px}
+.cont-info{display:flex;flex-direction:column;gap:24px}
+.cinfo-item{display:flex;gap:14px;align-items:flex-start}
+.cinfo-icon{
+  width:44px;height:44px;background:var(--navy4);
+  border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+}
+.cinfo-label{font-size:11px;letter-spacing:1.5px;color:var(--text3);text-transform:uppercase;margin-bottom:5px}
+.cinfo-val{font-size:15px;color:var(--text)}
+.cinfo-sub{font-size:13px;color:var(--text3);margin-top:2px}
+.hours-blk{
+  background:var(--navy4);border:1px solid var(--border);
+  padding:20px;margin-top:4px;
+}
+.hours-title{
+  font-size:11px;letter-spacing:2px;color:var(--blue3);
+  text-transform:uppercase;margin-bottom:14px;
+  display:flex;align-items:center;gap:8px;
+}
+.hours-title::before{content:'';width:14px;height:1px;background:var(--blue3)}
+.hrow{
+  display:flex;justify-content:space-between;
+  padding:7px 0;border-bottom:1px solid var(--border);font-size:13px;
+}
+.hrow:last-child{border-bottom:none}
+.hrow span:first-child{color:var(--text2)}
+.hrow span:last-child{color:var(--text)}
+.cont-form{
+  background:var(--navy2);border:1px solid var(--border2);
+  padding:36px;position:relative;
+}
+.cont-form::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--blue),var(--blue3));
+}
+
+/* ═══ FOOTER ═══ */
+footer{
+  background:var(--navy);border-top:1px solid var(--border);
+  padding:36px 64px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+}
+.foot-brand{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:4px;color:var(--blue3)}
+.foot-copy{font-size:12px;color:var(--text3)}
+.foot-links{display:flex;gap:24px}
+.foot-links a{font-size:12px;color:var(--text3);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--blue3)}
+
+/* ═══ MODAL ═══ */
+.overlay{
+  display:none;position:fixed;inset:0;z-index:300;
+  background:rgba(0,0,0,0.88);
+  align-items:center;justify-content:center;
+  padding:40px 20px;
+}
+.overlay.on{display:flex}
+.mbox{
+  background:var(--navy2);border:1px solid var(--border2);
+  width:100%;max-width:600px;
+  position:relative;max-height:88vh;overflow-y:auto;
+}
+.mbox::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--blue),var(--blue3),var(--blue));
+}
+.mhead{
+  padding:28px 32px 20px;border-bottom:1px solid var(--border);
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:16px;
+}
+.mhead-icon{
+  width:60px;height:60px;background:var(--navy3);
+  border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;flex-shrink:0;
+}
+.mtag{font-size:10px;letter-spacing:2px;color:var(--blue3);text-transform:uppercase;margin-bottom:7px}
+.mname{font-size:20px;font-weight:500;color:var(--text)}
+.mclose{
+  background:none;border:none;color:var(--text3);
+  font-size:22px;cursor:pointer;line-height:1;padding:4px;
+  transition:color .2s;flex-shrink:0;
+}
+.mclose:hover{color:var(--text)}
+.mbody{padding:28px 32px}
+.mspec-sec{
+  font-size:10px;letter-spacing:2px;color:var(--blue3);
+  text-transform:uppercase;margin:20px 0 12px;
+  display:flex;align-items:center;gap:8px;
+}
+.mspec-sec::before{content:'';width:14px;height:1px;background:var(--blue3)}
+.mspec-sec:first-child{margin-top:0}
+table.spec{width:100%;border-collapse:collapse}
+table.spec tr{border-bottom:1px solid var(--border)}
+table.spec tr:last-child{border-bottom:none}
+table.spec td{padding:10px 4px;font-size:13px}
+table.spec td:first-child{color:var(--text3);width:50%}
+table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
+.case-sec{margin-bottom:18px}
+.case-sec-t{font-size:13px;font-weight:500;color:var(--blue3);margin-bottom:7px}
+.case-sec-p{font-size:14px;color:var(--text2);line-height:1.85}
+</style>
 </head>
 <body>
 
-<!-- ========== TOP BAR ========== -->
-<div id="topbar">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8 topbar-info">
-        <span><i class="fa fa-envelope-o"></i> info@solarflowtech.com</span>
-        <span><i class="fa fa-phone"></i> +86-755-8888-0000</span>
-        <span><i class="fa fa-map-marker"></i> Shenzhen, Guangdong, China</span>
-      </div>
-      <div class="col-sm-4 text-right">
-        <div class="topbar-social">
-          <a href="#"><i class="fa fa-linkedin"></i></a>
-          <a href="#"><i class="fa fa-facebook"></i></a>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-          <a href="#"><i class="fa fa-youtube-play"></i></a>
-          <a href="#"><i class="fa fa-whatsapp"></i></a>
-        </div>
-      </div>
-    </div>
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-brand-en">KAILIN INTERNATIONAL</div>
+    <div class="nav-brand-cn">圳市凯霖国际贸易有限公司</div>
   </div>
-</div>
-
-<!-- ========== NAVBAR ========== -->
-<nav class="navbar navbar-default" id="mainNav">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navCollapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">
-        SOLAR<span>FLOW</span>
-        <small>Technology Co., Ltd.</small>
-      </a>
-    </div>
-    <div class="collapse navbar-collapse" id="navCollapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#why-us">Why Us</a></li>
-        <li><a href="#applications">Applications</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
+  <div class="nav-links">
+    <a href="#company">公司介绍</a>
+    <a href="#products">产品展示</a>
+    <a href="#solutions">解决方案</a>
+    <a href="#custom">定制方案</a>
+    <a href="#contact">联系我们</a>
   </div>
+  <button class="nav-btn" onclick="scroll2('contact')">获取报价</button>
 </nav>
 
-<!-- ========== HERO ========== -->
-<section id="hero">
-  <div id="heroSlider">
-
-    <!-- Slide 1 -->
-    <div class="hero-slide hero-slide-1">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7 col-sm-8">
-            <div class="hero-content animate__animated animate__fadeInLeft">
-              <div class="hero-tag">Est. 2008 · ISO 9001 Certified</div>
-              <h1>Solar-Powered<br><em>Water Pump</em><br>Solutions</h1>
-              <p>Professional solar water pump manufacturer for agriculture, irrigation, and clean water supply — serving 80+ countries worldwide.</p>
-              <a href="#products" class="btn-hero-primary">Explore Products</a>
-              <a href="#contact" class="btn-hero-outline">Request Quote</a>
-            </div>
-          </div>
-          <div class="col-md-5 col-sm-4 hidden-xs hero-visual">
-            <svg width="300" height="340" viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
-              <rect x="30" y="20" width="240" height="120" rx="4" fill="#1a3a5c" stroke="#F0A500" stroke-width="1.5"/>
-              <line x1="30" y1="60" x2="270" y2="60" stroke="#F0A500" stroke-width=".8" opacity=".4"/>
-              <line x1="30" y1="100" x2="270" y2="100" stroke="#F0A500" stroke-width=".8" opacity=".4"/>
-              <line x1="110" y1="20" x2="110" y2="140" stroke="#F0A500" stroke-width=".8" opacity=".4"/>
-              <line x1="190" y1="20" x2="190" y2="140" stroke="#F0A500" stroke-width=".8" opacity=".4"/>
-              <rect x="38" y="28" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
-              <rect x="118" y="28" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
-              <rect x="198" y="28" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
-              <rect x="38" y="68" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
-              <rect x="118" y="68" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
-              <rect x="198" y="68" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
-              <rect x="38" y="108" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
-              <rect x="118" y="108" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
-              <rect x="198" y="108" width="64" height="26" rx="2" fill="#0f2540" opacity=".9"/>
-              <line x1="150" y1="140" x2="150" y2="168" stroke="#F0A500" stroke-width="2"/>
-              <rect x="110" y="168" width="80" height="40" rx="4" fill="#1a3a5c" stroke="#F0A500" stroke-width="1.2"/>
-              <rect x="120" y="176" width="24" height="10" rx="2" fill="#0d2035" stroke="#F0A500" stroke-width=".7"/>
-              <circle cx="166" cy="181" r="8" fill="#0d2035" stroke="#F0A500" stroke-width="1"/>
-              <circle cx="166" cy="181" r="4" fill="#F0A500" opacity=".7"/>
-              <rect x="95" y="208" width="110" height="70" rx="6" fill="#1a3a5c" stroke="#F0A500" stroke-width="1.5"/>
-              <circle cx="150" cy="243" r="24" fill="#0d2035" stroke="#F0A500" stroke-width="1.5"/>
-              <circle cx="150" cy="243" r="14" fill="#1a3a5c" stroke="#F0A500" stroke-width="1"/>
-              <circle cx="150" cy="243" r="6" fill="#F0A500" opacity=".7"/>
-              <rect x="138" y="278" width="24" height="50" rx="3" fill="#1a3a5c" stroke="#F0A500" stroke-width="1"/>
-              <ellipse cx="150" cy="332" rx="35" ry="7" fill="#1B5E8A" opacity=".4"/>
-              <path d="M130,325 Q140,318 150,325 Q160,318 170,325" fill="none" stroke="#1B5E8A" stroke-width="1.5" opacity=".5"/>
-              <line x1="150" y1="5" x2="150" y2="14" stroke="#F0A500" stroke-width="1.5" opacity=".6"/>
-              <line x1="35" y1="10" x2="40" y2="17" stroke="#F0A500" stroke-width="1.2" opacity=".4"/>
-              <line x1="265" y1="10" x2="260" y2="17" stroke="#F0A500" stroke-width="1.2" opacity=".4"/>
-            </svg>
-          </div>
-        </div>
-      </div>
+<!-- VISION -->
+<section id="vision">
+  <div class="vision-bg"></div>
+  <div class="vision-content">
+    <div class="vision-badge">圳市凯霖国际贸易有限公司</div>
+    <h1 class="vision-headline">
+      让<em>新能源</em>驱动农业发展<br>让<em>科技</em>创造更高价值
+    </h1>
+    <div class="vision-divider"></div>
+    <div class="vision-tagline">EMPOWERING AGRICULTURE WITH CLEAN ENERGY</div>
+    <div class="vision-btns">
+      <button class="btn-p" onclick="scroll2('products')">查看产品</button>
+      <button class="btn-o" onclick="scroll2('company')">了解公司</button>
     </div>
-
-    <!-- Slide 2 -->
-    <div class="hero-slide hero-slide-2" style="display:none">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7 col-sm-8">
-            <div class="hero-content">
-              <div class="hero-tag">High Efficiency · Low Maintenance</div>
-              <h1>Deep Well<br><em>Submersible</em><br>Solar Pumps</h1>
-              <p>From 100m to 200m borehole depth. MPPT intelligent control, brushless DC motor, IP68 waterproof — built for the harshest environments.</p>
-              <a href="#products" class="btn-hero-primary">View Deep Well Series</a>
-              <a href="#contact" class="btn-hero-outline">Get Catalog</a>
-            </div>
-          </div>
-          <div class="col-md-5 hidden-xs hero-visual">
-            <svg width="220" height="340" viewBox="0 0 220 340" xmlns="http://www.w3.org/2000/svg">
-              <rect x="80" y="0" width="60" height="280" rx="4" fill="#1a3a5c" stroke="#F0A500" stroke-width="1.2" opacity=".25"/>
-              <rect x="72" y="180" width="76" height="22" rx="4" fill="#1a3a5c" stroke="#F0A500" stroke-width="1.5"/>
-              <rect x="72" y="207" width="76" height="22" rx="4" fill="#1a3a5c" stroke="#F0A500" stroke-width="1.5"/>
-              <rect x="72" y="234" width="76" height="22" rx="4" fill="#1a3a5c" stroke="#F0A500" stroke-width="1.5"/>
-              <rect x="82" y="50" width="56" height="125" rx="6" fill="#1a3a5c" stroke="#F0A500" stroke-width="1.5"/>
-              <rect x="90" y="60" width="40" height="22" rx="3" fill="#0d2035" stroke="#F0A500" stroke-width=".8"/>
-              <circle cx="110" cy="115" r="22" fill="#0d2035" stroke="#F0A500" stroke-width="1.5"/>
-              <circle cx="110" cy="115" r="12" fill="#1a3a5c" stroke="#F0A500" stroke-width="1"/>
-              <circle cx="110" cy="115" r="5" fill="#F0A500" opacity=".8"/>
-              <path d="M82,80 C60,85 52,130 65,160" fill="none" stroke="#F0A500" stroke-width="1" stroke-dasharray="4,3" opacity=".5"/>
-              <rect x="98" y="10" width="24" height="40" rx="3" fill="#1a3a5c" stroke="#F0A500" stroke-width="1"/>
-              <path d="M98,20 L70,15 L70,5 L98,10Z" fill="#F0A500" opacity=".7"/>
-              <path d="M50,18 Q40,25 35,35" fill="none" stroke="#1B5E8A" stroke-width="2.5" opacity=".6"/>
-              <path d="M50,18 Q45,30 42,42" fill="none" stroke="#1B5E8A" stroke-width="1.5" opacity=".4"/>
-              <text x="110" y="315" text-anchor="middle" font-size="9" fill="#F0A500" font-family="Oswald,sans-serif" letter-spacing="2">DEEP WELL SERIES</text>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 3 -->
-    <div class="hero-slide hero-slide-3" style="display:none">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7 col-sm-8">
-            <div class="hero-content">
-              <div class="hero-tag">Agricultural · Irrigation · Village Supply</div>
-              <h1>Complete Solar<br><em>Pumping Systems</em><br>Worldwide</h1>
-              <p>7 product series, 50+ models. From 400W surface pumps to 3000W deep-well industrial systems — OEM/ODM available for global distributors.</p>
-              <a href="#products" class="btn-hero-primary">Full Product Range</a>
-              <a href="#contact" class="btn-hero-outline">Become Distributor</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
-
-  <div class="hero-dots">
-    <div class="hero-dot active" onclick="goSlide(0)"></div>
-    <div class="hero-dot" onclick="goSlide(1)"></div>
-    <div class="hero-dot" onclick="goSlide(2)"></div>
+  <div class="vision-stats">
+    <div class="vstat"><div class="vstat-n">15<span class="vstat-u">+</span></div><div class="vstat-l">年行业经验</div></div>
+    <div class="vstat"><div class="vstat-n">2000<span class="vstat-u">+</span></div><div class="vstat-l">项目案例</div></div>
+    <div class="vstat"><div class="vstat-n">30<span class="vstat-u">+</span></div><div class="vstat-l">出口国家</div></div>
+    <div class="vstat"><div class="vstat-n">98<span class="vstat-u">%</span></div><div class="vstat-l">客户满意度</div></div>
+    <div class="vstat"><div class="vstat-n">0<span class="vstat-u">元</span></div><div class="vstat-l">运营电费</div></div>
   </div>
+  <div class="vision-scroll"><div class="scroll-dot"></div>向下探索</div>
 </section>
 
-<!-- ========== FEATURES STRIP ========== -->
-<section id="features-strip">
-  <div class="container-fluid" style="padding:0">
-    <div class="row" style="margin:0">
-      <div class="col-md-3 col-sm-6" style="padding:0">
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fa fa-leaf"></i></div>
-          <div class="feature-text"><h4>100% Solar Powered</h4><p>No electricity bills, zero carbon emissions</p></div>
-        </div>
+<!-- COMPANY -->
+<section id="company" class="sec sec-alt">
+  <div class="sec-head">
+    <div class="sec-eye">公司介绍</div>
+    <h2 class="sec-title">专注清洁能源 · <strong>推动农业现代化</strong></h2>
+    <p class="sec-sub">圳市凯霖国际贸易有限公司，专业从事太阳能水利设备研发、制造与国际贸易</p>
+  </div>
+  <div class="gold-line"></div>
+  <div class="inner">
+    <div class="co-img">
+      <div class="co-img-frame"></div>
+      <div class="co-img-badge">
+        <div class="co-img-badge-n">15+</div>
+        <div class="co-img-badge-l">Years Experience</div>
       </div>
-      <div class="col-md-3 col-sm-6" style="padding:0">
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fa fa-cogs"></i></div>
-          <div class="feature-text"><h4>MPPT Controller</h4><p>Maximum power point tracking built-in</p></div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6" style="padding:0">
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fa fa-globe"></i></div>
-          <div class="feature-text"><h4>Global Export</h4><p>Shipped to 80+ countries, CE &amp; ISO certified</p></div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6" style="padding:0">
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fa fa-shield"></i></div>
-          <div class="feature-text"><h4>3–5 Year Warranty</h4><p>Professional after-sales service team</p></div>
-        </div>
+    </div>
+    <div class="co-text">
+      <p>圳市凯霖国际贸易有限公司成立于深圳，是国内领先的太阳能水利系统解决方案提供商。凭借十五年深耕行业的经验，我们将先进光伏技术与水泵系统深度融合，为全球客户提供从设备供应到系统集成的一站式服务。</p>
+      <p>公司核心产品涵盖直流无刷太阳能水泵、高效单多晶光伏组件及完整的离网供水系统。产品广泛应用于农业灌溉、偏远村落饮水、牧场供水、水产养殖等领域，出口至东南亚、中东、非洲、南美洲等30余个国家和地区。</p>
+      <p>我们坚信"让新能源驱动农业发展，让科技创造更高价值"，致力于以清洁能源技术降低农业生产成本，提升偏远地区生活品质，助力全球可持续发展目标的实现。</p>
+      <div class="co-feats">
+        <div class="co-feat"><div class="co-feat-icon">⚡</div><div class="co-feat-t">高效能转换</div><div class="co-feat-d">光电转换效率达22%+，MPPT智能追踪</div></div>
+        <div class="co-feat"><div class="co-feat-icon">🌍</div><div class="co-feat-t">全球化服务</div><div class="co-feat-d">30+国出口经验，多语言技术支持</div></div>
+        <div class="co-feat"><div class="co-feat-icon">🛡</div><div class="co-feat-t">极端耐候性</div><div class="co-feat-d">IP68防护，-40°C至+85°C稳定运行</div></div>
+        <div class="co-feat"><div class="co-feat-icon">🔧</div><div class="co-feat-t">一站式交付</div><div class="co-feat-d">从设计到安装调试全程跟进</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== ABOUT ========== -->
-<section id="about" class="section-pad">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-5 col-sm-12">
-        <div class="about-img-wrap">
-          <div class="about-img-main">
-            <svg width="280" height="250" viewBox="0 0 280 250" xmlns="http://www.w3.org/2000/svg">
-              <rect x="30" y="80" width="220" height="140" rx="4" fill="#0d2035" stroke="#F0A500" stroke-width="1"/>
-              <polygon points="20,80 140,20 260,80" fill="#1a3a5c" stroke="#F0A500" stroke-width="1"/>
-              <rect x="50" y="100" width="36" height="36" rx="2" fill="#1a3a5c" stroke="#F0A500" stroke-width=".8"/>
-              <rect x="122" y="100" width="36" height="36" rx="2" fill="#1a3a5c" stroke="#F0A500" stroke-width=".8"/>
-              <rect x="194" y="100" width="36" height="36" rx="2" fill="#1a3a5c" stroke="#F0A500" stroke-width=".8"/>
-              <rect x="112" y="168" width="56" height="52" rx="2" fill="#1a3a5c" stroke="#F0A500" stroke-width=".8"/>
-              <rect x="100" y="38" width="80" height="30" rx="2" fill="#1B5E8A" stroke="#F0A500" stroke-width=".8"/>
-              <line x1="100" y1="53" x2="180" y2="53" stroke="#F0A500" stroke-width=".5" opacity=".5"/>
-              <line x1="127" y1="38" x2="127" y2="68" stroke="#F0A500" stroke-width=".5" opacity=".5"/>
-              <line x1="153" y1="38" x2="153" y2="68" stroke="#F0A500" stroke-width=".5" opacity=".5"/>
-              <text x="140" y="235" text-anchor="middle" font-size="9" fill="#F0A500" opacity=".7" font-family="Oswald,sans-serif" letter-spacing="2">SOLARFLOW HQ · SHENZHEN</text>
-            </svg>
+<!-- PRODUCTS -->
+<section id="products" class="sec">
+  <div class="sec-head">
+    <div class="sec-eye">产品展示</div>
+    <h2 class="sec-title">核心<strong>产品系列</strong></h2>
+    <p class="sec-sub">点击产品卡片查看完整技术参数规格与适用场景说明</p>
+  </div>
+  <div class="gold-line"></div>
+  <div class="prod-tabs">
+    <button class="tab-btn on" onclick="switchTab('pumps',this)">太阳能水泵</button>
+    <button class="tab-btn" onclick="switchTab('pvs',this)">光伏组件</button>
+  </div>
+
+  <div id="tp-pumps" class="tp on">
+    <div class="prod-grid">
+      <div class="pcard" onclick="openM('p1')">
+        <div class="pcard-img">🌊<div class="pcard-glow"></div></div>
+        <div class="pcard-body">
+          <div class="pcard-tag">深井潜水泵</div>
+          <div class="pcard-name">SP-150 深井潜水泵</div>
+          <div class="pcard-params">
+            <div class="prow"><span class="pk">流量</span><span class="pv">3.0 m³/h</span></div>
+            <div class="prow"><span class="pk">扬程</span><span class="pv">80 m</span></div>
+            <div class="prow"><span class="pk">功率</span><span class="pv">1500 W</span></div>
           </div>
-          <div class="about-badge">
-            <span class="num">15+</span>
-            <span class="lbl">Years of<br>Excellence</span>
-          </div>
+          <div class="pcard-more">查看详细参数</div>
         </div>
       </div>
-      <div class="col-md-7 col-sm-12">
-        <div class="about-content">
-          <p class="section-subtitle">Who We Are</p>
-          <h2 class="section-title">Leading Solar Pump<br>Manufacturer Since 2008</h2>
-          <div class="divider"></div>
-          <p style="color:#4A5568;line-height:1.8;">SolarFlow Technology Co., Ltd. is a vertically integrated manufacturer specializing in solar-powered water pumping systems. With a 15,000 m² production facility and 200+ R&amp;D engineers, we design, manufacture, and export complete solar pump solutions to agricultural, industrial, and residential markets worldwide.</p>
-          <ul class="check-list">
-            <li>Full product range: surface, submersible, deep-well, floating, and agricultural pumps</li>
-            <li>ISO 9001:2015, CE, RoHS, TÜV, and UL certifications</li>
-            <li>OEM / ODM services with 30-day lead time</li>
-            <li>Dedicated export team supporting 80+ countries</li>
-            <li>24/7 technical support and global spare parts supply</li>
-          </ul>
-          <a href="#products" class="btn-primary-solid">Our Products</a>
-          <a href="#contact" class="btn-outline-dark">Contact Us</a>
+      <div class="pcard" onclick="openM('p2')">
+        <div class="pcard-img">💧<div class="pcard-glow"></div></div>
+        <div class="pcard-body">
+          <div class="pcard-tag">地面离心泵</div>
+          <div class="pcard-name">SP-250 大流量地面泵</div>
+          <div class="pcard-params">
+            <div class="prow"><span class="pk">流量</span><span class="pv">8.5 m³/h</span></div>
+            <div class="prow"><span class="pk">扬程</span><span class="pv">35 m</span></div>
+            <div class="prow"><span class="pk">功率</span><span class="pv">2500 W</span></div>
+          </div>
+          <div class="pcard-more">查看详细参数</div>
+        </div>
+      </div>
+      <div class="pcard" onclick="openM('p3')">
+        <div class="pcard-img">⚡<div class="pcard-glow"></div></div>
+        <div class="pcard-body">
+          <div class="pcard-tag">高扬程多级泵</div>
+          <div class="pcard-name">SP-400 高扬程多级泵</div>
+          <div class="pcard-params">
+            <div class="prow"><span class="pk">流量</span><span class="pv">5.0 m³/h</span></div>
+            <div class="prow"><span class="pk">扬程</span><span class="pv">200 m</span></div>
+            <div class="prow"><span class="pk">功率</span><span class="pv">4000 W</span></div>
+          </div>
+          <div class="pcard-more">查看详细参数</div>
+        </div>
+      </div>
+      <div class="pcard" onclick="openM('p4')">
+        <div class="pcard-img">🔄<div class="pcard-glow"></div></div>
+        <div class="pcard-body">
+          <div class="pcard-tag">小型循环泵</div>
+          <div class="pcard-name">SP-080 循环水泵</div>
+          <div class="pcard-params">
+            <div class="prow"><span class="pk">流量</span><span class="pv">1.5 m³/h</span></div>
+            <div class="prow"><span class="pk">扬程</span><span class="pv">20 m</span></div>
+            <div class="prow"><span class="pk">功率</span><span class="pv">800 W</span></div>
+          </div>
+          <div class="pcard-more">查看详细参数</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tp-pvs" class="tp">
+    <div class="prod-grid">
+      <div class="pcard" onclick="openM('v1')">
+        <div class="pcard-img">🌤<div class="pcard-glow"></div></div>
+        <div class="pcard-body">
+          <div class="pcard-tag">单晶硅组件</div>
+          <div class="pcard-name">PV-400M 单晶组件</div>
+          <div class="pcard-params">
+            <div class="prow"><span class="pk">额定功率</span><span class="pv">400 Wp</span></div>
+            <div class="prow"><span class="pk">开路电压</span><span class="pv">49.2 V</span></div>
+            <div class="prow"><span class="pk">短路电流</span><span class="pv">10.3 A</span></div>
+          </div>
+          <div class="pcard-more">查看详细参数</div>
+        </div>
+      </div>
+      <div class="pcard" onclick="openM('v2')">
+        <div class="pcard-img">☀️<div class="pcard-glow"></div></div>
+        <div class="pcard-body">
+          <div class="pcard-tag">双面双玻组件</div>
+          <div class="pcard-name">PV-550D 双面组件</div>
+          <div class="pcard-params">
+            <div class="prow"><span class="pk">额定功率</span><span class="pv">550 Wp</span></div>
+            <div class="prow"><span class="pk">开路电压</span><span class="pv">53.6 V</span></div>
+            <div class="prow"><span class="pk">短路电流</span><span class="pv">13.8 A</span></div>
+          </div>
+          <div class="pcard-more">查看详细参数</div>
+        </div>
+      </div>
+      <div class="pcard" onclick="openM('v3')">
+        <div class="pcard-img">🔋<div class="pcard-glow"></div></div>
+        <div class="pcard-body">
+          <div class="pcard-tag">多晶硅组件</div>
+          <div class="pcard-name">PV-330P 多晶组件</div>
+          <div class="pcard-params">
+            <div class="prow"><span class="pk">额定功率</span><span class="pv">330 Wp</span></div>
+            <div class="prow"><span class="pk">开路电压</span><span class="pv">45.8 V</span></div>
+            <div class="prow"><span class="pk">短路电流</span><span class="pv">9.6 A</span></div>
+          </div>
+          <div class="pcard-more">查看详细参数</div>
+        </div>
+      </div>
+      <div class="pcard" onclick="openM('v4')">
+        <div class="pcard-img">🌞<div class="pcard-glow"></div></div>
+        <div class="pcard-body">
+          <div class="pcard-tag">TOPCon N型大板</div>
+          <div class="pcard-name">PV-700T 旗舰组件</div>
+          <div class="pcard-params">
+            <div class="prow"><span class="pk">额定功率</span><span class="pv">700 Wp</span></div>
+            <div class="prow"><span class="pk">开路电压</span><span class="pv">63.2 V</span></div>
+            <div class="prow"><span class="pk">短路电流</span><span class="pv">15.2 A</span></div>
+          </div>
+          <div class="pcard-more">查看详细参数</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== PRODUCTS ========== -->
-<section id="products" class="section-pad bg-light-theme">
-  <div class="container">
-    <div class="row" style="margin-bottom:50px">
-      <div class="col-md-6 col-sm-8">
-        <p class="section-subtitle">Product Range</p>
-        <h2 class="section-title">Complete Solar Pump Series</h2>
-        <div class="divider"></div>
-        <p style="color:#4A5568;font-size:.92rem;">Click any product card to view full specifications — flow rate, max head, and power rating.</p>
+<!-- SOLUTIONS -->
+<section id="solutions" class="sec sec-alt">
+  <div class="sec-head">
+    <div class="sec-eye">解决方案</div>
+    <h2 class="sec-title">面向<strong>多元场景</strong>的系统方案</h2>
+    <p class="sec-sub">从农业灌溉到偏远供水，我们为各类应用场景提供针对性系统设计</p>
+  </div>
+  <div class="gold-line"></div>
+  <div class="sol-grid">
+    <div class="scard" data-n="01"><div class="scard-icon">🌾</div><div class="scard-title">农业节水灌溉</div><div class="scard-desc">多泵并联智能分区灌溉系统，满足大面积农田精准用水需求，年均节水超30%，大幅降低生产成本。</div><div class="scard-tags"><span class="stag">大流量</span><span class="stag">低扬程</span><span class="stag">多泵并联</span></div></div>
+    <div class="scard" data-n="02"><div class="scard-icon">🏔</div><div class="scard-title">偏远村落饮水</div><div class="scard-desc">无电网山区、高原饮水解决方案，配合储能系统全天候供水，已在西藏、云南、新疆多地成功部署。</div><div class="scard-tags"><span class="stag">高扬程</span><span class="stag">储能配套</span><span class="stag">离网运行</span></div></div>
+    <div class="scard" data-n="03"><div class="scard-icon">🐟</div><div class="scard-title">水产养殖循环</div><div class="scard-desc">鱼塘虾池增氧循环系统，日照强度与需氧量自然契合，告别高电费，提升养殖成活率与经济效益。</div><div class="scard-tags"><span class="stag">循环增氧</span><span class="stag">阵列控制</span><span class="stag">低能耗</span></div></div>
+    <div class="scard" data-n="04"><div class="scard-icon">🌿</div><div class="scard-title">牧场草地供水</div><div class="scard-desc">移动式太阳能泵站，支持快速部署与季节性迁移，适应内蒙古、新疆等大范围分散水源取水需求。</div><div class="scard-tags"><span class="stag">移动部署</span><span class="stag">全地形</span><span class="stag">快速安装</span></div></div>
+    <div class="scard" data-n="05"><div class="scard-icon">🏘</div><div class="scard-title">村镇集中供水</div><div class="scard-desc">农村饮水安全工程标准方案，集中泵站+高位水箱，覆盖数百至数千人口，政策补贴优先推荐型号。</div><div class="scard-tags"><span class="stag">集中供水</span><span class="stag">水质监测</span><span class="stag">政策配套</span></div></div>
+    <div class="scard" data-n="06"><div class="scard-icon">🌐</div><div class="scard-title">国际出口定制</div><div class="scard-desc">针对东南亚、非洲、中东等海外市场的电压适配与认证定制，提供英/法/阿拉伯语技术文档支持。</div><div class="scard-tags"><span class="stag">多认证</span><span class="stag">多电压</span><span class="stag">多语种</span></div></div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases" class="sec">
+  <div class="sec-head">
+    <div class="sec-eye">案例展示</div>
+    <h2 class="sec-title">已落地的<strong>真实项目</strong></h2>
+    <p class="sec-sub">每一个案例背后，是凯霖团队从勘察到运维的全程陪伴</p>
+  </div>
+  <div class="gold-line"></div>
+  <div class="case-grid">
+    <div class="ccard" onclick="openM('c1')">
+      <div class="ccard-img">🌾<div class="ctag">农业灌溉</div></div>
+      <div class="ccard-body">
+        <div class="ccard-title">新疆棉花基地灌溉系统</div>
+        <div class="ccard-excerpt">5000亩棉田，8台SP-250并联，88kWp光伏配套，年节省燃油成本逾30万元，实现完全离网灌溉</div>
+        <div class="cmore">查看详情</div>
       </div>
     </div>
-    <div class="row">
-
-      <!-- Product 1: Deep Well -->
-      <div class="col-md-4 col-sm-6" style="margin-bottom:28px">
-        <div class="product-card" onclick="openProductModal('p1')">
-          <div class="product-img">
-            <div class="product-badge hot">Best Seller</div>
-            <svg width="160" height="190" viewBox="0 0 160 190" xmlns="http://www.w3.org/2000/svg">
-              <rect x="56" y="8" width="48" height="140" rx="7" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.5"/>
-              <rect x="64" y="18" width="32" height="20" rx="3" fill="#0d2035" stroke="#1B5E8A" stroke-width=".8"/>
-              <circle cx="80" cy="75" r="20" fill="#0d2035" stroke="#1B5E8A" stroke-width="1.5"/>
-              <circle cx="80" cy="75" r="11" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
-              <circle cx="80" cy="75" r="5" fill="#F0A500" opacity=".8"/>
-              <rect x="64" y="104" width="32" height="10" rx="2" fill="#0d2035" stroke="#1B5E8A" stroke-width=".7"/>
-              <rect x="64" y="120" width="32" height="10" rx="2" fill="#0d2035" stroke="#1B5E8A" stroke-width=".7"/>
-              <rect x="48" y="148" width="64" height="18" rx="4" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.2"/>
-              <rect x="48" y="170" width="64" height="18" rx="4" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.2"/>
-              <path d="M56,30 C38,36 32,70 44,100" fill="none" stroke="#F0A500" stroke-width="1" stroke-dasharray="3,3" opacity=".6"/>
-            </svg>
-          </div>
-          <div class="product-body">
-            <div class="product-model">Model SF-D750</div>
-            <div class="product-name">Deep Well Submersible Pump</div>
-            <div class="product-desc">High-performance brushless DC submersible pump for agricultural wells. MPPT built-in, IP68 rated.</div>
-            <div class="product-specs">
-              <div class="spec-cell"><span class="s-label">Flow Rate</span><span class="s-value">18 <span class="s-unit">m³/h</span></span></div>
-              <div class="spec-cell"><span class="s-label">Max Head</span><span class="s-value">120 <span class="s-unit">m</span></span></div>
-              <div class="spec-cell"><span class="s-label">Power</span><span class="s-value">3000 <span class="s-unit">W</span></span></div>
-            </div>
-            <button class="btn-product">View Specifications</button>
-          </div>
-        </div>
+    <div class="ccard" onclick="openM('c2')">
+      <div class="ccard-img">🏔<div class="ctag">偏远供水</div></div>
+      <div class="ccard-body">
+        <div class="ccard-title">西藏高原村落饮水工程</div>
+        <div class="ccard-excerpt">海拔4200米无电网区域，SP-400将山泉引入300人村落，高原低气压环境稳定运行2年以上</div>
+        <div class="cmore">查看详情</div>
       </div>
-
-      <!-- Product 2: Surface -->
-      <div class="col-md-4 col-sm-6" style="margin-bottom:28px">
-        <div class="product-card" onclick="openProductModal('p2')">
-          <div class="product-img">
-            <div class="product-badge new">New 2024</div>
-            <svg width="160" height="190" viewBox="0 0 160 190" xmlns="http://www.w3.org/2000/svg">
-              <rect x="35" y="20" width="90" height="38" rx="3" fill="#0d2035" stroke="#1B5E8A" stroke-width="1"/>
-              <line x1="35" y1="39" x2="125" y2="39" stroke="#F0A500" stroke-width=".6" opacity=".5"/>
-              <line x1="65" y1="20" x2="65" y2="58" stroke="#F0A500" stroke-width=".6" opacity=".5"/>
-              <line x1="95" y1="20" x2="95" y2="58" stroke="#F0A500" stroke-width=".6" opacity=".5"/>
-              <line x1="80" y1="58" x2="80" y2="68" stroke="#F0A500" stroke-width="1.5"/>
-              <rect x="25" y="68" width="110" height="68" rx="8" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.5"/>
-              <circle cx="80" cy="102" r="26" fill="#0d2035" stroke="#1B5E8A" stroke-width="1.5"/>
-              <circle cx="80" cy="102" r="15" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
-              <circle cx="80" cy="102" r="6" fill="#F0A500" opacity=".8"/>
-              <rect x="33" y="78" width="22" height="10" rx="2" fill="#0d2035" stroke="#1B5E8A" stroke-width=".7"/>
-              <rect x="135" y="81" width="18" height="54" rx="3" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
-              <rect x="7" y="91" width="18" height="18" rx="2" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
-              <ellipse cx="80" cy="158" rx="50" ry="9" fill="#1B5E8A" opacity=".2"/>
-            </svg>
-          </div>
-          <div class="product-body">
-            <div class="product-model">Model SF-S250</div>
-            <div class="product-name">Surface Centrifugal Pump</div>
-            <div class="product-desc">Compact solar surface pump with integrated panel. For small farms and domestic water supply.</div>
-            <div class="product-specs">
-              <div class="spec-cell"><span class="s-label">Flow Rate</span><span class="s-value">5 <span class="s-unit">m³/h</span></span></div>
-              <div class="spec-cell"><span class="s-label">Max Head</span><span class="s-value">45 <span class="s-unit">m</span></span></div>
-              <div class="spec-cell"><span class="s-label">Power</span><span class="s-value">550 <span class="s-unit">W</span></span></div>
-            </div>
-            <button class="btn-product">View Specifications</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 3: High Head -->
-      <div class="col-md-4 col-sm-6" style="margin-bottom:28px">
-        <div class="product-card" onclick="openProductModal('p3')">
-          <div class="product-img">
-            <svg width="160" height="190" viewBox="0 0 160 190" xmlns="http://www.w3.org/2000/svg">
-              <rect x="52" y="15" width="56" height="130" rx="7" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.5"/>
-              <rect x="60" y="25" width="40" height="22" rx="3" fill="#0d2035" stroke="#1B5E8A" stroke-width=".8"/>
-              <circle cx="80" cy="85" r="22" fill="#0d2035" stroke="#1B5E8A" stroke-width="1.5"/>
-              <circle cx="80" cy="85" r="12" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
-              <circle cx="80" cy="85" r="5" fill="#F0A500" opacity=".8"/>
-              <rect x="48" y="125" width="64" height="16" rx="3" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.2"/>
-              <rect x="60" y="145" width="40" height="40" rx="3" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
-              <line x1="48" y1="85" x2="36" y2="85" stroke="#1B5E8A" stroke-width="1.5"/>
-              <line x1="112" y1="85" x2="124" y2="85" stroke="#1B5E8A" stroke-width="1.5"/>
-              <circle cx="32" cy="85" r="6" fill="#0d2035" stroke="#1B5E8A" stroke-width="1"/>
-              <circle cx="128" cy="85" r="6" fill="#0d2035" stroke="#1B5E8A" stroke-width="1"/>
-              <ellipse cx="80" cy="188" rx="40" ry="7" fill="#1B5E8A" opacity=".2"/>
-            </svg>
-          </div>
-          <div class="product-body">
-            <div class="product-model">Model SF-H1200</div>
-            <div class="product-name">High-Head Multistage Pump</div>
-            <div class="product-desc">5-stage impeller for mountain terrain, tall buildings, and long-distance water transfer.</div>
-            <div class="product-specs">
-              <div class="spec-cell"><span class="s-label">Flow Rate</span><span class="s-value">6 <span class="s-unit">m³/h</span></span></div>
-              <div class="spec-cell"><span class="s-label">Max Head</span><span class="s-value">95 <span class="s-unit">m</span></span></div>
-              <div class="spec-cell"><span class="s-label">Power</span><span class="s-value">1200 <span class="s-unit">W</span></span></div>
-            </div>
-            <button class="btn-product">View Specifications</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 4: Floating -->
-      <div class="col-md-4 col-sm-6" style="margin-bottom:28px">
-        <div class="product-card" onclick="openProductModal('p4')">
-          <div class="product-img">
-            <svg width="160" height="190" viewBox="0 0 160 190" xmlns="http://www.w3.org/2000/svg">
-              <rect x="20" y="30" width="120" height="42" rx="3" fill="#0d2035" stroke="#1B5E8A" stroke-width="1"/>
-              <line x1="20" y1="51" x2="140" y2="51" stroke="#F0A500" stroke-width=".6" opacity=".5"/>
-              <line x1="55" y1="30" x2="55" y2="72" stroke="#F0A500" stroke-width=".6" opacity=".5"/>
-              <line x1="87" y1="30" x2="87" y2="72" stroke="#F0A500" stroke-width=".6" opacity=".5"/>
-              <line x1="80" y1="72" x2="80" y2="80" stroke="#F0A500" stroke-width="1.5"/>
-              <ellipse cx="80" cy="140" rx="60" ry="16" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.2"/>
-              <rect x="55" y="78" width="50" height="68" rx="6" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.5"/>
-              <circle cx="80" cy="112" r="18" fill="#0d2035" stroke="#1B5E8A" stroke-width="1.5"/>
-              <circle cx="80" cy="112" r="10" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
-              <circle cx="80" cy="112" r="4" fill="#F0A500" opacity=".8"/>
-              <path d="M20,155 Q50,148 80,155 Q110,162 140,155" fill="none" stroke="#1B5E8A" stroke-width="1.5" opacity=".4"/>
-              <path d="M20,165 Q50,158 80,165 Q110,172 140,165" fill="none" stroke="#1B5E8A" stroke-width="1" opacity=".25"/>
-            </svg>
-          </div>
-          <div class="product-body">
-            <div class="product-model">Model SF-F800</div>
-            <div class="product-name">Floating Solar Pump System</div>
-            <div class="product-desc">All-in-one floating system with integrated 800W solar panel for ponds, lakes, and reservoirs.</div>
-            <div class="product-specs">
-              <div class="spec-cell"><span class="s-label">Flow Rate</span><span class="s-value">8 <span class="s-unit">m³/h</span></span></div>
-              <div class="spec-cell"><span class="s-label">Max Head</span><span class="s-value">20 <span class="s-unit">m</span></span></div>
-              <div class="spec-cell"><span class="s-label">Power</span><span class="s-value">800 <span class="s-unit">W</span></span></div>
-            </div>
-            <button class="btn-product">View Specifications</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 5: Agricultural -->
-      <div class="col-md-4 col-sm-6" style="margin-bottom:28px">
-        <div class="product-card" onclick="openProductModal('p5')">
-          <div class="product-img">
-            <svg width="160" height="190" viewBox="0 0 160 190" xmlns="http://www.w3.org/2000/svg">
-              <rect x="50" y="18" width="60" height="28" rx="3" fill="#1a3a5c" stroke="#F0A500" stroke-width=".8"/>
-              <rect x="58" y="24" width="18" height="8" rx="1" fill="#0d2035" stroke="#F0A500" stroke-width=".5"/>
-              <circle cx="95" cy="32" r="5" fill="#0d2035" stroke="#F0A500" stroke-width=".8"/>
-              <circle cx="95" cy="32" r="2.5" fill="#F0A500" opacity=".7"/>
-              <line x1="80" y1="46" x2="80" y2="55" stroke="#F0A500" stroke-width="1.2"/>
-              <rect x="30" y="55" width="100" height="78" rx="8" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.5"/>
-              <circle cx="80" cy="94" r="28" fill="#0d2035" stroke="#1B5E8A" stroke-width="2"/>
-              <circle cx="80" cy="94" r="16" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.2"/>
-              <circle cx="80" cy="94" r="6" fill="#F0A500" opacity=".8"/>
-              <line x1="80" y1="78" x2="80" y2="66" stroke="#F0A500" stroke-width="1.2" opacity=".6"/>
-              <line x1="96" y1="94" x2="108" y2="94" stroke="#F0A500" stroke-width="1.2" opacity=".6"/>
-              <line x1="80" y1="110" x2="80" y2="122" stroke="#F0A500" stroke-width="1.2" opacity=".6"/>
-              <line x1="64" y1="94" x2="52" y2="94" stroke="#F0A500" stroke-width="1.2" opacity=".6"/>
-              <rect x="5" y="84" width="25" height="16" rx="3" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
-              <rect x="130" y="84" width="25" height="16" rx="3" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
-              <path d="M30,155 Q55,150 80,155 Q105,160 130,155" fill="none" stroke="#1B5E8A" stroke-width="1.5" opacity=".35"/>
-            </svg>
-          </div>
-          <div class="product-body">
-            <div class="product-model">Model SF-A1500</div>
-            <div class="product-name">Agricultural Booster Pump</div>
-            <div class="product-desc">Heavy-duty horizontal pump for wide-area irrigation, drip and sprinkler systems. AC/DC hybrid.</div>
-            <div class="product-specs">
-              <div class="spec-cell"><span class="s-label">Flow Rate</span><span class="s-value">12 <span class="s-unit">m³/h</span></span></div>
-              <div class="spec-cell"><span class="s-label">Max Head</span><span class="s-value">50 <span class="s-unit">m</span></span></div>
-              <div class="spec-cell"><span class="s-label">Power</span><span class="s-value">1500 <span class="s-unit">W</span></span></div>
-            </div>
-            <button class="btn-product">View Specifications</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 6: Village -->
-      <div class="col-md-4 col-sm-6" style="margin-bottom:28px">
-        <div class="product-card" onclick="openProductModal('p6')">
-          <div class="product-img">
-            <svg width="160" height="190" viewBox="0 0 160 190" xmlns="http://www.w3.org/2000/svg">
-              <polygon points="80,14 112,52 48,52" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.2"/>
-              <rect x="62" y="52" width="36" height="62" rx="4" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.5"/>
-              <rect x="70" y="60" width="20" height="12" rx="2" fill="#0d2035" stroke="#1B5E8A" stroke-width=".8"/>
-              <circle cx="80" cy="95" r="14" fill="#0d2035" stroke="#1B5E8A" stroke-width="1.5"/>
-              <circle cx="80" cy="95" r="7" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
-              <circle cx="80" cy="95" r="3" fill="#F0A500" opacity=".8"/>
-              <rect x="42" y="114" width="76" height="55" rx="5" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1.2"/>
-              <rect x="58" y="122" width="44" height="14" rx="2" fill="#0d2035" stroke="#1B5E8A" stroke-width=".8"/>
-              <rect x="52" y="169" width="14" height="18" rx="2" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
-              <rect x="94" y="169" width="14" height="18" rx="2" fill="#1a3a5c" stroke="#1B5E8A" stroke-width="1"/>
-              <rect x="50" y="136" width="6" height="22" rx="1" fill="#0d2035" stroke="#1B5E8A" stroke-width=".5"/>
-              <rect x="50" y="146" width="6" height="12" rx="1" fill="#1B5E8A" opacity=".5"/>
-            </svg>
-          </div>
-          <div class="product-body">
-            <div class="product-model">Model SF-V550</div>
-            <div class="product-name">Village Water Supply System</div>
-            <div class="product-desc">Complete village water solution with GSM monitoring, auto tank-fill, and dry-run protection.</div>
-            <div class="product-specs">
-              <div class="spec-cell"><span class="s-label">Flow Rate</span><span class="s-value">4 <span class="s-unit">m³/h</span></span></div>
-              <div class="spec-cell"><span class="s-label">Max Head</span><span class="s-value">45 <span class="s-unit">m</span></span></div>
-              <div class="spec-cell"><span class="s-label">Power</span><span class="s-value">550 <span class="s-unit">W</span></span></div>
-            </div>
-            <button class="btn-product">View Specifications</button>
-          </div>
-        </div>
-      </div>
-
     </div>
-    <div class="row">
-      <div class="col-xs-12 text-center" style="margin-top:10px">
-        <a href="#contact" class="btn-primary-solid" style="font-size:.85rem;padding:13px 36px">Request Full Product Catalog</a>
+    <div class="ccard" onclick="openM('c3')">
+      <div class="ccard-img">🐟<div class="ctag">水产养殖</div></div>
+      <div class="ccard-body">
+        <div class="ccard-title">广东水产养殖循环系统</div>
+        <div class="ccard-excerpt">20口鱼塘SP-080阵列部署，年节省电费15万，溶氧量提升20%，鱼类成活率增加8个百分点</div>
+        <div class="cmore">查看详情</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== STATS ========== -->
-<section id="stats">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 col-sm-6"><div class="stat-box"><span class="stat-number">15<span class="stat-unit">+</span></span><span class="stat-label">Years Manufacturing</span></div></div>
-      <div class="col-md-3 col-sm-6"><div class="stat-box"><span class="stat-number">80<span class="stat-unit">+</span></span><span class="stat-label">Countries Exported</span></div></div>
-      <div class="col-md-3 col-sm-6"><div class="stat-box"><span class="stat-number">50K<span class="stat-unit">+</span></span><span class="stat-label">Units Installed</span></div></div>
-      <div class="col-md-3 col-sm-6"><div class="stat-box"><span class="stat-number">200<span class="stat-unit">+</span></span><span class="stat-label">R&amp;D Engineers</span></div></div>
+<!-- CUSTOM -->
+<section id="custom" class="sec sec-alt">
+  <div class="sec-head">
+    <div class="sec-eye">定制方案</div>
+    <h2 class="sec-title">一对一<strong>工程定制服务</strong></h2>
+    <p class="sec-sub">填写项目需求，凯霖工程师1个工作日内为您提供专属解决方案与报价</p>
+  </div>
+  <div class="gold-line"></div>
+  <div class="custom-grid">
+    <div class="custom-intro">
+      <p>每个项目的地理条件、用水规模和日照资源各有不同。凯霖拥有专业水文工程师与光伏系统设计师团队，根据您提供的现场数据，量身设计最优系统配置，并出具详细的投资回收期分析报告。</p>
+      <div class="process">
+        <div class="proc-item"><div class="proc-n">01</div><div><div class="proc-t">需求沟通</div><div class="proc-d">填写表单后，工程师电话确认项目细节与技术要求</div></div></div>
+        <div class="proc-item"><div class="proc-n">02</div><div><div class="proc-t">现场勘察</div><div class="proc-d">派遣工程师实地勘察水源地形与光照资源条件</div></div></div>
+        <div class="proc-item"><div class="proc-n">03</div><div><div class="proc-t">方案设计</div><div class="proc-d">出具系统设计图、BOM清单与投资回收分析报告</div></div></div>
+        <div class="proc-item"><div class="proc-n">04</div><div><div class="proc-t">安装调试</div><div class="proc-d">专业团队施工安装，现场调试至稳定运行后移交</div></div></div>
+        <div class="proc-item"><div class="proc-n">05</div><div><div class="proc-t">运维质保</div><div class="proc-d">15年产品质保，远程监控，72小时售后响应</div></div></div>
+      </div>
+    </div>
+    <div class="form-box">
+      <div class="form-title">填写定制需求</div>
+      <div class="frow">
+        <div class="ff"><label>姓名 *</label><input type="text" id="cf1" placeholder="您的姓名"></div>
+        <div class="ff"><label>联系电话 *</label><input type="tel" id="cf2" placeholder="138 0000 0000"></div>
+      </div>
+      <div class="frow">
+        <div class="ff"><label>公司名称</label><input type="text" id="cf3" placeholder="选填"></div>
+        <div class="ff"><label>项目地区</label><input type="text" id="cf4" placeholder="省 / 市 / 县"></div>
+      </div>
+      <div class="ff"><label>应用场景</label>
+        <select id="cf5">
+          <option value="">请选择</option>
+          <option>农业灌溉</option><option>人畜饮水</option>
+          <option>水产养殖</option><option>牧场供水</option>
+          <option>村镇供水</option><option>出口采购</option><option>其他</option>
+        </select>
+      </div>
+      <div class="frow">
+        <div class="ff"><label>日需水量（m³）</label><input type="text" id="cf6" placeholder="如：50"></div>
+        <div class="ff"><label>预计扬程（m）</label><input type="text" id="cf7" placeholder="如：80"></div>
+      </div>
+      <div class="ff"><label>详细说明</label><textarea id="cf8" placeholder="项目背景、特殊要求或其他信息…"></textarea></div>
+      <button class="fsub" onclick="submitForm('cf','custom-ok')">提交定制需求</button>
+      <div class="fsuccess" id="custom-ok">✓ 提交成功！工程师将在1个工作日内与您联系</div>
     </div>
   </div>
 </section>
 
-<!-- ========== WHY US ========== -->
-<section id="why-us" class="section-pad">
-  <div class="container">
-    <div class="row" style="margin-bottom:50px">
-      <div class="col-md-6 col-sm-8">
-        <p class="section-subtitle">Why Choose Us</p>
-        <h2 class="section-title">The SolarFlow Advantage</h2>
-        <div class="divider"></div>
+<!-- CONTACT -->
+<section id="contact" class="sec">
+  <div class="sec-head">
+    <div class="sec-eye">联系我们</div>
+    <h2 class="sec-title">随时<strong>与凯霖对话</strong></h2>
+    <p class="sec-sub">销售咨询、技术支持、售后服务，多渠道快速响应</p>
+  </div>
+  <div class="gold-line"></div>
+  <div class="cont-grid">
+    <div class="cont-info">
+      <div class="cinfo-item">
+        <div class="cinfo-icon">📞</div>
+        <div><div class="cinfo-label">销售热线</div><div class="cinfo-val">0755-88880123</div><div class="cinfo-sub">工作日 09:00 – 18:00</div></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cinfo-icon">✉</div>
+        <div><div class="cinfo-label">商务邮箱</div><div class="cinfo-val">sales@kailin-solar.com</div><div class="cinfo-sub">24小时内回复</div></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cinfo-icon">💬</div>
+        <div><div class="cinfo-label">微信客服</div><div class="cinfo-val">KailinSolar_Service</div><div class="cinfo-sub">扫码添加，快速响应</div></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cinfo-icon">📍</div>
+        <div><div class="cinfo-label">公司地址</div><div class="cinfo-val">广东省深圳市南山区科技园</div><div class="cinfo-sub">凯霖国际贸易大厦 8楼</div></div>
+      </div>
+      <div class="hours-blk">
+        <div class="hours-title">服务时间</div>
+        <div class="hrow"><span>周一 — 周五</span><span>09:00 — 18:00</span></div>
+        <div class="hrow"><span>周六</span><span>09:00 — 12:00</span></div>
+        <div class="hrow"><span>周日 / 节假日</span><span>在线留言处理</span></div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-3 col-sm-6" style="margin-bottom:24px"><div class="why-card"><div class="why-icon"><i class="fa fa-microchip"></i></div><h4>MPPT Technology</h4><p>Built-in Maximum Power Point Tracking ensures peak efficiency under all solar conditions including cloudy weather.</p></div></div>
-      <div class="col-md-3 col-sm-6" style="margin-bottom:24px"><div class="why-card"><div class="why-icon"><i class="fa fa-tachometer"></i></div><h4>High Efficiency Motor</h4><p>Permanent magnet brushless DC motors deliver ≥97% efficiency, extending pump lifespan to 10+ years.</p></div></div>
-      <div class="col-md-3 col-sm-6" style="margin-bottom:24px"><div class="why-card"><div class="why-icon"><i class="fa fa-certificate"></i></div><h4>International Certifications</h4><p>CE, ISO 9001, RoHS, TÜV, and UL certifications for seamless import compliance in all major markets.</p></div></div>
-      <div class="col-md-3 col-sm-6" style="margin-bottom:24px"><div class="why-card"><div class="why-icon"><i class="fa fa-wrench"></i></div><h4>OEM / ODM Service</h4><p>Custom branding, packaging, and technical specs available. 30-day lead time for standard OEM orders.</p></div></div>
-      <div class="col-md-3 col-sm-6" style="margin-bottom:24px"><div class="why-card"><div class="why-icon"><i class="fa fa-shield"></i></div><h4>Smart Protections</h4><p>Dry-run, over-voltage, over-current, low water level, and reverse polarity protection as standard.</p></div></div>
-      <div class="col-md-3 col-sm-6" style="margin-bottom:24px"><div class="why-card"><div class="why-icon"><i class="fa fa-cloud"></i></div><h4>Remote Monitoring</h4><p>Optional GSM/4G module for real-time flow, pressure, and status monitoring via mobile app.</p></div></div>
-      <div class="col-md-3 col-sm-6" style="margin-bottom:24px"><div class="why-card"><div class="why-icon"><i class="fa fa-ship"></i></div><h4>Global Logistics</h4><p>FOB, CIF, and DDP shipping terms. Experienced export team with HS code documentation support.</p></div></div>
-      <div class="col-md-3 col-sm-6" style="margin-bottom:24px"><div class="why-card"><div class="why-icon"><i class="fa fa-headphones"></i></div><h4>After-Sales Support</h4><p>Dedicated technical support engineers available 24/7 via email, WhatsApp, and video call.</p></div></div>
+    <div class="cont-form">
+      <div class="form-title" style="margin-bottom:24px">在线留言</div>
+      <div class="frow">
+        <div class="ff"><label>姓名 *</label><input type="text" id="ct1" placeholder="您的姓名"></div>
+        <div class="ff"><label>联系电话 *</label><input type="tel" id="ct2" placeholder="138 0000 0000"></div>
+      </div>
+      <div class="frow">
+        <div class="ff"><label>邮箱</label><input type="email" id="ct3" placeholder="your@email.com"></div>
+        <div class="ff"><label>咨询类型</label>
+          <select id="ct4">
+            <option value="">请选择</option>
+            <option>水泵产品咨询</option><option>光伏组件咨询</option>
+            <option>整套系统设计</option><option>出口采购合作</option>
+            <option>售后技术支持</option><option>其他</option>
+          </select>
+        </div>
+      </div>
+      <div class="ff"><label>留言内容 *</label><textarea id="ct5" placeholder="请描述您的项目需求，我们将在1个工作日内回复…" style="min-height:120px"></textarea></div>
+      <button class="fsub" onclick="submitForm('ct','contact-ok')">提交留言</button>
+      <div class="fsuccess" id="contact-ok">✓ 留言已提交！我们会尽快与您联系</div>
     </div>
   </div>
 </section>
 
-<!-- ========== APPLICATIONS ========== -->
-<section id="applications" class="section-pad bg-dark-theme">
-  <div class="container">
-    <div class="row" style="margin-bottom:45px">
-      <div class="col-md-6 col-sm-8">
-        <p class="section-subtitle text-muted-light">Use Cases</p>
-        <h2 class="section-title text-white">Application Scenarios</h2>
-        <div class="divider"></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4 col-sm-6" style="margin-bottom:20px"><div class="app-card"><div class="app-card-img">🌾</div><div class="app-card-overlay"><div class="app-card-text"><h4>Agricultural Irrigation</h4><p>Large-scale farmland irrigation, drip systems, and sprinkler networks powered entirely by solar.</p></div></div></div></div>
-      <div class="col-md-4 col-sm-6" style="margin-bottom:20px"><div class="app-card"><div class="app-card-img">🏘️</div><div class="app-card-overlay"><div class="app-card-text"><h4>Village Water Supply</h4><p>Reliable clean water supply for rural communities without grid electricity access.</p></div></div></div></div>
-      <div class="col-md-4 col-sm-6" style="margin-bottom:20px"><div class="app-card"><div class="app-card-img">🐄</div><div class="app-card-overlay"><div class="app-card-text"><h4>Livestock Watering</h4><p>Automatic solar water stations for cattle, sheep, and poultry farms in remote pastures.</p></div></div></div></div>
-      <div class="col-md-4 col-sm-6" style="margin-bottom:20px"><div class="app-card"><div class="app-card-img">🏗️</div><div class="app-card-overlay"><div class="app-card-text"><h4>Construction Sites</h4><p>Temporary water supply for construction projects in areas without power infrastructure.</p></div></div></div></div>
-      <div class="col-md-4 col-sm-6" style="margin-bottom:20px"><div class="app-card"><div class="app-card-img">🌊</div><div class="app-card-overlay"><div class="app-card-text"><h4>Pond &amp; Lake Management</h4><p>Floating solar pumps for aquaculture aeration, algae control, and water circulation.</p></div></div></div></div>
-      <div class="col-md-4 col-sm-6" style="margin-bottom:20px"><div class="app-card"><div class="app-card-img">🏔️</div><div class="app-card-overlay"><div class="app-card-text"><h4>Mountain / Remote Areas</h4><p>High-head multistage pumps for elevated terrain, mountain villages, and off-grid resorts.</p></div></div></div></div>
-    </div>
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="foot-brand">KAILIN INTERNATIONAL</div>
+    <div style="font-size:12px;color:var(--text3);margin-top:4px">圳市凯霖国际贸易有限公司</div>
   </div>
-</section>
-
-<!-- ========== CERTIFICATIONS ========== -->
-<section id="certs" class="section-pad-sm bg-light-theme">
-  <div class="container">
-    <div class="row" style="margin-bottom:35px;text-align:center">
-      <div class="col-xs-12">
-        <p class="section-subtitle">Quality Assurance</p>
-        <h2 class="section-title">Certifications &amp; Standards</h2>
-        <div class="divider center"></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom:20px"><div class="cert-box"><span class="cert-icon">🏅</span><h5>ISO 9001</h5><p>Quality Management System</p></div></div>
-      <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom:20px"><div class="cert-box"><span class="cert-icon">🇪🇺</span><h5>CE Mark</h5><p>European Conformity</p></div></div>
-      <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom:20px"><div class="cert-box"><span class="cert-icon">♻️</span><h5>RoHS</h5><p>Hazardous Substances Free</p></div></div>
-      <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom:20px"><div class="cert-box"><span class="cert-icon">✅</span><h5>TÜV</h5><p>German Safety Certification</p></div></div>
-      <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom:20px"><div class="cert-box"><span class="cert-icon">🔬</span><h5>IP68 Rated</h5><p>Full Waterproof Protection</p></div></div>
-      <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom:20px"><div class="cert-box"><span class="cert-icon">⚡</span><h5>UL Listed</h5><p>US Safety Standards</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== CONTACT ========== -->
-<section id="contact" class="section-pad bg-dark-theme">
-  <div class="container">
-    <div class="row" style="margin-bottom:50px">
-      <div class="col-xs-12 text-center">
-        <p class="section-subtitle text-muted-light">Get In Touch</p>
-        <h2 class="section-title text-white">Contact Us For Pricing &amp; Catalog</h2>
-        <div class="divider center"></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4 col-sm-5">
-        <div class="contact-info-item">
-          <div class="ci-icon"><i class="fa fa-map-marker"></i></div>
-          <div class="ci-text"><h5>Head Office</h5><p>No. 88 Solar Industry Park,<br>Nanshan District, Shenzhen 518000,<br>Guangdong, China</p></div>
-        </div>
-        <div class="contact-info-item">
-          <div class="ci-icon"><i class="fa fa-phone"></i></div>
-          <div class="ci-text"><h5>Phone / WhatsApp</h5><p>+86-755-8888-0000<br>+86-138-0000-0000</p></div>
-        </div>
-        <div class="contact-info-item">
-          <div class="ci-icon"><i class="fa fa-envelope-o"></i></div>
-          <div class="ci-text"><h5>Email</h5><p>info@solarflowtech.com<br>sales@solarflowtech.com</p></div>
-        </div>
-        <div class="contact-info-item">
-          <div class="ci-icon"><i class="fa fa-clock-o"></i></div>
-          <div class="ci-text"><h5>Business Hours</h5><p>Mon–Fri: 09:00 – 18:00 (CST)<br>Reply within 24 hours</p></div>
-        </div>
-      </div>
-      <div class="col-md-8 col-sm-7">
-        <div class="contact-form-wrap">
-          <div class="row">
-            <div class="col-sm-6"><div class="form-group"><label>Your Name *</label><input type="text" class="form-control" placeholder="Full name"/></div></div>
-            <div class="col-sm-6"><div class="form-group"><label>Company</label><input type="text" class="form-control" placeholder="Company name"/></div></div>
-            <div class="col-sm-6"><div class="form-group"><label>Email *</label><input type="email" class="form-control" placeholder="your@email.com"/></div></div>
-            <div class="col-sm-6"><div class="form-group"><label>Country</label><input type="text" class="form-control" placeholder="Your country"/></div></div>
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label>Product of Interest</label>
-                <select class="form-control">
-                  <option value="">Select a product...</option>
-                  <option>SF-D750 Deep Well Pump</option>
-                  <option>SF-S250 Surface Pump</option>
-                  <option>SF-H1200 High-Head Pump</option>
-                  <option>SF-F800 Floating Pump</option>
-                  <option>SF-A1500 Agricultural Pump</option>
-                  <option>SF-V550 Village System</option>
-                  <option>Multiple Products / OEM</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-sm-6"><div class="form-group"><label>Quantity (units)</label><input type="text" class="form-control" placeholder="e.g. 50 units"/></div></div>
-            <div class="col-xs-12"><div class="form-group"><label>Message / Requirements</label><textarea class="form-control" rows="4" placeholder="Describe your project requirements, installation conditions, or any questions..."></textarea></div></div>
-            <div class="col-xs-12">
-              <button type="submit" class="btn-submit"><i class="fa fa-paper-plane" style="margin-right:8px"></i>Send Inquiry</button>
-              <span style="font-size:.78rem;color:rgba(255,255,255,.35);margin-left:15px">We reply within 24 business hours</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== FOOTER ========== -->
-<footer id="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-sm-6" style="margin-bottom:30px">
-        <div class="footer-brand">SOLAR<span>FLOW</span></div>
-        <p class="footer-desc">SolarFlow Technology Co., Ltd. — Professional solar water pump manufacturer and exporter since 2008. Serving agriculture, industry, and communities worldwide with clean energy pumping solutions.</p>
-        <div class="footer-social">
-          <a href="#"><i class="fa fa-linkedin"></i></a>
-          <a href="#"><i class="fa fa-facebook"></i></a>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-          <a href="#"><i class="fa fa-youtube-play"></i></a>
-          <a href="#"><i class="fa fa-whatsapp"></i></a>
-        </div>
-      </div>
-      <div class="col-md-2 col-sm-3 col-xs-6" style="margin-bottom:30px">
-        <div class="footer-title">Products</div>
-        <ul class="footer-links">
-          <li><a href="#">Deep Well Pumps</a></li>
-          <li><a href="#">Surface Pumps</a></li>
-          <li><a href="#">High-Head Pumps</a></li>
-          <li><a href="#">Floating Pumps</a></li>
-          <li><a href="#">Agricultural Pumps</a></li>
-          <li><a href="#">Village Systems</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2 col-sm-3 col-xs-6" style="margin-bottom:30px">
-        <div class="footer-title">Company</div>
-        <ul class="footer-links">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Manufacturing</a></li>
-          <li><a href="#">Certifications</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Distributors</a></li>
-          <li><a href="#">Careers</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4 col-sm-12" style="margin-bottom:30px">
-        <div class="footer-title">Newsletter</div>
-        <p style="font-size:.82rem;color:rgba(255,255,255,.45);margin-bottom:14px">Subscribe for product updates, technical guides, and industry news.</p>
-        <div class="input-group">
-          <input type="email" class="form-control" placeholder="Your email address" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:#fff;border-radius:0;height:40px"/>
-          <span class="input-group-btn">
-            <button class="btn" style="background:var(--accent);color:var(--dark);border-radius:0;height:40px;font-family:Oswald,sans-serif;font-weight:600;font-size:.8rem;letter-spacing:1px;padding:0 16px;border:none">Subscribe</button>
-          </span>
-        </div>
-        <p style="font-size:.72rem;color:rgba(255,255,255,.25);margin-top:10px"><i class="fa fa-map-marker" style="color:var(--accent);margin-right:5px"></i>No. 88 Solar Industry Park, Shenzhen, China</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="row">
-        <div class="col-sm-8">© 2024 SolarFlow Technology Co., Ltd. All Rights Reserved.</div>
-        <div class="col-sm-4 text-right"><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Use</a></div>
-      </div>
-    </div>
+  <div class="foot-copy">© 2026 凯霖国际贸易 · 专注太阳能水利系统</div>
+  <div class="foot-links">
+    <a href="#company">公司介绍</a>
+    <a href="#products">产品展示</a>
+    <a href="#solutions">解决方案</a>
+    <a href="#contact">联系我们</a>
   </div>
 </footer>
 
-<!-- ========== PRODUCT MODAL ========== -->
-<div class="modal fade product-modal" id="productModal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">
-          <small id="modal-model-text"></small>
-          <span id="modal-name-text"></span>
-        </h4>
+<!-- MODAL -->
+<div class="overlay" id="overlay" onclick="closeBg(event)">
+  <div class="mbox" id="mbox">
+    <div class="mhead">
+      <div style="display:flex;gap:16px;align-items:flex-start">
+        <div class="mhead-icon" id="m-icon"></div>
+        <div><div class="mtag" id="m-tag"></div><div class="mname" id="m-name"></div></div>
       </div>
-      <div class="modal-body">
-        <div class="modal-img-area" id="modal-img-area">
-          <svg width="200" height="160" viewBox="0 0 200 160" id="modal-svg">
-            <text x="100" y="80" text-anchor="middle" font-size="12" fill="#1B5E8A" font-family="Oswald,sans-serif">Product Illustration</text>
-          </svg>
-        </div>
-        <div class="modal-specs-row">
-          <div class="modal-spec-box">
-            <span class="ms-icon">≋</span>
-            <span class="ms-label">Flow Rate</span>
-            <div class="ms-value"><span id="ms-flow"></span> <span class="ms-unit">m³/h</span></div>
-          </div>
-          <div class="modal-spec-box">
-            <span class="ms-icon">↑</span>
-            <span class="ms-label">Max Head</span>
-            <div class="ms-value"><span id="ms-head"></span> <span class="ms-unit">m</span></div>
-          </div>
-          <div class="modal-spec-box">
-            <span class="ms-icon">⚡</span>
-            <span class="ms-label">Power</span>
-            <div class="ms-value"><span id="ms-power"></span> <span class="ms-unit">W</span></div>
-          </div>
-        </div>
-        <div class="modal-features-title">Technical Specifications &amp; Key Features</div>
-        <ul class="modal-features-grid" id="ms-features"></ul>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn-submit" style="padding:10px 24px;font-size:.82rem"><i class="fa fa-envelope-o" style="margin-right:6px"></i>Inquire About This Product</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius:0;font-family:Oswald,sans-serif;letter-spacing:1px;font-size:.82rem;text-transform:uppercase;padding:10px 20px">Close</button>
-      </div>
+      <button class="mclose" onclick="closeM()">✕</button>
     </div>
+    <div class="mbody" id="m-body"></div>
   </div>
 </div>
 
-<!-- Scroll to top -->
-<div id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fa fa-chevron-up"></i></div>
-
-<!-- ========== SCRIPTS ========== -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
-var productData = {
-  p1:{model:'Model SF-D750',name:'Deep Well Submersible Pump',flow:'18',head:'120',power:'3000',features:['Brushless DC Permanent Magnet Motor','Built-in MPPT Controller (±2%)','Voltage Input: 48V–240V DC','IP68 Waterproof (submersible to 120m)','Anti-Sand Design (particles ≤0.5mm)','Dry-Run & Over-Current Protection','Stainless Steel SUS304/316 Body','5-Year Manufacturer Warranty','CE / ISO 9001 / TÜV Certified','Max. Efficiency ≥ 97%','Operating Temp: -10°C to +50°C','Optional GSM Remote Monitoring']},
-  p2:{model:'Model SF-S250',name:'Surface Centrifugal Pump',flow:'5',head:'45',power:'550',features:['Self-Priming Design (suction lift 6m)','Plug & Play Installation','Voltage Input: 24V–72V DC','IP55 Splash-Proof Housing','Auto Pressure Switch Included','Low Startup Voltage (100W min.)','Corrosion-Resistant Impeller','2-Year Manufacturer Warranty','CE / RoHS Certified','Max. Efficiency ≥ 85%','Lightweight: 4.2 kg','Optional Tank Level Float Switch']},
-  p3:{model:'Model SF-H1200',name:'High-Head Multistage Pump',flow:'6',head:'95',power:'1200',features:['5-Stage Impeller for High Pressure','Compact Vertical Inline Design','Voltage Input: 72V–180V DC','Silent Operation < 45 dB','Thermal Overload Auto-Reset','Anti-Freeze Drain Port','Cast Iron Housing, SS Impellers','3-Year Manufacturer Warranty','CE / ISO 9001 Certified','Max. Efficiency ≥ 92%','Max Ambient Temp: 55°C','Pressure Gauge Port Included']},
-  p4:{model:'Model SF-F800',name:'Floating Solar Pump System',flow:'8',head:'20',power:'800',features:['Integrated 800W Monocrystalline Panel','HDPE UV-Resistant Float Platform','Voltage Input: Solar Direct (MPPT)','360° Rotating Outlet Pipe','Algae Suppression / Aeration Mode','Anchor & Mooring Lines Included','All-in-One Assembly < 30 min','2-Year System Warranty','CE / UL Listed','Max. Panel Efficiency ≥ 21%','Float Load Rating: 120 kg','Optional Solar Tracker Upgrade']},
-  p5:{model:'Model SF-A1500',name:'Agricultural Booster Pump',flow:'12',head:'50',power:'1500',features:['Dual Impeller High-Volume Design','AC/DC Hybrid Input Supported','Voltage Input: 72V–240V DC or AC220V','Anti-Corrosion Impeller Coating','Smart Dry-Run Level Sensor','Wide Flow Adjustment (0–100%)','Field-Serviceable Design','3-Year Manufacturer Warranty','CE / ISO 9001 Certified','Max. Efficiency ≥ 88%','Handles Up to 3.5 kg/m³ Salinity','SCADA / Modbus RS485 Ready']},
-  p6:{model:'Model SF-V550',name:'Village Water Supply System',flow:'4',head:'45',power:'550',features:['Built-in MPPT Controller','GSM/4G Remote Monitoring','Voltage Input: 24V–96V DC','Auto Day/Night On/Off Switch','Tank Level Float Sensor Included','Lightning & Surge Protection','Stainless Steel 316 Impeller','3-Year System Warranty','CE / RoHS Certified','Max. Efficiency ≥ 87%','Low-Flow Alarm Alert','Compatible with 2″–4″ Boreholes']}
+var DB={
+  p1:{icon:'🌊',tag:'深井潜水泵',name:'SP-150 深井潜水泵',
+    s:[['基本参数',null],['额定流量','3.0 m³/h'],['最大流量','4.5 m³/h'],['额定扬程','65 m'],['最大扬程','80 m'],
+       ['电气参数',null],['额定功率','1500 W'],['工作电压','DC 72–144 V'],['电机类型','永磁无刷直流'],
+       ['机械参数',null],['泵体材料','304不锈钢'],['防护等级','IP68'],['泵径','4寸 φ100mm'],['工作水温','0–50 ℃'],['整机重量','12 kg'],
+       ['控制特性',null],['功率追踪','MPPT最大功率追踪'],['保护功能','干运转保护 / 过流保护'],['适用场景','深井取水 · 农业灌溉 · 偏远供水']]},
+  p2:{icon:'💧',tag:'地面离心泵',name:'SP-250 大流量地面泵',
+    s:[['基本参数',null],['额定流量','8.5 m³/h'],['最大流量','12 m³/h'],['额定扬程','35 m'],['最大扬程','45 m'],
+       ['电气参数',null],['额定功率','2500 W'],['工作电压','DC 96–192 V'],['电机类型','永磁无刷直流'],
+       ['机械参数',null],['泵体材料','铸铁+不锈钢'],['防护等级','IP55'],['工作水温','0–40 ℃'],['整机重量','28 kg'],
+       ['控制特性',null],['控制方式','MPPT + 变频调速'],['保护功能','缺水保护 / 过载保护'],['适用场景','大面积灌溉 · 工业供水']]},
+  p3:{icon:'⚡',tag:'高扬程多级泵',name:'SP-400 高扬程多级泵',
+    s:[['基本参数',null],['额定流量','5.0 m³/h'],['额定扬程','160 m'],['最大扬程','200 m'],
+       ['电气参数',null],['额定功率','4000 W'],['工作电压','DC 144–240 V'],['电机类型','永磁无刷直流'],
+       ['机械参数',null],['泵级数','6级多级'],['泵体材料','304不锈钢'],['防护等级','IP68'],['泵径','4寸'],['整机重量','18 kg'],
+       ['控制特性',null],['适用场景','高原取水 · 山地供水 · 工矿排水']]},
+  p4:{icon:'🔄',tag:'小型循环泵',name:'SP-080 循环水泵',
+    s:[['基本参数',null],['额定流量','1.5 m³/h'],['最大扬程','20 m'],
+       ['电气参数',null],['额定功率','800 W'],['工作电压','DC 48–96 V'],['电机类型','永磁无刷直流'],
+       ['机械参数',null],['泵体材料','316不锈钢'],['防护等级','IP68'],['噪音等级','≤45 dB'],['整机重量','5.5 kg'],
+       ['适用场景',null],['主要用途','水产养殖 · 景观循环 · 家用供水']]},
+  v1:{icon:'🌤',tag:'单晶硅组件',name:'PV-400M 单晶组件',
+    s:[['STC电气参数',null],['额定功率 (Pmax)','400 Wp'],['组件效率','21.3 %'],['Vmpp (最大功率电压)','41.5 V'],['Impp (最大功率电流)','9.64 A'],['开路电压 (Voc)','49.2 V'],['短路电流 (Isc)','10.3 A'],
+       ['机械参数',null],['组件尺寸','1755 × 1038 × 35 mm'],['重量','21.5 kg'],['边框','阳极氧化铝'],
+       ['环境及质保',null],['工作温度','-40 – +85 ℃'],['最大系统电压','1500 V DC'],['产品质保','15 年'],['线性功率质保','25 年']]},
+  v2:{icon:'☀️',tag:'双面双玻组件',name:'PV-550D 双面组件',
+    s:[['STC电气参数',null],['正面额定功率','550 Wp'],['双面增益','+10–25 %'],['组件效率','22.1 %'],['Vmpp','42.3 V'],['Impp','13.0 A'],['开路电压 (Voc)','53.6 V'],['短路电流 (Isc)','13.8 A'],
+       ['机械参数',null],['组件尺寸','2256 × 1133 × 30 mm'],['重量','32 kg'],['前后盖板','3.2mm钢化玻璃'],
+       ['质保',null],['产品质保','15 年'],['线性功率质保','30 年']]},
+  v3:{icon:'🔋',tag:'多晶硅组件',name:'PV-330P 多晶组件',
+    s:[['STC电气参数',null],['额定功率','330 Wp'],['组件效率','17.0 %'],['Vmpp','37.8 V'],['Impp','8.73 A'],['开路电压 (Voc)','45.8 V'],['短路电流 (Isc)','9.6 A'],
+       ['机械参数',null],['组件尺寸','1960 × 990 × 40 mm'],['重量','22 kg'],
+       ['质保',null],['产品质保','10 年'],['线性功率质保','25 年']]},
+  v4:{icon:'🌞',tag:'TOPCon N型旗舰',name:'PV-700T TOPCon组件',
+    s:[['STC电气参数',null],['额定功率','700 Wp'],['组件效率','22.8 %'],['Vmpp','53.0 V'],['Impp','13.2 A'],['开路电压 (Voc)','63.2 V'],['短路电流 (Isc)','15.2 A'],
+       ['机械参数',null],['组件尺寸','2384 × 1303 × 35 mm'],['重量','38 kg'],['电池片技术','210mm TOPCon N型'],
+       ['质保',null],['最大系统电压','1500 V DC'],['产品质保','15 年'],['线性功率质保','30 年']]},
+  c1:{icon:'🌾',tag:'农业灌溉案例',name:'新疆棉花基地灌溉系统',
+    cs:[{t:'项目背景',p:'新疆某大型棉花种植基地，总灌溉面积5000亩。原有柴油机组运维成本极高，且供水不稳定，严重影响棉花品质与产量，急需可靠替代方案。'},
+        {t:'解决方案',p:'凯霖团队部署8台SP-250大流量地面泵并联运行，配套160块PV-550D双面组件，系统总装机88kWp，完全离网运行，配备智能分区灌溉控制器实现精准用水。'},
+        {t:'运行效果',p:'系统日均供水量达600 m³，满足5000亩棉田峰值灌溉需求。年节约柴油及运维成本超30万元，投资回收期约4年，后续15年运行基本零成本。'},
+        {t:'客户反馈',p:'日照充足时全速运行，阴天也能保持60%出力，系统稳定性远超预期。最关键是彻底告别了柴油短缺和运输困难的烦恼，棉花品质也明显提升。'}]},
+  c2:{icon:'🏔',tag:'偏远供水案例',name:'西藏高原村落饮水工程',
+    cs:[{t:'项目背景',p:'西藏那曲某村落，海拔4200米，距最近电网超120公里。300余名村民长期依靠人力背水，水源为2公里外山泉，高差约180米，生活极为不便。'},
+        {t:'解决方案',p:'安装1台SP-400高扬程多级泵，配套12块PV-400M单晶组件（4.8kWp），配备3kWh铁锂电池组保障夜间及阴天持续供水，全套系统适配高原低气压环境。'},
+        {t:'运行效果',p:'系统每日稳定供水约15m³，满足全村生活及牲畜饮水需求。已在高原极端环境下连续运行逾两年，零重大故障，彻底解决了300人的饮水安全问题。'},
+        {t:'社会价值',p:'工程获当地政府"民生工程示范项目"认定，已成为西藏周边多个县市无电网供水工程的复制推广模板，凯霖方案累计惠及逾5000名高原牧民。'}]},
+  c3:{icon:'🐟',tag:'水产养殖案例',name:'广东水产养殖循环系统',
+    cs:[{t:'项目背景',p:'广东珠三角某规模化水产养殖场，共20口鱼塘，面积约200亩。原有市电增氧循环系统月均电费约1.5万元，全年电费负担超18万，经营压力较大。'},
+        {t:'解决方案',p:'为每口鱼塘配置1台SP-080小型循环泵共20台，配套40块PV-400M单晶组件（16kWp），通过智能控制器根据日照强度自动调节各塘水循环强度。'},
+        {t:'运行效果',p:'白天完全依靠太阳能驱动，全年节省电费约15万元，鱼塘溶氧量提升20%，鱼类成活率提高8个百分点，养殖综合经济效益提升超25%。'},
+        {t:'业主反馈',p:'光照越强水循环越旺，恰好与鱼类需氧规律高度吻合，安装后基本无需人工干预。投资回收期不到两年，是我们做过性价比最高的技改项目。'}]}
 };
 
-function openProductModal(id){
-  var d=productData[id]; if(!d)return;
-  $('#modal-model-text').text(d.model);
-  $('#modal-name-text').text(d.name);
-  $('#ms-flow').text(d.flow);
-  $('#ms-head').text(d.head);
-  $('#ms-power').text(d.power);
-  var html=''; d.features.forEach(function(f){html+='<li>'+f+'</li>';});
-  $('#ms-features').html(html);
-  $('#productModal').modal('show');
+function openM(id){
+  var d=DB[id];
+  document.getElementById('m-icon').textContent=d.icon;
+  document.getElementById('m-tag').textContent=d.tag;
+  document.getElementById('m-name').textContent=d.name;
+  var html='';
+  if(d.s){
+    var inT=false;
+    d.s.forEach(function(r){
+      if(r[1]===null){
+        if(inT)html+='</table>';
+        html+='<div class="mspec-sec">'+r[0]+'</div><table class="spec">';
+        inT=true;
+      }else{
+        html+='<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>';
+      }
+    });
+    if(inT)html+='</table>';
+  }
+  if(d.cs){
+    d.cs.forEach(function(s){
+      html+='<div class="case-sec"><div class="case-sec-t">'+s.t+'</div><div class="case-sec-p">'+s.p+'</div></div>';
+    });
+  }
+  document.getElementById('m-body').innerHTML=html;
+  document.getElementById('overlay').classList.add('on');
 }
-
-// Hero slider
-var currentSlide=0;
-function goSlide(idx){
-  $('.hero-slide').hide();
-  $($('.hero-slide')[idx]).show();
-  $('.hero-dot').removeClass('active');
-  $($('.hero-dot')[idx]).addClass('active');
-  currentSlide=idx;
+function closeM(){document.getElementById('overlay').classList.remove('on')}
+function closeBg(e){if(e.target===document.getElementById('overlay'))closeM()}
+function scroll2(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('on')});
+  document.querySelectorAll('.tp').forEach(function(p){p.classList.remove('on')});
+  btn.classList.add('on');
+  document.getElementById('tp-'+id).classList.add('on');
 }
-setInterval(function(){goSlide((currentSlide+1)%3);},5000);
-
-// Smooth scroll
-$('a[href^="#"]').on('click',function(e){
-  var t=$(this.getAttribute('href'));
-  if(t.length){e.preventDefault();$('html,body').animate({scrollTop:t.offset().top-65},700);}
-});
-
-// Scroll top btn + active nav
-$(window).on('scroll',function(){
-  var s=$(this).scrollTop();
-  if(s>400)$('#scroll-top').addClass('visible'); else $('#scroll-top').removeClass('visible');
-  $('section[id]').each(function(){
-    var top=$(this).offset().top-80, bot=top+$(this).outerHeight(), id=$(this).attr('id');
-    if(s>=top&&s<bot){$('#mainNav .navbar-nav li').removeClass('active');$('#mainNav .navbar-nav li a[href="#'+id+'"]').parent().addClass('active');}
-  });
-});
-
-// Fade in on scroll
-function checkVis(){
-  $('.why-card,.product-card,.cert-box,.app-card').each(function(){
-    if($(window).scrollTop()+$(window).height()>$(this).offset().top+60)$(this).css('opacity','1');
-  });
+function submitForm(pre,okId){
+  var n=document.getElementById(pre+'1').value.trim();
+  var p=document.getElementById(pre+'2').value.trim();
+  if(!n||!p){alert('请填写姓名和联系电话');return}
+  var btn=event.currentTarget;
+  btn.textContent='提交中…';btn.disabled=true;
+  setTimeout(function(){
+    btn.style.display='none';
+    document.getElementById(okId).style.display='block';
+  },800);
 }
-$('.why-card,.product-card,.cert-box,.app-card').css({opacity:0,transition:'opacity .5s ease'});
-$(window).on('scroll',checkVis); checkVis();
 </script>
 </body>
 </html>
