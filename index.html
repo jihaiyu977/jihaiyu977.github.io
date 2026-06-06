@@ -599,6 +599,19 @@ table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
           <div class="pcard-more">查看详细参数</div>
         </div>
       </div>
+      <div class="pcard" onclick="openM('p5')">
+        <div class="pcard-img">🌊<div class="pcard-glow"></div></div>
+        <div class="pcard-body">
+          <div class="pcard-tag">深井潜水泵</div>
+          <div class="pcard-name">SP-150 深井潜水泵</div>
+          <div class="pcard-params">
+            <div class="prow"><span class="pk">流量</span><span class="pv">3.0 m³/h</span></div>
+            <div class="prow"><span class="pk">扬程</span><span class="pv">80 m</span></div>
+            <div class="prow"><span class="pk">功率</span><span class="pv">1500 W</span></div>
+          </div>
+          <div class="pcard-more">查看详细参数</div>
+        </div>
+      </div>
       <div class="pcard" onclick="openM('p2')">
         <div class="pcard-img">💧<div class="pcard-glow"></div></div>
         <div class="pcard-body">
@@ -890,6 +903,11 @@ table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
 <script>
 var DB={
   p1:{icon:'🌊',tag:'深井潜水泵',name:'SP-150 深井潜水泵',
+    s:[['基本参数',null],['额定流量','3.0 m³/h'],['最大流量','4.5 m³/h'],['额定扬程','65 m'],['最大扬程','80 m'],
+       ['电气参数',null],['额定功率','1500 W'],['工作电压','DC 72–144 V'],['电机类型','永磁无刷直流'],
+       ['机械参数',null],['泵体材料','304不锈钢'],['防护等级','IP68'],['泵径','4寸 φ100mm'],['工作水温','0–50 ℃'],['整机重量','12 kg'],
+       ['控制特性',null],['功率追踪','MPPT最大功率追踪'],['保护功能','干运转保护 / 过流保护'],['适用场景','深井取水 · 农业灌溉 · 偏远供水']]},
+  p5:{icon:'🌊',tag:'深井潜水泵',name:'SP-150 深井潜水泵',
     s:[['基本参数',null],['额定流量','3.0 m³/h'],['最大流量','4.5 m³/h'],['额定扬程','65 m'],['最大扬程','80 m'],
        ['电气参数',null],['额定功率','1500 W'],['工作电压','DC 72–144 V'],['电机类型','永磁无刷直流'],
        ['机械参数',null],['泵体材料','304不锈钢'],['防护等级','IP68'],['泵径','4寸 φ100mm'],['工作水温','0–50 ℃'],['整机重量','12 kg'],
