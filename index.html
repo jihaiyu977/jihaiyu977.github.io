@@ -328,28 +328,7 @@ nav{
 .cmore::after{content:'→';font-size:13px;transition:transform .2s}
 .ccard:hover .cmore::after{transform:translateX(4px)}
 
-/* ═══ CUSTOM ═══ */
-#custom{background:var(--navy2);position:relative;overflow:hidden}
-#custom::before{
-  content:'';position:absolute;top:-200px;right:-200px;
-  width:600px;height:600px;border-radius:50%;
-  background:radial-gradient(circle,rgba(21,101,200,0.06),transparent 70%);
-  pointer-events:none;
-}
-.custom-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
-.custom-intro p{font-size:15px;color:var(--text2);line-height:1.9;margin-bottom:28px}
-.process{display:flex;flex-direction:column;gap:0}
-.proc-item{
-  display:flex;gap:20px;padding:22px 0;
-  border-bottom:1px solid var(--border);
-}
-.proc-item:first-child{border-top:1px solid var(--border)}
-.proc-n{
-  font-family:'Bebas Neue',sans-serif;font-size:36px;
-  color:var(--blue3);line-height:1;min-width:44px;
-}
-.proc-t{font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px}
-.proc-d{font-size:12px;color:var(--text3);line-height:1.6}
+
 .form-box{
   background:var(--navy3);border:1px solid var(--border2);
   padding:36px;position:relative;
@@ -535,7 +514,6 @@ table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
     <div class="vstat"><div class="vstat-n">2000<span class="vstat-u">+</span></div><div class="vstat-l">项目案例</div></div>
     <div class="vstat"><div class="vstat-n">30<span class="vstat-u">+</span></div><div class="vstat-l">出口国家</div></div>
     <div class="vstat"><div class="vstat-n">98<span class="vstat-u">%</span></div><div class="vstat-l">客户满意度</div></div>
-    <div class="vstat"><div class="vstat-n">0<span class="vstat-u">元</span></div><div class="vstat-l">运营电费</div></div>
   </div>
   <div class="vision-scroll"><div class="scroll-dot"></div>向下探索</div>
 </section>
