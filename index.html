@@ -54,14 +54,24 @@ nav{
 .lang-btn.on{background:var(--blue3);border-color:var(--blue3);color:#fff}
 .lang-btn:hover{color:#fff;border-color:var(--blue3)}
 .nav-links{display:flex;gap:32px}
-.lang-switcher{display:flex;gap:8px;align-items:center;margin-left:24px}
-.lang-btn{
-  background:transparent;color:var(--text2);border:1px solid rgba(255,255,255,0.15);
-  padding:8px 14px;font-size:12px;cursor:pointer;border-radius:6px;
-  transition:all .2s;font-family:'Noto Sans SC',sans-serif;
+.lang-switcher{display:flex;align-items:center;margin-left:24px}
+.lang-select{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.15);
+  color:var(--text2);
+  padding:10px 14px;
+  border-radius:6px;
+  font-size:13px;
+  cursor:pointer;
+  font-family:'Noto Sans SC',sans-serif;
+  transition:all .2s;
 }
-.lang-btn.on{background:var(--blue3);border-color:var(--blue3);color:#fff}
-.lang-btn:hover{color:#fff;border-color:var(--blue3)}
+.lang-select:hover,
+.lang-select:focus{
+  border-color:var(--blue3);
+  color:#fff;
+  outline:none;
+}
 .nav-brand-en{
   font-family:'Bebas Neue',sans-serif;
   font-size:22px;letter-spacing:4px;color:var(--blue3);
@@ -523,9 +533,11 @@ table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
     <a href="#contact" data-i18n="nav.contact">联系我们</a>
   </div>
   <div class="lang-switcher">
-    <button class="lang-btn on" data-lang="ru" onclick="setLanguage('ru', this)">Рус</button>
-    <button class="lang-btn" data-lang="en" onclick="setLanguage('en', this)">EN</button>
-    <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh', this)">中文</button>
+    <select class="lang-select" onchange="setLanguage(this.value, this)">
+      <option value="ru">俄文</option>
+      <option value="en">英文</option>
+      <option value="zh">中文</option>
+    </select>
   </div>
   <button class="nav-btn" onclick="scroll2('contact')" data-i18n="nav.quote">获取报价</button>
 </nav>
@@ -1490,16 +1502,17 @@ function translatePage(lang){
       if(txt && dict[txt]) el.textContent = dict[txt];
     }
   });
-  document.querySelectorAll('.lang-btn').forEach(function(btn){
-    btn.classList.toggle('on', btn.dataset.lang===lang);
-  });
+  var select = document.querySelector('.lang-select');
+  if(select) select.value = lang;
   document.body.classList.add('ready');
 }
 
-function setLanguage(lang, btn){
-  if(btn){
+function setLanguage(lang, control){
+  if(control && control.tagName === 'SELECT'){
+    control.value = lang;
+  } else if(control){
     document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.remove('on');});
-    btn.classList.add('on');
+    control.classList.add('on');
   }
   localStorage.setItem('siteLang', lang);
   translatePage(lang);
@@ -1507,9 +1520,9 @@ function setLanguage(lang, btn){
 
 window.addEventListener('DOMContentLoaded', function(){
   var lang = localStorage.getItem('siteLang') || 'ru';
-  var btn = document.querySelector('.lang-btn[data-lang="' + lang + '"]');
-  if(!btn) btn = document.querySelector('.lang-btn[data-lang="ru"]');
-  setLanguage(lang, btn);
+  var select = document.querySelector('.lang-select');
+  if(select) select.value = lang;
+  setLanguage(lang, select);
 });
 
 function openM(id){
