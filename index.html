@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>深圳市凯霖国际贸易有限公司 · 太阳能水利系统</title>
+<title>Shenzhen Kailin International Trading Co., Ltd. · Солнечные водные системы</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
@@ -27,7 +27,9 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans SC',sans-serif;font-weight:300;background:var(--navy);color:var(--text);overflow-x:hidden;line-height:1.7}
+body{font-family:'Noto Sans SC',sans-serif;font-weight:300;background:var(--navy);color:var(--text);overflow-x:hidden;line-height:1.7;opacity:0;transition:opacity .2s ease}
+body.ready{opacity:1}
+body.ready{opacity:1}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:var(--navy)}
 ::-webkit-scrollbar-thumb{background:var(--blue2);border-radius:2px}
@@ -42,6 +44,24 @@ nav{
   border-bottom:1px solid var(--border);
 }
 .nav-brand{display:flex;flex-direction:column;gap:2px}
+.nav-links{display:flex;gap:32px}
+.lang-switcher{display:flex;gap:8px;align-items:center;margin-left:24px}
+.lang-btn{
+  background:transparent;color:var(--text2);border:1px solid rgba(255,255,255,0.15);
+  padding:8px 14px;font-size:12px;cursor:pointer;border-radius:6px;
+  transition:all .2s;font-family:'Noto Sans SC',sans-serif;
+}
+.lang-btn.on{background:var(--blue3);border-color:var(--blue3);color:#fff}
+.lang-btn:hover{color:#fff;border-color:var(--blue3)}
+.nav-links{display:flex;gap:32px}
+.lang-switcher{display:flex;gap:8px;align-items:center;margin-left:24px}
+.lang-btn{
+  background:transparent;color:var(--text2);border:1px solid rgba(255,255,255,0.15);
+  padding:8px 14px;font-size:12px;cursor:pointer;border-radius:6px;
+  transition:all .2s;font-family:'Noto Sans SC',sans-serif;
+}
+.lang-btn.on{background:var(--blue3);border-color:var(--blue3);color:#fff}
+.lang-btn:hover{color:#fff;border-color:var(--blue3)}
 .nav-brand-en{
   font-family:'Bebas Neue',sans-serif;
   font-size:22px;letter-spacing:4px;color:var(--blue3);
@@ -484,46 +504,50 @@ table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
 <!-- NAV -->
 <nav>
   <div class="nav-brand">
-    <div class="nav-brand-en">KAILIN INTERNATIONAL</div>
-    <div class="nav-brand-cn">深圳市凯霖国际贸易有限公司</div>
+    <div class="nav-brand-text" data-i18n="nav.brand">KAILIN INTERNATIONAL</div>
   </div>
   <div class="nav-links">
-    <a href="#company">公司介绍</a>
-    <a href="#products">产品展示</a>
-    <a href="#solutions">解决方案</a>
-    <a href="#contact">联系我们</a>
+    <a href="#company" data-i18n="nav.company">公司介绍</a>
+    <a href="#products" data-i18n="nav.products">产品展示</a>
+    <a href="#solutions" data-i18n="nav.solutions">解决方案</a>
+    <a href="#contact" data-i18n="nav.contact">联系我们</a>
   </div>
-  <button class="nav-btn" onclick="scroll2('contact')">获取报价</button>
+  <div class="lang-switcher">
+    <button class="lang-btn on" data-lang="ru" onclick="setLanguage('ru', this)">Рус</button>
+    <button class="lang-btn" data-lang="en" onclick="setLanguage('en', this)">EN</button>
+    <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh', this)">中文</button>
+  </div>
+  <button class="nav-btn" onclick="scroll2('contact')" data-i18n="nav.quote">获取报价</button>
 </nav>
 
 <!-- VISION -->
 <section id="vision">
   <div class="vision-bg"></div>
   <div class="vision-content">
-    <div class="vision-badge">深圳市凯霖国际贸易有限公司</div>
-    <h1 class="vision-headline">
+    <div class="vision-badge" data-i18n="vision.badge">深圳市凯霖国际贸易有限公司</div>
+    <h1 class="vision-headline" data-i18n="vision.headline">
       让<em>新能源</em>驱动农业发展<br>让<em>科技</em>创造更高价值
     </h1>
     <div class="vision-divider"></div>
-    <div class="vision-tagline">EMPOWERING AGRICULTURE WITH CLEAN ENERGY</div>
+    <div class="vision-tagline" data-i18n="vision.tagline">EMPOWERING AGRICULTURE WITH CLEAN ENERGY</div>
     <div class="vision-btns">
     </div>
   </div>
   <div class="vision-stats">
-    <div class="vstat"><div class="vstat-n">15<span class="vstat-u">+</span></div><div class="vstat-l">年行业经验</div></div>
-    <div class="vstat"><div class="vstat-n">2000<span class="vstat-u">+</span></div><div class="vstat-l">项目案例</div></div>
-    <div class="vstat"><div class="vstat-n">30<span class="vstat-u">+</span></div><div class="vstat-l">出口国家</div></div>
-    <div class="vstat"><div class="vstat-n">98<span class="vstat-u">%</span></div><div class="vstat-l">客户满意度</div></div>
+    <div class="vstat"><div class="vstat-n">15<span class="vstat-u">+</span></div><div class="vstat-l" data-i18n="vision.stat.experience">年行业经验</div></div>
+    <div class="vstat"><div class="vstat-n">2000<span class="vstat-u">+</span></div><div class="vstat-l" data-i18n="vision.stat.projects">项目案例</div></div>
+    <div class="vstat"><div class="vstat-n">30<span class="vstat-u">+</span></div><div class="vstat-l" data-i18n="vision.stat.countries">出口国家</div></div>
+    <div class="vstat"><div class="vstat-n">98<span class="vstat-u">%</span></div><div class="vstat-l" data-i18n="vision.stat.satisfaction">客户满意度</div></div>
   </div>
-  <div class="vision-scroll"><div class="scroll-dot"></div>向下探索</div>
+  <div class="vision-scroll" data-i18n="vision.scroll"><div class="scroll-dot"></div>向下探索</div>
 </section>
 
 <!-- COMPANY -->
 <section id="company" class="sec sec-alt">
   <div class="sec-head">
-    <div class="sec-eye">公司介绍</div>
-    <h2 class="sec-title">专注清洁能源 · <strong>推动农业现代化</strong></h2>
-    <p class="sec-sub">深圳市凯霖国际贸易有限公司，专业从事太阳能水利设备研发、制造与国际贸易</p>
+    <div class="sec-eye" data-i18n="company.eye">公司介绍</div>
+    <h2 class="sec-title" data-i18n="company.title">专注清洁能源 · <strong>推动农业现代化</strong></h2>
+    <p class="sec-sub" data-i18n="company.sub">深圳市凯霖国际贸易有限公司，专业从事太阳能水利设备研发、制造与国际贸易</p>
   </div>
   <div class="gold-line"></div>
   <div class="inner">
@@ -531,18 +555,18 @@ table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
       <div class="co-img-frame"></div>
       <div class="co-img-badge">
         <div class="co-img-badge-n">15+</div>
-        <div class="co-img-badge-l">Years Experience</div>
+        <div class="co-img-badge-l" data-i18n="company.badgeLabel">Years Experience</div>
       </div>
     </div>
     <div class="co-text">
-      <p>深圳市凯霖国际贸易有限公司成立于深圳，是国内领先的太阳能水利系统解决方案提供商。凭借十五年深耕行业的经验，我们将先进光伏技术与水泵系统深度融合，为全球客户提供从设备供应到系统集成的一站式服务。</p>
-      <p>公司核心产品涵盖直流无刷太阳能水泵、高效单多晶光伏组件及完整的离网供水系统。产品广泛应用于农业灌溉、偏远村落饮水、牧场供水、水产养殖等领域，出口至东南亚、中东、非洲、南美洲等30余个国家和地区。</p>
-      <p>我们坚信"让新能源驱动农业发展，让科技创造更高价值"，致力于以清洁能源技术降低农业生产成本，提升偏远地区生活品质，助力全球可持续发展目标的实现。</p>
+      <p data-i18n="company.paragraph1">深圳市凯霖国际贸易有限公司成立于深圳，是国内领先的太阳能水利系统解决方案提供商。凭借十五年深耕行业的经验，我们将先进光伏技术与水泵系统深度融合，为全球客户提供从设备供应到系统集成的一站式服务。</p>
+      <p data-i18n="company.paragraph2">公司核心产品涵盖直流无刷太阳能水泵、高效单多晶光伏组件及完整的离网供水系统。产品广泛应用于农业灌溉、偏远村落饮水、牧场供水、水产养殖等领域，出口至东南亚、中东、非洲、南美洲等30余个国家和地区。</p>
+      <p data-i18n="company.paragraph3">我们坚信"让新能源驱动农业发展，让科技创造更高价值"，致力于以清洁能源技术降低农业生产成本，提升偏远地区生活品质，助力全球可持续发展目标的实现。</p>
       <div class="co-feats">
-        <div class="co-feat"><div class="co-feat-icon">⚡</div><div class="co-feat-t">高效能转换</div><div class="co-feat-d">光电转换效率达22%+，MPPT智能追踪</div></div>
-        <div class="co-feat"><div class="co-feat-icon">🌍</div><div class="co-feat-t">全球化服务</div><div class="co-feat-d">30+国出口经验，多语言技术支持</div></div>
-        <div class="co-feat"><div class="co-feat-icon">🛡</div><div class="co-feat-t">极端耐候性</div><div class="co-feat-d">IP68防护，-20°C至+70°C稳定运行</div></div>
-        <div class="co-feat"><div class="co-feat-icon">🔧</div><div class="co-feat-t">一站式交付</div><div class="co-feat-d">从设计到安装调试全程跟进</div></div>
+        <div class="co-feat"><div class="co-feat-icon">⚡</div><div class="co-feat-t" data-i18n="feature.efficiency.title">高效能转换</div><div class="co-feat-d" data-i18n="feature.efficiency.desc">光电转换效率达22%+，MPPT智能追踪</div></div>
+        <div class="co-feat"><div class="co-feat-icon">🌍</div><div class="co-feat-t" data-i18n="feature.global.title">全球化服务</div><div class="co-feat-d" data-i18n="feature.global.desc">30+国出口经验，多语言技术支持</div></div>
+        <div class="co-feat"><div class="co-feat-icon">🛡</div><div class="co-feat-t" data-i18n="feature.weather.title">极端耐候性</div><div class="co-feat-d" data-i18n="feature.weather.desc">IP68防护，-20°C至+70°C稳定运行</div></div>
+        <div class="co-feat"><div class="co-feat-icon">🔧</div><div class="co-feat-t" data-i18n="feature.delivery.title">一站式交付</div><div class="co-feat-d" data-i18n="feature.delivery.desc">从设计到安装调试全程跟进</div></div>
       </div>
     </div>
   </div>
@@ -551,14 +575,14 @@ table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
 <!-- PRODUCTS -->
 <section id="products" class="sec">
   <div class="sec-head">
-    <div class="sec-eye">产品展示</div>
-    <h2 class="sec-title">核心<strong>产品系列</strong></h2>
-    <p class="sec-sub">点击产品卡片查看完整技术参数规格与适用场景说明</p>
+    <div class="sec-eye" data-i18n="products.eye">产品展示</div>
+    <h2 class="sec-title" data-i18n="products.title">核心<strong>产品系列</strong></h2>
+    <p class="sec-sub" data-i18n="products.sub">点击产品卡片查看完整技术参数规格与适用场景说明</p>
   </div>
   <div class="gold-line"></div>
   <div class="prod-tabs">
-    <button class="tab-btn on" onclick="switchTab('pumps',this)">太阳能水泵</button>
-    <button class="tab-btn" onclick="switchTab('pvs',this)">光伏组件</button>
+    <button class="tab-btn on" onclick="switchTab('pumps',this)" data-i18n="products.tab.pumps">太阳能水泵</button>
+    <button class="tab-btn" onclick="switchTab('pvs',this)" data-i18n="products.tab.pvs">光伏组件</button>
   </div>
 
   <div id="tp-pumps" class="tp on">
@@ -566,66 +590,66 @@ table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
       <div class="pcard" onclick="openM('p1')">
         <div class="pcard-img">🌊<div class="pcard-glow"></div></div>
         <div class="pcard-body">
-          <div class="pcard-tag">深井潜水泵</div>
-          <div class="pcard-name">SP-150 深井潜水泵</div>
+            <div class="pcard-tag" data-i18n="product.tag.deepWell">深井潜水泵</div>
+            <div class="pcard-name" data-i18n="product.name.sp150">SP-150 深井潜水泵</div>
           <div class="pcard-params">
-            <div class="prow"><span class="pk">流量</span><span class="pv">3.0 m³/h</span></div>
-            <div class="prow"><span class="pk">扬程</span><span class="pv">80 m</span></div>
-            <div class="prow"><span class="pk">功率</span><span class="pv">1500 W</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.flow">流量</span><span class="pv">3.0 m³/h</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.head">扬程</span><span class="pv">80 m</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.power">功率</span><span class="pv">1500 W</span></div>
           </div>
-          <div class="pcard-more">查看详细参数</div>
+            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
         </div>
       </div>
       <div class="pcard" onclick="openM('p5')">
         <div class="pcard-img">🌊<div class="pcard-glow"></div></div>
         <div class="pcard-body">
-          <div class="pcard-tag">深井潜水泵</div>
-          <div class="pcard-name">SP-150 深井潜水泵</div>
+            <div class="pcard-tag" data-i18n="product.tag.deepWell">深井潜水泵</div>
+            <div class="pcard-name" data-i18n="product.name.sp150">SP-150 深井潜水泵</div>
           <div class="pcard-params">
-            <div class="prow"><span class="pk">流量</span><span class="pv">3.0 m³/h</span></div>
-            <div class="prow"><span class="pk">扬程</span><span class="pv">80 m</span></div>
-            <div class="prow"><span class="pk">功率</span><span class="pv">1500 W</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.flow">流量</span><span class="pv">3.0 m³/h</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.head">扬程</span><span class="pv">80 m</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.power">功率</span><span class="pv">1500 W</span></div>
           </div>
-          <div class="pcard-more">查看详细参数</div>
+            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
         </div>
       </div>
       <div class="pcard" onclick="openM('p2')">
         <div class="pcard-img">💧<div class="pcard-glow"></div></div>
         <div class="pcard-body">
-          <div class="pcard-tag">地面离心泵</div>
-          <div class="pcard-name">SP-250 大流量地面泵</div>
+            <div class="pcard-tag" data-i18n="product.tag.centrifugal">地面离心泵</div>
+            <div class="pcard-name" data-i18n="product.name.sp250">SP-250 大流量地面泵</div>
           <div class="pcard-params">
-            <div class="prow"><span class="pk">流量</span><span class="pv">8.5 m³/h</span></div>
-            <div class="prow"><span class="pk">扬程</span><span class="pv">35 m</span></div>
-            <div class="prow"><span class="pk">功率</span><span class="pv">2500 W</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.flow">流量</span><span class="pv">8.5 m³/h</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.head">扬程</span><span class="pv">35 m</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.power">功率</span><span class="pv">2500 W</span></div>
           </div>
-          <div class="pcard-more">查看详细参数</div>
+            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
         </div>
       </div>
       <div class="pcard" onclick="openM('p3')">
         <div class="pcard-img">⚡<div class="pcard-glow"></div></div>
         <div class="pcard-body">
-          <div class="pcard-tag">高扬程多级泵</div>
-          <div class="pcard-name">SP-400 高扬程多级泵</div>
+            <div class="pcard-tag" data-i18n="product.tag.multiStage">高扬程多级泵</div>
+            <div class="pcard-name" data-i18n="product.name.sp400">SP-400 高扬程多级泵</div>
           <div class="pcard-params">
-            <div class="prow"><span class="pk">流量</span><span class="pv">5.0 m³/h</span></div>
-            <div class="prow"><span class="pk">扬程</span><span class="pv">200 m</span></div>
-            <div class="prow"><span class="pk">功率</span><span class="pv">4000 W</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.flow">流量</span><span class="pv">5.0 m³/h</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.head">扬程</span><span class="pv">200 m</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.power">功率</span><span class="pv">4000 W</span></div>
           </div>
-          <div class="pcard-more">查看详细参数</div>
+            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
         </div>
       </div>
       <div class="pcard" onclick="openM('p4')">
         <div class="pcard-img">🔄<div class="pcard-glow"></div></div>
         <div class="pcard-body">
-          <div class="pcard-tag">小型循环泵</div>
-          <div class="pcard-name">SP-080 循环水泵</div>
+            <div class="pcard-tag" data-i18n="product.tag.circulation">小型循环泵</div>
+            <div class="pcard-name" data-i18n="product.name.sp080">SP-080 循环水泵</div>
           <div class="pcard-params">
-            <div class="prow"><span class="pk">流量</span><span class="pv">1.5 m³/h</span></div>
-            <div class="prow"><span class="pk">扬程</span><span class="pv">20 m</span></div>
-            <div class="prow"><span class="pk">功率</span><span class="pv">800 W</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.flow">流量</span><span class="pv">1.5 m³/h</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.head">扬程</span><span class="pv">20 m</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.power">功率</span><span class="pv">800 W</span></div>
           </div>
-          <div class="pcard-more">查看详细参数</div>
+            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
         </div>
       </div>
     </div>
@@ -636,53 +660,53 @@ table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
       <div class="pcard" onclick="openM('v1')">
         <div class="pcard-img">🌤<div class="pcard-glow"></div></div>
         <div class="pcard-body">
-          <div class="pcard-tag">单晶硅组件</div>
-          <div class="pcard-name">PV-400M 单晶组件</div>
+            <div class="pcard-tag" data-i18n="product.tag.mono">单晶硅组件</div>
+            <div class="pcard-name" data-i18n="product.name.pv400m">PV-400M 单晶组件</div>
           <div class="pcard-params">
-            <div class="prow"><span class="pk">额定功率</span><span class="pv">400 Wp</span></div>
-            <div class="prow"><span class="pk">开路电压</span><span class="pv">49.2 V</span></div>
-            <div class="prow"><span class="pk">短路电流</span><span class="pv">10.3 A</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.ratedPower">额定功率</span><span class="pv">400 Wp</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.openVoltage">开路电压</span><span class="pv">49.2 V</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.shortCircuitCurrent">短路电流</span><span class="pv">10.3 A</span></div>
           </div>
-          <div class="pcard-more">查看详细参数</div>
+            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
         </div>
       </div>
       <div class="pcard" onclick="openM('v2')">
         <div class="pcard-img">☀️<div class="pcard-glow"></div></div>
         <div class="pcard-body">
-          <div class="pcard-tag">双面双玻组件</div>
-          <div class="pcard-name">PV-550D 双面组件</div>
+            <div class="pcard-tag" data-i18n="product.tag.bifacial">双面双玻组件</div>
+            <div class="pcard-name" data-i18n="product.name.pv550d">PV-550D 双面组件</div>
           <div class="pcard-params">
-            <div class="prow"><span class="pk">额定功率</span><span class="pv">550 Wp</span></div>
-            <div class="prow"><span class="pk">开路电压</span><span class="pv">53.6 V</span></div>
-            <div class="prow"><span class="pk">短路电流</span><span class="pv">13.8 A</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.ratedPower">额定功率</span><span class="pv">550 Wp</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.openVoltage">开路电压</span><span class="pv">53.6 V</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.shortCircuitCurrent">短路电流</span><span class="pv">13.8 A</span></div>
           </div>
-          <div class="pcard-more">查看详细参数</div>
+            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
         </div>
       </div>
       <div class="pcard" onclick="openM('v3')">
         <div class="pcard-img">🔋<div class="pcard-glow"></div></div>
         <div class="pcard-body">
-          <div class="pcard-tag">多晶硅组件</div>
-          <div class="pcard-name">PV-330P 多晶组件</div>
+            <div class="pcard-tag" data-i18n="product.tag.poly">多晶硅组件</div>
+            <div class="pcard-name" data-i18n="product.name.pv330p">PV-330P 多晶组件</div>
           <div class="pcard-params">
-            <div class="prow"><span class="pk">额定功率</span><span class="pv">330 Wp</span></div>
-            <div class="prow"><span class="pk">开路电压</span><span class="pv">45.8 V</span></div>
-            <div class="prow"><span class="pk">短路电流</span><span class="pv">9.6 A</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.ratedPower">额定功率</span><span class="pv">330 Wp</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.openVoltage">开路电压</span><span class="pv">45.8 V</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.shortCircuitCurrent">短路电流</span><span class="pv">9.6 A</span></div>
           </div>
-          <div class="pcard-more">查看详细参数</div>
+            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
         </div>
       </div>
       <div class="pcard" onclick="openM('v4')">
         <div class="pcard-img">🌞<div class="pcard-glow"></div></div>
         <div class="pcard-body">
-          <div class="pcard-tag">TOPCon N型大板</div>
-          <div class="pcard-name">PV-700T 旗舰组件</div>
+            <div class="pcard-tag" data-i18n="product.tag.topcon">TOPCon N型大板</div>
+            <div class="pcard-name" data-i18n="product.name.pv700t">PV-700T 旗舰组件</div>
           <div class="pcard-params">
-            <div class="prow"><span class="pk">额定功率</span><span class="pv">700 Wp</span></div>
-            <div class="prow"><span class="pk">开路电压</span><span class="pv">63.2 V</span></div>
-            <div class="prow"><span class="pk">短路电流</span><span class="pv">15.2 A</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.ratedPower">额定功率</span><span class="pv">700 Wp</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.openVoltage">开路电压</span><span class="pv">63.2 V</span></div>
+              <div class="prow"><span class="pk" data-i18n="product.param.shortCircuitCurrent">短路电流</span><span class="pv">15.2 A</span></div>
           </div>
-          <div class="pcard-more">查看详细参数</div>
+            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
         </div>
       </div>
     </div>
@@ -692,52 +716,52 @@ table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
 <!-- SOLUTIONS -->
 <section id="solutions" class="sec sec-alt">
   <div class="sec-head">
-    <div class="sec-eye">解决方案</div>
-    <h2 class="sec-title">面向<strong>多元场景</strong>的系统方案</h2>
-    <p class="sec-sub">从农业灌溉到偏远供水，我们为各类应用场景提供针对性系统设计</p>
+    <div class="sec-eye" data-i18n="solutions.eye">解决方案</div>
+    <h2 class="sec-title" data-i18n="solutions.title">面向<strong>多元场景</strong>的系统方案</h2>
+    <p class="sec-sub" data-i18n="solutions.sub">从农业灌溉到偏远供水，我们为各类应用场景提供针对性系统设计</p>
   </div>
   <div class="gold-line"></div>
   <div class="sol-grid">
-    <div class="scard" data-n="01"><div class="scard-icon">🌾</div><div class="scard-title">农业节水灌溉</div><div class="scard-desc">多泵并联智能分区灌溉系统，满足大面积农田精准用水需求，年均节水超30%，大幅降低生产成本。</div><div class="scard-tags"><span class="stag">大流量</span><span class="stag">低扬程</span><span class="stag">多泵并联</span></div></div>
-    <div class="scard" data-n="02"><div class="scard-icon">🏔</div><div class="scard-title">偏远村落饮水</div><div class="scard-desc">无电网山区、高原饮水解决方案，配合储能系统全天候供水，已在西藏、云南、新疆多地成功部署。</div><div class="scard-tags"><span class="stag">高扬程</span><span class="stag">储能配套</span><span class="stag">离网运行</span></div></div>
-    <div class="scard" data-n="03"><div class="scard-icon">🐟</div><div class="scard-title">水产养殖循环</div><div class="scard-desc">鱼塘虾池增氧循环系统，日照强度与需氧量自然契合，告别高电费，提升养殖成活率与经济效益。</div><div class="scard-tags"><span class="stag">循环增氧</span><span class="stag">阵列控制</span><span class="stag">低能耗</span></div></div>
-    <div class="scard" data-n="04"><div class="scard-icon">🌿</div><div class="scard-title">牧场草地供水</div><div class="scard-desc">移动式太阳能泵站，支持快速部署与季节性迁移，适应内蒙古、新疆等大范围分散水源取水需求。</div><div class="scard-tags"><span class="stag">移动部署</span><span class="stag">全地形</span><span class="stag">快速安装</span></div></div>
-    <div class="scard" data-n="05"><div class="scard-icon">🏘</div><div class="scard-title">村镇集中供水</div><div class="scard-desc">农村饮水安全工程标准方案，集中泵站+高位水箱，覆盖数百至数千人口，政策补贴优先推荐型号。</div><div class="scard-tags"><span class="stag">集中供水</span><span class="stag">水质监测</span><span class="stag">政策配套</span></div></div>
-    <div class="scard" data-n="06"><div class="scard-icon">🌐</div><div class="scard-title">国际出口定制</div><div class="scard-desc">针对东南亚、非洲、中东等海外市场的电压适配与认证定制，提供英/法/阿拉伯语技术文档支持。</div><div class="scard-tags"><span class="stag">多认证</span><span class="stag">多电压</span><span class="stag">多语种</span></div></div>
+    <div class="scard" data-n="01"><div class="scard-icon">🌾</div><div class="scard-title" data-i18n="solution.01.title">农业节水灌溉</div><div class="scard-desc" data-i18n="solution.01.desc">多泵并联智能分区灌溉系统，满足大面积农田精准用水需求，年均节水超30%，大幅降低生产成本。</div><div class="scard-tags"><span class="stag" data-i18n="solution.01.tag1">大流量</span><span class="stag" data-i18n="solution.01.tag2">低扬程</span><span class="stag" data-i18n="solution.01.tag3">多泵并联</span></div></div>
+    <div class="scard" data-n="02"><div class="scard-icon">🏔</div><div class="scard-title" data-i18n="solution.02.title">偏远村落饮水</div><div class="scard-desc" data-i18n="solution.02.desc">无电网山区、高原饮水解决方案，配合储能系统全天候供水，已在西藏、云南、新疆多地成功部署。</div><div class="scard-tags"><span class="stag" data-i18n="solution.02.tag1">高扬程</span><span class="stag" data-i18n="solution.02.tag2">储能配套</span><span class="stag" data-i18n="solution.02.tag3">离网运行</span></div></div>
+    <div class="scard" data-n="03"><div class="scard-icon">🐟</div><div class="scard-title" data-i18n="solution.03.title">水产养殖循环</div><div class="scard-desc" data-i18n="solution.03.desc">鱼塘虾池增氧循环系统，日照强度与需氧量自然契合，告别高电费，提升养殖成活率与经济效益。</div><div class="scard-tags"><span class="stag" data-i18n="solution.03.tag1">循环增氧</span><span class="stag" data-i18n="solution.03.tag2">阵列控制</span><span class="stag" data-i18n="solution.03.tag3">低能耗</span></div></div>
+    <div class="scard" data-n="04"><div class="scard-icon">🌿</div><div class="scard-title" data-i18n="solution.04.title">牧场草地供水</div><div class="scard-desc" data-i18n="solution.04.desc">移动式太阳能泵站，支持快速部署与季节性迁移，适应内蒙古、新疆等大范围分散水源取水需求。</div><div class="scard-tags"><span class="stag" data-i18n="solution.04.tag1">移动部署</span><span class="stag" data-i18n="solution.04.tag2">全地形</span><span class="stag" data-i18n="solution.04.tag3">快速安装</span></div></div>
+    <div class="scard" data-n="05"><div class="scard-icon">🏘</div><div class="scard-title" data-i18n="solution.05.title">村镇集中供水</div><div class="scard-desc" data-i18n="solution.05.desc">农村饮水安全工程标准方案，集中泵站+高位水箱，覆盖数百至数千人口，政策补贴优先推荐型号。</div><div class="scard-tags"><span class="stag" data-i18n="solution.05.tag1">集中供水</span><span class="stag" data-i18n="solution.05.tag2">水质监测</span><span class="stag" data-i18n="solution.05.tag3">政策配套</span></div></div>
+    <div class="scard" data-n="06"><div class="scard-icon">🌐</div><div class="scard-title" data-i18n="solution.06.title">国际出口定制</div><div class="scard-desc" data-i18n="solution.06.desc">针对东南亚、非洲、中东等海外市场的电压适配与认证定制，提供英/法/阿拉伯语技术文档支持。</div><div class="scard-tags"><span class="stag" data-i18n="solution.06.tag1">多认证</span><span class="stag" data-i18n="solution.06.tag2">多电压</span><span class="stag" data-i18n="solution.06.tag3">多语种</span></div></div>
   </div>
 </section>
 
 <!-- CASES -->
 <section id="cases" class="sec">
   <div class="sec-head">
-    <div class="sec-eye">案例展示</div>
-    <h2 class="sec-title">已落地的<strong>真实项目</strong></h2>
-    <p class="sec-sub">每一个案例背后，是凯霖团队从勘察到运维的全程陪伴</p>
+    <div class="sec-eye" data-i18n="cases.eye">案例展示</div>
+    <h2 class="sec-title" data-i18n="cases.title">已落地的<strong>真实项目</strong></h2>
+    <p class="sec-sub" data-i18n="cases.sub">每一个案例背后，是凯霖团队从勘察到运维的全程陪伴</p>
   </div>
   <div class="gold-line"></div>
   <div class="case-grid">
     <div class="ccard" onclick="openM('c1')">
-      <div class="ccard-img">🌾<div class="ctag">农业灌溉</div></div>
+      <div class="ccard-img">🌾<div class="ctag" data-i18n="case.01.tag">农业灌溉</div></div>
       <div class="ccard-body">
-        <div class="ccard-title">新疆棉花基地灌溉系统</div>
-        <div class="ccard-excerpt">5000亩棉田，8台SP-250并联，88kWp光伏配套，年节省燃油成本逾30万元，实现完全离网灌溉</div>
-        <div class="cmore">查看详情</div>
+        <div class="ccard-title" data-i18n="case.01.title">新疆棉花基地灌溉系统</div>
+        <div class="ccard-excerpt" data-i18n="case.01.excerpt">5000亩棉田，8台SP-250并联，88kWp光伏配套，年节省燃油成本逾30万元，实现完全离网灌溉</div>
+        <div class="cmore" data-i18n="view.detail">查看详情</div>
       </div>
     </div>
     <div class="ccard" onclick="openM('c2')">
-      <div class="ccard-img">🏔<div class="ctag">偏远供水</div></div>
+      <div class="ccard-img">🏔<div class="ctag" data-i18n="case.02.tag">偏远供水</div></div>
       <div class="ccard-body">
-        <div class="ccard-title">西藏高原村落饮水工程</div>
-        <div class="ccard-excerpt">海拔4200米无电网区域，SP-400将山泉引入300人村落，高原低气压环境稳定运行2年以上</div>
-        <div class="cmore">查看详情</div>
+        <div class="ccard-title" data-i18n="case.02.title">西藏高原村落饮水工程</div>
+        <div class="ccard-excerpt" data-i18n="case.02.excerpt">海拔4200米无电网区域，SP-400将山泉引入300人村落，高原低气压环境稳定运行2年以上</div>
+        <div class="cmore" data-i18n="view.detail">查看详情</div>
       </div>
     </div>
     <div class="ccard" onclick="openM('c3')">
-      <div class="ccard-img">🐟<div class="ctag">水产养殖</div></div>
+      <div class="ccard-img">🐟<div class="ctag" data-i18n="case.03.tag">水产养殖</div></div>
       <div class="ccard-body">
-        <div class="ccard-title">广东水产养殖循环系统</div>
-        <div class="ccard-excerpt">20口鱼塘SP-080阵列部署，年节省电费15万，溶氧量提升20%，鱼类成活率增加8个百分点</div>
-        <div class="cmore">查看详情</div>
+        <div class="ccard-title" data-i18n="case.03.title">广东水产养殖循环系统</div>
+        <div class="ccard-excerpt" data-i18n="case.03.excerpt">20口鱼塘SP-080阵列部署，年节省电费15万，溶氧量提升20%，鱼类成活率增加8个百分点</div>
+        <div class="cmore" data-i18n="view.detail">查看详情</div>
       </div>
     </div>
   </div>
@@ -746,56 +770,56 @@ table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
 <!-- CONTACT -->
 <section id="contact" class="sec">
   <div class="sec-head">
-    <div class="sec-eye">联系我们</div>
-    <h2 class="sec-title">随时<strong>与凯霖对话</strong></h2>
-    <p class="sec-sub">销售咨询、技术支持、售后服务，多渠道快速响应</p>
+    <div class="sec-eye" data-i18n="contact.eye">联系我们</div>
+    <h2 class="sec-title" data-i18n="contact.title">随时<strong>与凯霖对话</strong></h2>
+    <p class="sec-sub" data-i18n="contact.sub">销售咨询、技术支持、售后服务，多渠道快速响应</p>
   </div>
   <div class="gold-line"></div>
   <div class="cont-grid">
     <div class="cont-info">
       <div class="cinfo-item">
         <div class="cinfo-icon">📞</div>
-        <div><div class="cinfo-label">销售热线</div><div class="cinfo-val">0755-88880123</div><div class="cinfo-sub">工作日 09:00 – 18:00</div></div>
+        <div><div class="cinfo-label" data-i18n="contact.sales">销售热线</div><div class="cinfo-val" data-i18n="contact.phoneVal">0755-88880123</div><div class="cinfo-sub" data-i18n="contact.hours.weekdays">工作日 09:00 – 18:00</div></div>
       </div>
       <div class="cinfo-item">
         <div class="cinfo-icon">✉</div>
-        <div><div class="cinfo-label">商务邮箱</div><div class="cinfo-val">sales@kailin-solar.com</div><div class="cinfo-sub">24小时内回复</div></div>
+        <div><div class="cinfo-label" data-i18n="contact.email">商务邮箱</div><div class="cinfo-val">sales@kailin-solar.com</div><div class="cinfo-sub" data-i18n="contact.replyTime">24小时内回复</div></div>
       </div>
       <div class="cinfo-item">
         <div class="cinfo-icon">💬</div>
-        <div><div class="cinfo-label">微信客服</div><div class="cinfo-val">KailinSolar_Service</div><div class="cinfo-sub">扫码添加，快速响应</div></div>
+        <div><div class="cinfo-label" data-i18n="contact.wechat">微信客服</div><div class="cinfo-val">KailinSolar_Service</div><div class="cinfo-sub" data-i18n="contact.scanPrompt">扫码添加，快速响应</div></div>
       </div>
       <div class="cinfo-item">
         <div class="cinfo-icon">📍</div>
-        <div><div class="cinfo-label">公司地址</div><div class="cinfo-val">广东省深圳市南山区科技园</div><div class="cinfo-sub">凯霖国际贸易大厦 8楼</div></div>
+        <div><div class="cinfo-label" data-i18n="contact.address">公司地址</div><div class="cinfo-val" data-i18n="contact.locationVal">广东省深圳市南山区科技园</div><div class="cinfo-sub" data-i18n="contact.locationDetail">凯霖国际贸易大厦 8楼</div></div>
       </div>
       <div class="hours-blk">
-        <div class="hours-title">服务时间</div>
-        <div class="hrow"><span>周一 — 周五</span><span>09:00 — 18:00</span></div>
-        <div class="hrow"><span>周六</span><span>09:00 — 12:00</span></div>
-        <div class="hrow"><span>周日 / 节假日</span><span>在线留言处理</span></div>
+        <div class="hours-title" data-i18n="contact.hoursTitle">服务时间</div>
+        <div class="hrow"><span data-i18n="contact.hours.weekdays">周一 — 周五</span><span>09:00 — 18:00</span></div>
+        <div class="hrow"><span data-i18n="contact.hours.saturday">周六</span><span>09:00 — 12:00</span></div>
+        <div class="hrow"><span data-i18n="contact.hours.sunday">周日 / 节假日</span><span data-i18n="contact.hours.off">在线留言处理</span></div>
       </div>
     </div>
     <div class="cont-form">
-      <div class="form-title" style="margin-bottom:24px">在线留言</div>
+      <div class="form-title" style="margin-bottom:24px" data-i18n="contact.formTitle">在线留言</div>
       <div class="frow">
-        <div class="ff"><label>姓名 *</label><input type="text" id="ct1" placeholder="您的姓名"></div>
-        <div class="ff"><label>联系电话 *</label><input type="tel" id="ct2" placeholder="138 0000 0000"></div>
+        <div class="ff"><label data-i18n="contact.nameLabel">姓名 *</label><input type="text" id="ct1" data-i18n-placeholder="contact.placeholder.name" placeholder="您的姓名"></div>
+        <div class="ff"><label data-i18n="contact.phoneLabel">联系电话 *</label><input type="tel" id="ct2" data-i18n-placeholder="contact.placeholder.phone" placeholder="138 0000 0000"></div>
       </div>
       <div class="frow">
-        <div class="ff"><label>邮箱</label><input type="email" id="ct3" placeholder="your@email.com"></div>
-        <div class="ff"><label>咨询类型</label>
+        <div class="ff"><label data-i18n="contact.emailLabel">邮箱</label><input type="email" id="ct3" data-i18n-placeholder="contact.placeholder.email" placeholder="your@email.com"></div>
+        <div class="ff"><label data-i18n="contact.typeLabel">咨询类型</label>
           <select id="ct4">
-            <option value="">请选择</option>
-            <option>水泵产品咨询</option><option>光伏组件咨询</option>
-            <option>整套系统设计</option><option>出口采购合作</option>
-            <option>售后技术支持</option><option>其他</option>
+            <option value="" data-i18n="option.select">请选择</option>
+            <option data-i18n="option.pumpInquiry">水泵产品咨询</option><option data-i18n="option.pvInquiry">光伏组件咨询</option>
+            <option data-i18n="option.systemDesign">整套系统设计</option><option data-i18n="option.exportCooperation">出口采购合作</option>
+            <option data-i18n="option.support">售后技术支持</option><option data-i18n="option.other">其他</option>
           </select>
         </div>
       </div>
-      <div class="ff"><label>留言内容 *</label><textarea id="ct5" placeholder="请描述您的项目需求，我们将在1个工作日内回复…" style="min-height:120px"></textarea></div>
-      <button class="fsub" onclick="submitForm('ct','contact-ok')">提交留言</button>
-      <div class="fsuccess" id="contact-ok">✓ 留言已提交！我们会尽快与您联系</div>
+      <div class="ff"><label data-i18n="contact.messageLabel">留言内容 *</label><textarea id="ct5" data-i18n-placeholder="contact.placeholder.message" placeholder="请描述您的项目需求，我们将在1个工作日内回复…" style="min-height:120px"></textarea></div>
+      <button class="fsub" onclick="submitForm('ct','contact-ok')" data-i18n="contact.submit">提交留言</button>
+      <div class="fsuccess" id="contact-ok" data-i18n="contact.success">✓ 留言已提交！我们会尽快与您联系</div>
     </div>
   </div>
 </section>
@@ -804,14 +828,14 @@ table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
 <footer>
   <div>
     <div class="foot-brand">KAILIN INTERNATIONAL</div>
-    <div style="font-size:12px;color:var(--text3);margin-top:4px">深圳市凯霖国际贸易有限公司</div>
+    <div style="font-size:12px;color:var(--text3);margin-top:4px" data-i18n="footer.companyInfo">深圳市凯霖国际贸易有限公司</div>
   </div>
-  <div class="foot-copy">© 2026 凯霖国际贸易 · 专注太阳能水利系统</div>
+  <div class="foot-copy" data-i18n="footer.copy">© 2026 凯霖国际贸易 · 专注太阳能水利系统</div>
   <div class="foot-links">
-    <a href="#company">公司介绍</a>
-    <a href="#products">产品展示</a>
-    <a href="#solutions">解决方案</a>
-    <a href="#contact">联系我们</a>
+    <a href="#company" data-i18n="nav.company">公司介绍</a>
+    <a href="#products" data-i18n="nav.products">产品展示</a>
+    <a href="#solutions" data-i18n="nav.solutions">解决方案</a>
+    <a href="#contact" data-i18n="nav.contact">联系我们</a>
   </div>
 </footer>
 
@@ -889,11 +913,540 @@ var DB={
         {t:'业主反馈',p:'光照越强水循环越旺，恰好与鱼类需氧规律高度吻合，安装后基本无需人工干预。投资回收期不到两年，是我们做过性价比最高的技改项目。'}]}
 };
 
+var I18N={
+  ru:{
+    'page.title':'Shenzhen Kailin International Trading Co., Ltd. · Solar Water Systems',
+    'nav.company':'О компании',
+    'nav.products':'Продукция',
+    'nav.solutions':'Решения',
+    'nav.contact':'Контакты',
+    'nav.brand':'Shenzhen Kailin International Trading Co., Ltd.',
+    'nav.quote':'Получить прайс',
+    'vision.badge':'Shenzhen Kailin International',
+    'vision.headline':'Пусть <em>возобновляемая энергия</em> движет сельским хозяйством<br>Пусть <em>технологии</em> создают большую ценность',
+    'vision.tagline':'EMPOWERING AGRICULTURE WITH CLEAN ENERGY',
+    'vision.scroll':'Исследовать дальше',
+    'company.eye':'О компании',
+    'company.title':'Фокус на чистой энергии · <strong>модернизация сельского хозяйства</strong>',
+    'company.sub':'Shenzhen Kailin International Trading Co., Ltd. занимается разработкой, производством и международной торговлей солнечных водных систем',
+    'company.badgeLabel':'Лет опыта',
+    'company.paragraph1':'Shenzhen Kailin International Trading Co., Ltd. основана в Шэньчжэне и является ведущим поставщиком солнечных водных систем в Китае. С 15-летним опытом мы объединяем передовые фотогальванические технологии и насосные системы, чтобы предложить клиентам полный комплекс от оборудования до интеграции.',
+    'company.paragraph2':'Наши ключевые продукты включают бесщеточные солнечные насосы, высокоэффективные монокристаллические и поликристаллические солнечные модули, а также полные автономные системы водоснабжения. Продукция широко используется в орошении, питьевом водоснабжении удаленных поселений, пастбищных системах и аквакультуре, экспортируется в более чем 30 стран.',
+    'company.paragraph3':'Мы верим, что возобновляемая энергия должна стимулировать развитие сельского хозяйства, а технологии — создавать большую ценность. Наша миссия — снизить производственные затраты и повысить качество жизни в удаленных районах, поддерживая глобальные цели устойчивого развития.',
+    'feature.efficiency.title':'Высокая эффективность',
+    'feature.efficiency.desc':'КПД солнечной панели до 22%+, интеллектуальный MPPT',
+    'feature.global.title':'Международная поддержка',
+    'feature.global.desc':'Экспорт в 30+ стран, многоязычная техническая поддержка',
+    'feature.weather.title':'Защита IP68',
+    'feature.weather.desc':'IP68, стабильная работа при -20°C до +70°C',
+    'feature.delivery.title':'Полный сервис',
+    'feature.delivery.desc':'«Полное сопровождение от проектирования до установки»',
+    'products.eye':'Продукция',
+    'products.title':'Ключевые <strong>серии продуктов</strong>',
+    'products.sub':'Нажмите на карточку товара, чтобы увидеть полные технические характеристики и сценарии применения',
+    'products.tab.pumps':'Солнечные насосы',
+    'products.tab.pvs':'Солнечные модули',
+    'product.viewDetails':'Подробнее',
+    'vision.stat.experience':'Годы опыта',
+    'vision.stat.projects':'Проектов',
+    'vision.stat.countries':'Стран экспорта',
+    'vision.stat.satisfaction':'Удовлетворенность клиентов',
+    'product.tag.deepWell':'Глубоководный насос',
+    'product.tag.centrifugal':'Поверхностный центробежный насос',
+    'product.tag.multiStage':'Многоступенчатый высоконапорный насос',
+    'product.tag.circulation':'Циркуляционный насос',
+    'product.tag.mono':'Монокристаллическая панель',
+    'product.tag.bifacial':'Двухсторонняя панель',
+    'product.tag.poly':'Поликристаллическая панель',
+    'product.tag.topcon':'TOPCon панель',
+    'product.name.sp150':'SP-150 глубинный насос',
+    'product.name.sp250':'SP-250 мощный наземный насос',
+    'product.name.sp400':'SP-400 высоконапорный насос',
+    'product.name.sp080':'SP-080 циркуляционный насос',
+    'product.name.pv400m':'PV-400M монокристаллическая панель',
+    'product.name.pv550d':'PV-550D двусторонняя панель',
+    'product.name.pv330p':'PV-330P поликристаллическая панель',
+    'product.name.pv700t':'PV-700T TOPCon панель',
+    'product.param.flow':'Подача',
+    'product.param.head':'Напор',
+    'product.param.power':'Мощность',
+    'product.param.ratedPower':'Номинальная мощность',
+    'product.param.openVoltage':'Напряжение холостого хода',
+    'product.param.shortCircuitCurrent':'Ток короткого замыкания',
+    'solution.01.title':'Сельскохозяйственное орошение',
+    'solution.01.desc':'Система интеллектуального зонального орошения с параллельным подключением насосов обеспечивает точное водоснабжение больших площадей и экономит до 30% воды.',
+    'solution.01.tag1':'Большой объем',
+    'solution.01.tag2':'Низкий напор',
+    'solution.01.tag3':'Параллельные насосы',
+    'solution.02.title':'Питьевая вода для удаленных деревень',
+    'solution.02.desc':'Решение для высокогорных и безсетевых регионов с энергохранилищем обеспечивает круглосуточное водоснабжение.',
+    'solution.02.tag1':'Высокий напор',
+    'solution.02.tag2':'Схема с накопителем',
+    'solution.02.tag3':'Автономная работа',
+    'solution.03.title':'Циркуляция для аквакультуры',
+    'solution.03.desc':'Солнечная система насосов для прудов и озер снижает затраты на электроэнергию и повышает выживаемость рыбы.',
+    'solution.03.tag1':'Циркуляция и аэрация',
+    'solution.03.tag2':'Управление массивом',
+    'solution.03.tag3':'Низкое энергопотребление',
+    'solution.04.title':'Водоснабжение пастбищ',
+    'solution.04.desc':'Мобильные солнечные насосные станции для быстрого развёртывания и сезонных перемещений по большим территориям.',
+    'solution.04.tag1':'Мобильная установка',
+    'solution.04.tag2':'Для любой местности',
+    'solution.04.tag3':'Быстрый монтаж',
+    'solution.05.title':'Централизованное водоснабжение деревень',
+    'solution.05.desc':'Стандартное решение с распределительной насосной станцией и ёмкостью, покрывающее сотни жителей и подходящее под субсидии.',
+    'solution.05.tag1':'Централизованное водоснабжение',
+    'solution.05.tag2':'Контроль качества воды',
+    'solution.05.tag3':'Поддержка политики',
+    'solution.06.title':'Экспортные системы под заказ',
+    'solution.06.desc':'Адаптация под рынки Юго-Восточной Азии, Африки и Ближнего Востока с документацией на английском, французском и арабском.',
+    'solution.06.tag1':'Мультисертификация',
+    'solution.06.tag2':'Разные напряжения',
+    'solution.06.tag3':'Многоязычная документация',
+    'case.01.tag':'Сельское хозяйство',
+    'case.01.title':'Ирригационная система для хлопкового поля в Синьцзяне',
+    'case.01.excerpt':'5 000 му хлопка, 8 насосов SP-250, 88 кВт солнечных панелей, экономия дизтоплива более 300 000 юаней в год.',
+    'case.02.tag':'Удалённое водоснабжение',
+    'case.02.title':'Проект питьевого водоснабжения в высокогорной деревне Тибета',
+    'case.02.excerpt':'Подъём с высоты 4200 м, система SP-400 подает горный источник в деревню из 300 человек более 2 лет без сбоев.',
+    'case.03.tag':'Аквакультура',
+    'case.03.title':'Циркуляционная система для аквакультуры в Гуандуне',
+    'case.03.excerpt':'20 прудов, 20 насосов SP-080, экономия 150 000 юаней в год, содержание кислорода +20%, выживаемость рыбы +8%.',
+    'option.pumpInquiry':'Запрос по насосам',
+    'option.pvInquiry':'Запрос по солнечным панелям',
+    'option.systemDesign':'Дизайн системы',
+    'option.exportCooperation':'Сотрудничество по экспорту',
+    'option.support':'Техническая поддержка',
+    'option.other':'Другое',
+    'contact.phoneVal':'0755-88880123',
+    'contact.locationVal':'Парк науки и техники, район Наньшань, Шэньчжэнь',
+    'contact.locationDetail':'8 этаж, Kailin International Trading Building',
+    'contact.hours.weekdays':'Пн — Пт',
+    'contact.hours.saturday':'Сб',
+    'contact.hours.sunday':'Вс / праздники',
+    'contact.hours.off':'Обработка сообщений онлайн',
+    'contact.replyTime':'Ответ в течение 24 часов',
+    'contact.scanPrompt':'Добавьте в WeChat для быстрой связи',
+    '请填写姓名和联系电话':'Please fill in name and phone',
+    '提交中…':'Submitting…',
+    'solutions.title':'Системные решения для <strong>различных сцен</strong>',
+    'solutions.sub':'От орошения до удаленного водоснабжения — мы предлагаем проектирование для каждого сценария',
+    'cases.eye':'Кейсы',
+    'cases.title':'Реальные проекты',
+    'cases.sub':'За каждым проектом стоит поддержка команды Kailin от обследования до обслуживания',
+    'contact.eye':'Контакты',
+    'contact.title':'Готовы <strong>обсудить ваш проект</strong>',
+    'contact.sub':'Консультации по продажам, техническая поддержка и послепродажное обслуживание — быстрый отклик несколькими каналами',
+    'contact.sales':'Продажная линия',
+    'contact.email':'Коммерческая почта',
+    'contact.wechat':'WeChat поддержка',
+    'contact.address':'Адрес компании',
+    'contact.hoursTitle':'Часы работы',
+    'contact.formTitle':'Онлайн-заявка',
+    'contact.nameLabel':'Имя *',
+    'contact.phoneLabel':'Телефон *',
+    'contact.emailLabel':'Электронная почта',
+    'contact.typeLabel':'Тип запроса',
+    'contact.messageLabel':'Текст сообщения *',
+    'contact.placeholder.name':'Ваше имя',
+    'contact.placeholder.phone':'Например 138 0000 0000',
+    'contact.placeholder.email':'your@email.com',
+    'contact.placeholder.message':'Опишите ваш проект — мы ответим в течение одного рабочего дня…',
+    'contact.submit':'Отправить сообщение',
+    'contact.success':'✓ Сообщение отправлено! Мы свяжемся с вами в ближайшее время',
+    'footer.company':'Компания',
+    'footer.copy':'© 2026 Kailin International · Системы солнечной энергетики для водоснабжения',
+    'footer.companyInfo':'Shenzhen Kailin International Trading Co., Ltd.',
+    'option.select':'Пожалуйста выберите',
+    'placeholder.company':'Опционально',
+    'placeholder.location':'Провинция / город / район',
+    'placeholder.water':'Например: 50',
+    'placeholder.head':'Например: 80',
+    'label.name':'姓名 *',
+    'label.phone':'联系电话 *',
+    'label.company':'公司名称',
+    'label.location':'项目地区',
+    'label.scene':'应用场景',
+    'label.water':'日需水量（m³）',
+    'label.head':'预计扬程（m）',
+    'label.detail':'详细说明',
+    'hint.solar':'光电转换效率达22%+，MPPT智能追踪',
+    'view.detail':'查看详细参数',
+    'button.request':'获取报价'
+  },
+  en:{
+    'page.title':'Shenzhen Kailin International Trading Co., Ltd. · Solar Water Systems',
+    'nav.company':'Company',
+    'nav.products':'Products',
+    'nav.solutions':'Solutions',
+    'nav.contact':'Contact',
+    'nav.brand':'Shenzhen Kailin International Trading Co., Ltd.',
+    'nav.quote':'Get Quote',
+    'vision.badge':'Shenzhen Kailin International',
+    'vision.headline':'Let <em>clean energy</em> power agriculture<br>Let <em>technology</em> create greater value',
+    'vision.tagline':'EMPOWERING AGRICULTURE WITH CLEAN ENERGY',
+    'vision.scroll':'Explore down',
+    'company.eye':'About Us',
+    'company.title':'Focused on clean energy · <strong>advancing agricultural modernization</strong>',
+    'company.sub':'Shenzhen Kailin International Trading Co., Ltd. specializes in R&D, manufacturing and international trade of solar water systems',
+    'company.badgeLabel':'Years Experience',
+    'company.paragraph1':'Founded in Shenzhen, Shenzhen Kailin International Trading Co., Ltd. is a leading provider of solar water system solutions in China. With 15 years of experience, we combine advanced PV technology and pump systems to deliver one-stop service worldwide.',
+    'company.paragraph2':'Our core products include brushless solar water pumps, high-efficiency mono- and polycrystalline PV modules, and complete off-grid water supply systems. Products are widely used in irrigation, remote village drinking water, pasture water supply, and aquaculture, exported to over 30 countries.',
+    'company.paragraph3':'We believe renewable energy should drive agriculture and technology should create greater value. We aim to reduce agricultural production costs, improve rural living standards, and support global sustainable development goals.',
+    'feature.efficiency.title':'High efficiency',
+    'feature.efficiency.desc':'Solar conversion efficiency up to 22%+, intelligent MPPT',
+    'feature.global.title':'Global service',
+    'feature.global.desc':'Export to 30+ countries, multilingual technical support',
+    'feature.weather.title':'IP68 protection',
+    'feature.weather.desc':'IP68 protection, stable operation from -20°C to +70°C',
+    'feature.delivery.title':'One-stop delivery',
+    'feature.delivery.desc':'Full support from design to installation',
+    'products.eye':'Products',
+    'products.title':'Core <strong>product series</strong>',
+    'products.sub':'Click product cards to view full technical parameters and application scenarios',
+    'products.tab.pumps':'Solar Pumps',
+    'products.tab.pvs':'PV Modules',
+    'product.viewDetails':'View details',
+    'vision.stat.experience':'Years Experience',
+    'vision.stat.projects':'Projects',
+    'vision.stat.countries':'Export Countries',
+    'vision.stat.satisfaction':'Customer Satisfaction',
+    'product.tag.deepWell':'Deep Well Pump',
+    'product.tag.centrifugal':'Surface Centrifugal Pump',
+    'product.tag.multiStage':'High-Head Multi-Stage Pump',
+    'product.tag.circulation':'Circulation Pump',
+    'product.tag.mono':'Mono Solar Module',
+    'product.tag.bifacial':'Bifacial Glass-Glass Module',
+    'product.tag.poly':'Poly Solar Module',
+    'product.tag.topcon':'TOPCon Module',
+    'product.name.sp150':'SP-150 Deep Well Pump',
+    'product.name.sp250':'SP-250 High-Flow Surface Pump',
+    'product.name.sp400':'SP-400 High-Head Multi-Stage Pump',
+    'product.name.sp080':'SP-080 Circulation Pump',
+    'product.name.pv400m':'PV-400M Mono Module',
+    'product.name.pv550d':'PV-550D Bifacial Module',
+    'product.name.pv330p':'PV-330P Poly Module',
+    'product.name.pv700t':'PV-700T TOPCon Module',
+    'product.param.flow':'Flow',
+    'product.param.head':'Head',
+    'product.param.power':'Power',
+    'product.param.ratedPower':'Rated Power',
+    'product.param.openVoltage':'Open Circuit Voltage',
+    'product.param.shortCircuitCurrent':'Short Circuit Current',
+    'solution.01.title':'Agricultural Water-Saving Irrigation',
+    'solution.01.desc':'A multi-pump parallel intelligent zoning irrigation system for large farmland, saving over 30% water and reducing operating costs.',
+    'solution.01.tag1':'High flow',
+    'solution.01.tag2':'Low head',
+    'solution.01.tag3':'Parallel pumps',
+    'solution.02.title':'Remote Village Drinking Water',
+    'solution.02.desc':'Off-grid high-altitude drinking water system with energy storage support for reliable supply.',
+    'solution.02.tag1':'High head',
+    'solution.02.tag2':'Energy storage',
+    'solution.02.tag3':'Off-grid operation',
+    'solution.03.title':'Aquaculture Circulation',
+    'solution.03.desc':'Solar pond circulation system that matches oxygen supply to sunlight and lowers electric operating cost.',
+    'solution.03.tag1':'Circulation aeration',
+    'solution.03.tag2':'Array control',
+    'solution.03.tag3':'Low energy use',
+    'solution.04.title':'Pasture Water Supply',
+    'solution.04.desc':'Mobile solar pump stations for fast deployment and seasonal relocation across large territories.',
+    'solution.04.tag1':'Mobile deployment',
+    'solution.04.tag2':'All-terrain',
+    'solution.04.tag3':'Fast installation',
+    'solution.05.title':'Township Centralized Supply',
+    'solution.05.desc':'Standard rural water safety scheme with central pumping and storage for hundreds to thousands of people.',
+    'solution.05.tag1':'Centralized supply',
+    'solution.05.tag2':'Water quality monitoring',
+    'solution.05.tag3':'Policy support',
+    'solution.06.title':'Export Customization',
+    'solution.06.desc':'Voltage adaptation and certification customization for markets in Southeast Asia, Africa, and the Middle East, with multilingual documentation.',
+    'solution.06.tag1':'Multi-certification',
+    'solution.06.tag2':'Multi-voltage',
+    'solution.06.tag3':'Multilingual docs',
+    'case.01.tag':'Agricultural Irrigation',
+    'case.01.title':'Xinjiang Cotton Irrigation Base',
+    'case.01.excerpt':'5,000 mu of cotton with 8 SP-250 pumps and 88kWp PV support, saving over ¥300,000 in fuel costs annually.',
+    'case.02.tag':'Remote Water Supply',
+    'case.02.title':'Tibet Highland Village Drinking Water Project',
+    'case.02.excerpt':'At 4200m elevation and off-grid, SP-400 delivers spring water to a 300-person village reliably for over 2 years.',
+    'case.03.tag':'Aquaculture',
+    'case.03.title':'Guangdong Aquaculture Circulation System',
+    'case.03.excerpt':'20 ponds with 20 SP-080 pumps save ¥150,000 a year, improve oxygen by 20%, and increase survival by 8%.',
+    'option.pumpInquiry':'Pump product inquiry',
+    'option.pvInquiry':'PV module inquiry',
+    'option.systemDesign':'System design',
+    'option.exportCooperation':'Export procurement cooperation',
+    'option.support':'After-sales support',
+    'option.other':'Other',
+    'contact.phoneVal':'0755-88880123',
+    'contact.locationVal':'Science Park, Nanshan District, Shenzhen',
+    'contact.locationDetail':'8/F Kailin International Trading Building',
+    'contact.hours.weekdays':'Mon — Fri',
+    'contact.hours.saturday':'Sat',
+    'contact.hours.sunday':'Sun / Holidays',
+    'contact.hours.off':'Online message processing',
+    'contact.replyTime':'Reply within 24 hours',
+    'contact.scanPrompt':'Scan to add on WeChat for faster contact',
+    '请填写姓名和联系电话':'Please fill in name and phone',
+    '提交中…':'Submitting…',
+    'solutions.title':'System solutions for <strong>diverse scenarios</strong>',
+    'solutions.sub':'From agricultural irrigation to remote water supply, we provide targeted system designs',
+    'cases.eye':'Case Studies',
+    'cases.title':'Realized <strong>projects</strong>',
+    'cases.sub':'Each case is backed by Kailin team support from survey to operation',
+    'contact.eye':'Contact',
+    'contact.title':'Ready to <strong>talk with Kailin</strong>',
+    'contact.sub':'Sales inquiry, technical support and after-sales service with fast multi-channel response',
+    'contact.sales':'Sales hotline',
+    'contact.email':'Business email',
+    'contact.wechat':'WeChat support',
+    'contact.address':'Company address',
+    'contact.hoursTitle':'Service hours',
+    'contact.formTitle':'Online message',
+    'contact.nameLabel':'Name *',
+    'contact.phoneLabel':'Phone *',
+    'contact.emailLabel':'Email',
+    'contact.typeLabel':'Inquiry type',
+    'contact.messageLabel':'Message *',
+    'contact.placeholder.name':'Your name',
+    'contact.placeholder.phone':'138 0000 0000',
+    'contact.placeholder.email':'your@email.com',
+    'contact.placeholder.message':'Describe your project requirements and we will reply within one working day…',
+    'contact.submit':'Submit message',
+    'contact.success':'✓ Message submitted! We will contact you shortly',
+    'footer.company':'Company',
+    'footer.copy':'© 2026 Kailin International · Solar water systems',
+    'footer.companyInfo':'Shenzhen Kailin International Trading Co., Ltd.',
+    'option.select':'Please select',
+    'placeholder.company':'Optional',
+    'placeholder.location':'Province / City / County',
+    'placeholder.water':'Eg: 50',
+    'placeholder.head':'Eg: 80',
+    'label.name':'姓名 *',
+    'label.phone':'联系电话 *',
+    'label.company':'公司名称',
+    'label.location':'项目地区',
+    'label.scene':'应用场景',
+    'label.water':'日需水量（m³）',
+    'label.head':'预计扬程（m）',
+    'label.detail':'详细说明',
+    'hint.solar':'Solar conversion efficiency up to 22%+, MPPT tracking',
+    'view.detail':'View details',
+    'button.request':'Get Quote'
+  },
+  zh:{
+    'page.title':'深圳市凯霖国际贸易有限公司 · 太阳能水利系统',
+    'nav.company':'公司介绍',
+    'nav.products':'产品展示',
+    'nav.solutions':'解决方案',
+    'nav.contact':'联系我们',
+    'nav.brand':'深圳市凯霖国际贸易有限公司',
+    'nav.quote':'获取报价',
+    'vision.badge':'深圳市凯霖国际贸易有限公司',
+    'vision.headline':'让<em>新能源</em>驱动农业发展<br>让<em>科技</em>创造更高价值',
+    'vision.tagline':'EMPOWERING AGRICULTURE WITH CLEAN ENERGY',
+    'vision.scroll':'向下探索',
+    'company.eye':'公司介绍',
+    'company.title':'专注清洁能源 · <strong>推动农业现代化</strong>',
+    'company.sub':'深圳市凯霖国际贸易有限公司，专业从事太阳能水利设备研发、制造与国际贸易',
+    'company.badgeLabel':'Years Experience',
+    'company.paragraph1':'深圳市凯霖国际贸易有限公司成立于深圳，是国内领先的太阳能水利系统解决方案提供商。凭借十五年深耕行业的经验，我们将先进光伏技术与水泵系统深度融合，为全球客户提供从设备供应到系统集成的一站式服务。',
+    'company.paragraph2':'公司核心产品涵盖直流无刷太阳能水泵、高效单多晶光伏组件及完整的离网供水系统。产品广泛应用于农业灌溉、偏远村落饮水、牧场供水、水产养殖等领域，出口至东南亚、中东、非洲、南美洲等30余个国家和地区。',
+    'company.paragraph3':'我们坚信"让新能源驱动农业发展，让科技创造更高价值"，致力于以清洁能源技术降低农业生产成本，提升偏远地区生活品质，助力全球可持续发展目标的实现。',
+    'feature.efficiency.title':'高效能转换',
+    'feature.efficiency.desc':'光电转换效率达22%+，MPPT智能追踪',
+    'feature.global.title':'全球化服务',
+    'feature.global.desc':'30+国出口经验，多语言技术支持',
+    'feature.weather.title':'极端耐候性',
+    'feature.weather.desc':'IP68防护，-20°C至+70°C稳定运行',
+    'feature.delivery.title':'一站式交付',
+    'feature.delivery.desc':'从设计到安装调试全程跟进',
+    'products.eye':'产品展示',
+    'products.title':'核心<strong>产品系列</strong>',
+    'products.sub':'点击产品卡片查看完整技术参数规格与适用场景说明',
+    'products.tab.pumps':'太阳能水泵',
+    'products.tab.pvs':'光伏组件',
+    'product.viewDetails':'查看详细参数',
+    'vision.stat.experience':'年行业经验',
+    'vision.stat.projects':'项目案例',
+    'vision.stat.countries':'出口国家',
+    'vision.stat.satisfaction':'客户满意度',
+    'product.tag.deepWell':'深井潜水泵',
+    'product.tag.centrifugal':'地面离心泵',
+    'product.tag.multiStage':'高扬程多级泵',
+    'product.tag.circulation':'小型循环泵',
+    'product.tag.mono':'单晶硅组件',
+    'product.tag.bifacial':'双面双玻组件',
+    'product.tag.poly':'多晶硅组件',
+    'product.tag.topcon':'TOPCon N型大板',
+    'product.name.sp150':'SP-150 深井潜水泵',
+    'product.name.sp250':'SP-250 大流量地面泵',
+    'product.name.sp400':'SP-400 高扬程多级泵',
+    'product.name.sp080':'SP-080 循环水泵',
+    'product.name.pv400m':'PV-400M 单晶组件',
+    'product.name.pv550d':'PV-550D 双面组件',
+    'product.name.pv330p':'PV-330P 多晶组件',
+    'product.name.pv700t':'PV-700T 旗舰组件',
+    'product.param.flow':'流量',
+    'product.param.head':'扬程',
+    'product.param.power':'功率',
+    'product.param.ratedPower':'额定功率',
+    'product.param.openVoltage':'开路电压',
+    'product.param.shortCircuitCurrent':'短路电流',
+    'solution.01.title':'农业节水灌溉',
+    'solution.01.desc':'多泵并联智能分区灌溉系统，满足大面积农田精准用水需求，年均节水超30%，大幅降低生产成本。',
+    'solution.01.tag1':'大流量',
+    'solution.01.tag2':'低扬程',
+    'solution.01.tag3':'多泵并联',
+    'solution.02.title':'偏远村落饮水',
+    'solution.02.desc':'无电网山区、高原饮水解决方案，配合储能系统全天候供水，已在西藏、云南、新疆多地成功部署。',
+    'solution.02.tag1':'高扬程',
+    'solution.02.tag2':'储能配套',
+    'solution.02.tag3':'离网运行',
+    'solution.03.title':'水产养殖循环',
+    'solution.03.desc':'鱼塘虾池增氧循环系统，日照强度与需氧量自然契合，告别高电费，提升养殖成活率与经济效益。',
+    'solution.03.tag1':'循环增氧',
+    'solution.03.tag2':'阵列控制',
+    'solution.03.tag3':'低能耗',
+    'solution.04.title':'牧场草地供水',
+    'solution.04.desc':'移动式太阳能泵站，支持快速部署与季节性迁移，适应内蒙古、新疆等大范围分散水源取水需求。',
+    'solution.04.tag1':'移动部署',
+    'solution.04.tag2':'全地形',
+    'solution.04.tag3':'快速安装',
+    'solution.05.title':'村镇集中供水',
+    'solution.05.desc':'农村饮水安全工程标准方案，集中泵站+高位水箱，覆盖数百至数千人口，政策补贴优先推荐型号。',
+    'solution.05.tag1':'集中供水',
+    'solution.05.tag2':'水质监测',
+    'solution.05.tag3':'政策配套',
+    'solution.06.title':'国际出口定制',
+    'solution.06.desc':'针对东南亚、非洲、中东等海外市场的电压适配与认证定制，提供英/法/阿拉伯语技术文档支持。',
+    'solution.06.tag1':'多认证',
+    'solution.06.tag2':'多电压',
+    'solution.06.tag3':'多语种',
+    'case.01.tag':'农业灌溉',
+    'case.01.title':'新疆棉花基地灌溉系统',
+    'case.01.excerpt':'5000亩棉田，8台SP-250并联，88kWp光伏配套，年节省燃油成本逾30万元，实现完全离网灌溉',
+    'case.02.tag':'偏远供水',
+    'case.02.title':'西藏高原村落饮水工程',
+    'case.02.excerpt':'海拔4200米无电网区域，SP-400将山泉引入300人村落，高原低气压环境稳定运行2年以上',
+    'case.03.tag':'水产养殖',
+    'case.03.title':'广东水产养殖循环系统',
+    'case.03.excerpt':'20口鱼塘SP-080阵列部署，年节省电费15万，溶氧量提升20%，鱼类成活率增加8个百分点',
+    'option.pumpInquiry':'水泵产品咨询',
+    'option.pvInquiry':'光伏组件咨询',
+    'option.systemDesign':'整套系统设计',
+    'option.exportCooperation':'出口采购合作',
+    'option.support':'售后技术支持',
+    'option.other':'其他',
+    'contact.phoneVal':'0755-88880123',
+    'contact.locationVal':'广东省深圳市南山区科技园',
+    'contact.locationDetail':'凯霖国际贸易大厦 8楼',
+    'contact.hours.weekdays':'周一 — 周五',
+    'contact.hours.saturday':'周六',
+    'contact.hours.sunday':'周日 / 节假日',
+    'contact.hours.off':'在线留言处理',
+    'contact.replyTime':'24小时内回复',
+    'contact.scanPrompt':'扫码添加，快速响应',
+    '请填写姓名和联系电话':'请填写姓名和联系电话',
+    '提交中…':'提交中…',
+    'solutions.title':'面向<strong>多元场景</strong>的系统方案',
+    'solutions.sub':'从农业灌溉到偏远供水，我们为各类应用场景提供针对性系统设计',
+    'cases.eye':'案例展示',
+    'cases.title':'已落地的<strong>真实项目</strong>',
+    'cases.sub':'每一个案例背后，是凯霖团队从勘察到运维的全程陪伴',
+    'contact.eye':'联系我们',
+    'contact.title':'随时<strong>与凯霖对话</strong>',
+    'contact.sub':'销售咨询、技术支持、售后服务，多渠道快速响应',
+    'contact.sales':'销售热线',
+    'contact.email':'商务邮箱',
+    'contact.wechat':'微信客服',
+    'contact.address':'公司地址',
+    'contact.hoursTitle':'服务时间',
+    'contact.formTitle':'在线留言',
+    'contact.nameLabel':'姓名 *',
+    'contact.phoneLabel':'联系电话 *',
+    'contact.emailLabel':'邮箱',
+    'contact.typeLabel':'咨询类型',
+    'contact.messageLabel':'留言内容 *',
+    'contact.placeholder.name':'您的姓名',
+    'contact.placeholder.phone':'138 0000 0000',
+    'contact.placeholder.email':'your@email.com',
+    'contact.placeholder.message':'请描述您的项目需求，我们将在1个工作日内回复…',
+    'contact.submit':'提交留言',
+    'contact.success':'✓ 留言已提交！我们会尽快与您联系',
+    'footer.company':'公司',
+    'footer.copy':'© 2026 凯霖国际贸易 · 专注太阳能水利系统',
+    'footer.companyInfo':'深圳市凯霖国际贸易有限公司',
+    'option.select':'请选择',
+    'placeholder.company':'选填',
+    'placeholder.location':'省 / 市 / 县',
+    'placeholder.water':'如：50',
+    'placeholder.head':'如：80',
+    'label.name':'姓名 *',
+    'label.phone':'联系电话 *',
+    'label.company':'公司名称',
+    'label.location':'项目地区',
+    'label.scene':'应用场景',
+    'label.water':'日需水量（m³）',
+    'label.head':'预计扬程（m）',
+    'label.detail':'详细说明',
+    'hint.solar':'光电转换效率达22%+，MPPT智能追踪',
+    'view.detail':'查看详细参数',
+    'button.request':'获取报价'
+  }
+};
+
+function translateText(text, lang){
+  var dict = I18N[lang] || I18N.zh;
+  return dict[text] || text;
+}
+
+function translatePage(lang){
+  var dict = I18N[lang] || I18N.zh;
+  document.documentElement.lang = lang;
+  if(dict['page.title']) document.title = dict['page.title'];
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var key = el.dataset.i18n;
+    if(key && dict[key]) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+    var key = el.dataset.i18nPlaceholder;
+    if(key && dict[key]) el.placeholder = dict[key];
+  });
+  document.querySelectorAll('body *').forEach(function(el){
+    if(el.children.length===0){
+      var txt = el.textContent.trim();
+      if(txt && dict[txt]) el.textContent = dict[txt];
+    }
+  });
+  document.querySelectorAll('.lang-btn').forEach(function(btn){
+    btn.classList.toggle('on', btn.dataset.lang===lang);
+  });
+  document.body.classList.add('ready');
+}
+
+function setLanguage(lang, btn){
+  if(btn){
+    document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.remove('on');});
+    btn.classList.add('on');
+  }
+  localStorage.setItem('siteLang', lang);
+  translatePage(lang);
+}
+
+window.addEventListener('DOMContentLoaded', function(){
+  var lang = localStorage.getItem('siteLang') || 'ru';
+  var btn = document.querySelector('.lang-btn[data-lang="' + lang + '"]');
+  if(!btn) btn = document.querySelector('.lang-btn[data-lang="ru"]');
+  setLanguage(lang, btn);
+});
+
 function openM(id){
   var d=DB[id];
+  var lang = document.documentElement.lang || 'ru';
   document.getElementById('m-icon').textContent=d.icon;
-  document.getElementById('m-tag').textContent=d.tag;
-  document.getElementById('m-name').textContent=d.name;
+  document.getElementById('m-tag').textContent=translateText(d.tag, lang);
+  document.getElementById('m-name').innerHTML=translateText(d.name, lang);
   var html='';
   if(d.s){
     var inT=false;
@@ -903,14 +1456,14 @@ function openM(id){
         html+='<div class="mspec-sec">'+r[0]+'</div><table class="spec">';
         inT=true;
       }else{
-        html+='<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>';
+        html+='<tr><td>'+translateText(r[0], lang)+'</td><td>'+translateText(r[1], lang)+'</td></tr>';
       }
     });
     if(inT)html+='</table>';
   }
   if(d.cs){
     d.cs.forEach(function(s){
-      html+='<div class="case-sec"><div class="case-sec-t">'+s.t+'</div><div class="case-sec-p">'+s.p+'</div></div>';
+      html+='<div class="case-sec"><div class="case-sec-t">'+translateText(s.t, lang)+'</div><div class="case-sec-p">'+translateText(s.p, lang)+'</div></div>';
     });
   }
   document.getElementById('m-body').innerHTML=html;
@@ -928,9 +1481,11 @@ function switchTab(id,btn){
 function submitForm(pre,okId){
   var n=document.getElementById(pre+'1').value.trim();
   var p=document.getElementById(pre+'2').value.trim();
-  if(!n||!p){alert('请填写姓名和联系电话');return}
+  var lang=document.documentElement.lang||'ru';
+  if(!n||!p){alert(translateText('请填写姓名和联系电话', lang));return}
   var btn=event.currentTarget;
-  btn.textContent='提交中…';btn.disabled=true;
+  btn.textContent=translateText('提交中…', lang);
+  btn.disabled=true;
   setTimeout(function(){
     btn.style.display='none';
     document.getElementById(okId).style.display='block';
