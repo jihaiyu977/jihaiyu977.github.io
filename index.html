@@ -260,6 +260,23 @@ nav{
 .tp.on{display:block}
 .prod-slider{display:flex;flex-direction:column;gap:24px}
 .slider-pages{position:relative}
+.slide-nav{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:44px;height:44px;border:none;
+  background:rgba(255,255,255,0.08);
+  color:var(--text);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:999px;
+  transition:background .2s,transform .2s;
+  z-index:2;
+}
+.slide-nav:hover{background:rgba(30,122,224,0.24);transform:translateY(-50%) scale(1.05)}
+.slide-prev{left:-24px}
+.slide-next{right:-24px}
+.slide-nav::before{content:'';display:inline-block;width:0;height:0;border-style:solid}
+.slide-prev::before{border-width:8px 10px 8px 0;border-color:transparent var(--text) transparent transparent}
+.slide-next::before{border-width:8px 0 8px 10px;border-color:transparent transparent transparent var(--text)}
+@media(max-width:1024px){.slide-nav{display:none}}
 .slide{display:none;gap:20px}
 .slide.on{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .pcard{
@@ -621,6 +638,8 @@ table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
   <div id="tp-pumps" class="tp on">
     <div class="prod-slider">
       <div class="slider-pages">
+        <button class="slide-nav slide-prev" type="button" onclick="changeSlide(this,-1)" aria-label="上一页"></button>
+        <button class="slide-nav slide-next" type="button" onclick="changeSlide(this,1)" aria-label="下一页"></button>
         <div class="slide on">
           <div class="pcard" onclick="openM('v1')">
             <div class="pcard-img">💧<div class="pcard-glow"></div></div>
@@ -939,6 +958,8 @@ table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
   <div id="tp-pvs" class="tp">
     <div class="prod-slider">
       <div class="slider-pages">
+        <button class="slide-nav slide-prev" type="button" onclick="changeSlide(this,-1)" aria-label="上一页"></button>
+        <button class="slide-nav slide-next" type="button" onclick="changeSlide(this,1)" aria-label="下一页"></button>
         <div class="slide on">
           <div class="pcard" onclick="openM('v1')">
             <div class="pcard-img">🌤<div class="pcard-glow"></div></div>
@@ -2096,6 +2117,21 @@ function switchSlide(btn,index){
   btn.classList.add('on');
   var slides = container.querySelectorAll('.slide');
   if(slides[index]) slides[index].classList.add('on');
+}
+function changeSlide(btn,direction){
+  var container = btn.closest('.tp');
+  if(!container) return;
+  var slides = Array.prototype.slice.call(container.querySelectorAll('.slide'));
+  var dots = Array.prototype.slice.call(container.querySelectorAll('.page-dots .dot'));
+  var currentIndex = slides.findIndex(function(s){return s.classList.contains('on');});
+  if(currentIndex < 0) currentIndex = 0;
+  var target = currentIndex + direction;
+  if(target < 0) target = slides.length - 1;
+  if(target >= slides.length) target = 0;
+  slides.forEach(function(s){s.classList.remove('on');});
+  dots.forEach(function(d){d.classList.remove('on');});
+  if(slides[target]) slides[target].classList.add('on');
+  if(dots[target]) dots[target].classList.add('on');
 }
 function submitForm(pre,okId){
   var n=document.getElementById(pre+'1').value.trim();
