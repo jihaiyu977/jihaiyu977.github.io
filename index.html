@@ -258,10 +258,15 @@ nav{
 .tab-btn:hover:not(.on){color:var(--text2)}
 .tp{display:none}
 .tp.on{display:block}
-.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1px;background:var(--border)}
+.prod-slider{display:flex;flex-direction:column;gap:24px}
+.slider-pages{position:relative}
+.slide{display:none;gap:20px}
+.slide.on{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .pcard{
+  display:flex;flex-direction:row;gap:1px;
   background:var(--navy2);cursor:pointer;
   transition:background .2s;position:relative;overflow:hidden;
+  min-height:260px;
 }
 .pcard:hover{background:var(--navy3)}
 .pcard::after{
@@ -271,31 +276,49 @@ nav{
 }
 .pcard:hover::after{transform:scaleX(1)}
 .pcard-img{
-  height:180px;background:var(--navy3);
-  border-bottom:1px solid var(--border);
+  width:38%;min-width:180px;background:var(--navy3);
+  border-right:1px solid var(--border);
   display:flex;align-items:center;justify-content:center;
-  font-size:60px;position:relative;overflow:hidden;
+  font-size:60px;position:relative;overflow:hidden;padding:32px;
 }
 .pcard-glow{
   position:absolute;inset:0;
   background:radial-gradient(ellipse at center,rgba(30,122,224,0.12),transparent 70%);
 }
-.pcard-body{padding:22px}
-.pcard-tag{font-size:10px;letter-spacing:2px;color:var(--blue3);text-transform:uppercase;margin-bottom:8px}
-.pcard-name{font-size:15px;font-weight:500;color:var(--text);margin-bottom:18px}
+.pcard-body{padding:24px;display:flex;flex-direction:column;justify-content:center}
+.pcard-tag{font-size:10px;letter-spacing:2px;color:var(--blue3);text-transform:uppercase;margin-bottom:10px}
+.pcard-name{font-size:17px;font-weight:600;color:var(--text);margin-bottom:18px}
 .pcard-params{display:flex;flex-direction:column;gap:0}
 .prow{
   display:flex;justify-content:space-between;align-items:center;
-  padding:8px 0;border-top:1px solid var(--border);font-size:12px;
+  padding:12px 0;border-top:1px solid var(--border);font-size:13px;
 }
-.pk{color:var(--text3)}
-.pv{color:var(--text);font-weight:500;font-size:13px}
+.pk{color:var(--text3);letter-spacing:0.5px}
+.pv{color:var(--text);font-weight:600;font-size:14px}
 .pcard-more{
   display:flex;align-items:center;justify-content:space-between;
-  margin-top:18px;padding-top:14px;border-top:1px solid var(--border);
+  margin-top:20px;padding-top:16px;border-top:1px solid var(--border);
   font-size:11px;letter-spacing:1.5px;color:var(--blue3);text-transform:uppercase;
 }
 .pcard-more::after{content:'→';font-size:13px}
+.page-dots{display:flex;justify-content:center;gap:12px;margin-top:8px}
+.dot{
+  width:14px;height:14px;border-radius:50%;border:none;
+  background:rgba(255,255,255,0.18);cursor:pointer;
+  transition:transform .2s,background .2s;
+}
+.dot.on{background:var(--blue3);transform:scale(1.15)}
+@media(max-width:1024px){
+  .slide.on{grid-template-columns:1fr}
+  .pcard{flex-direction:column;min-height:auto}
+  .pcard-img{width:100%;border-right:none;border-bottom:1px solid var(--border);padding:28px 24px}
+}
+@media(max-width:700px){
+  .tab-btn{padding:14px 20px}
+  .pcard-body{padding:20px}
+  .prow{padding:10px 0}
+}
+
 
 /* ═══ SOLUTIONS ═══ */
 .sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
@@ -596,128 +619,139 @@ table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
   </div>
 
   <div id="tp-pumps" class="tp on">
-    <div class="prod-grid">
-      <div class="pcard" onclick="openM('p1')">
-        <div class="pcard-img">🌊<div class="pcard-glow"></div></div>
-        <div class="pcard-body">
-            <div class="pcard-tag" data-i18n="product.tag.deepWell">深井潜水泵</div>
-            <div class="pcard-name" data-i18n="product.name.sp150">SP-150 深井潜水泵</div>
-          <div class="pcard-params">
-              <div class="prow"><span class="pk" data-i18n="product.param.flow">流量</span><span class="pv">3.0 m³/h</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.head">扬程</span><span class="pv">80 m</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.power">功率</span><span class="pv">1500 W</span></div>
+    <div class="prod-slider">
+      <div class="slider-pages">
+        <div class="slide on">
+          <div class="pcard" onclick="openM('p1')">
+            <div class="pcard-img">🌊<div class="pcard-glow"></div></div>
+            <div class="pcard-body">
+              <div class="pcard-tag" data-i18n="product.tag.deepWell">深井潜水泵</div>
+              <div class="pcard-name" data-i18n="product.name.sp150">SP-150 深井潜水泵</div>
+              <div class="pcard-params">
+                <div class="prow"><span class="pk" data-i18n="product.param.flow">流量</span><span class="pv">3.0 m³/h</span></div>
+                <div class="prow"><span class="pk" data-i18n="product.param.head">扬程</span><span class="pv">80 m</span></div>
+                <div class="prow"><span class="pk" data-i18n="product.param.power">功率</span><span class="pv">1500 W</span></div>
+                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">320 Wp</span></div>
+              </div>
+              <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
+            </div>
           </div>
-            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
+          <div class="pcard" onclick="openM('p5')">
+            <div class="pcard-img">🌊<div class="pcard-glow"></div></div>
+            <div class="pcard-body">
+              <div class="pcard-tag" data-i18n="product.tag.deepWell">深井潜水泵</div>
+              <div class="pcard-name" data-i18n="product.name.sp150">SP-150 深井潜水泵</div>
+              <div class="pcard-params">
+                <div class="prow"><span class="pk" data-i18n="product.param.flow">流量</span><span class="pv">3.0 m³/h</span></div>
+                <div class="prow"><span class="pk" data-i18n="product.param.head">扬程</span><span class="pv">80 m</span></div>
+                <div class="prow"><span class="pk" data-i18n="product.param.power">功率</span><span class="pv">1500 W</span></div>
+                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">320 Wp</span></div>
+              </div>
+              <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="pcard" onclick="openM('p2')">
+            <div class="pcard-img">💧<div class="pcard-glow"></div></div>
+            <div class="pcard-body">
+              <div class="pcard-tag" data-i18n="product.tag.centrifugal">地面离心泵</div>
+              <div class="pcard-name" data-i18n="product.name.sp250">SP-250 大流量地面泵</div>
+              <div class="pcard-params">
+                <div class="prow"><span class="pk" data-i18n="product.param.flow">流量</span><span class="pv">8.5 m³/h</span></div>
+                <div class="prow"><span class="pk" data-i18n="product.param.head">扬程</span><span class="pv">35 m</span></div>
+                <div class="prow"><span class="pk" data-i18n="product.param.power">功率</span><span class="pv">2500 W</span></div>
+                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">450 Wp</span></div>
+              </div>
+              <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
+            </div>
+          </div>
+          <div class="pcard" onclick="openM('p3')">
+            <div class="pcard-img">⚡<div class="pcard-glow"></div></div>
+            <div class="pcard-body">
+              <div class="pcard-tag" data-i18n="product.tag.multiStage">高扬程多级泵</div>
+              <div class="pcard-name" data-i18n="product.name.sp400">SP-400 高扬程多级泵</div>
+              <div class="pcard-params">
+                <div class="prow"><span class="pk" data-i18n="product.param.flow">流量</span><span class="pv">5.0 m³/h</span></div>
+                <div class="prow"><span class="pk" data-i18n="product.param.head">扬程</span><span class="pv">200 m</span></div>
+                <div class="prow"><span class="pk" data-i18n="product.param.power">功率</span><span class="pv">4000 W</span></div>
+                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">600 Wp</span></div>
+              </div>
+              <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="pcard" onclick="openM('p5')">
-        <div class="pcard-img">🌊<div class="pcard-glow"></div></div>
-        <div class="pcard-body">
-            <div class="pcard-tag" data-i18n="product.tag.deepWell">深井潜水泵</div>
-            <div class="pcard-name" data-i18n="product.name.sp150">SP-150 深井潜水泵</div>
-          <div class="pcard-params">
-              <div class="prow"><span class="pk" data-i18n="product.param.flow">流量</span><span class="pv">3.0 m³/h</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.head">扬程</span><span class="pv">80 m</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.power">功率</span><span class="pv">1500 W</span></div>
-          </div>
-            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
-        </div>
-      </div>
-      <div class="pcard" onclick="openM('p2')">
-        <div class="pcard-img">💧<div class="pcard-glow"></div></div>
-        <div class="pcard-body">
-            <div class="pcard-tag" data-i18n="product.tag.centrifugal">地面离心泵</div>
-            <div class="pcard-name" data-i18n="product.name.sp250">SP-250 大流量地面泵</div>
-          <div class="pcard-params">
-              <div class="prow"><span class="pk" data-i18n="product.param.flow">流量</span><span class="pv">8.5 m³/h</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.head">扬程</span><span class="pv">35 m</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.power">功率</span><span class="pv">2500 W</span></div>
-          </div>
-            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
-        </div>
-      </div>
-      <div class="pcard" onclick="openM('p3')">
-        <div class="pcard-img">⚡<div class="pcard-glow"></div></div>
-        <div class="pcard-body">
-            <div class="pcard-tag" data-i18n="product.tag.multiStage">高扬程多级泵</div>
-            <div class="pcard-name" data-i18n="product.name.sp400">SP-400 高扬程多级泵</div>
-          <div class="pcard-params">
-              <div class="prow"><span class="pk" data-i18n="product.param.flow">流量</span><span class="pv">5.0 m³/h</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.head">扬程</span><span class="pv">200 m</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.power">功率</span><span class="pv">4000 W</span></div>
-          </div>
-            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
-        </div>
-      </div>
-      <div class="pcard" onclick="openM('p4')">
-        <div class="pcard-img">🔄<div class="pcard-glow"></div></div>
-        <div class="pcard-body">
-            <div class="pcard-tag" data-i18n="product.tag.circulation">小型循环泵</div>
-            <div class="pcard-name" data-i18n="product.name.sp080">SP-080 循环水泵</div>
-          <div class="pcard-params">
-              <div class="prow"><span class="pk" data-i18n="product.param.flow">流量</span><span class="pv">1.5 m³/h</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.head">扬程</span><span class="pv">20 m</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.power">功率</span><span class="pv">800 W</span></div>
-          </div>
-            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
-        </div>
+      <div class="page-dots">
+        <button class="dot on" onclick="switchSlide(this,0)" type="button"></button>
+        <button class="dot" onclick="switchSlide(this,1)" type="button"></button>
       </div>
     </div>
   </div>
 
   <div id="tp-pvs" class="tp">
-    <div class="prod-grid">
-      <div class="pcard" onclick="openM('v1')">
-        <div class="pcard-img">🌤<div class="pcard-glow"></div></div>
-        <div class="pcard-body">
-            <div class="pcard-tag" data-i18n="product.tag.mono">单晶硅组件</div>
-            <div class="pcard-name" data-i18n="product.name.pv400m">PV-400M 单晶组件</div>
-          <div class="pcard-params">
-              <div class="prow"><span class="pk" data-i18n="product.param.ratedPower">额定功率</span><span class="pv">400 Wp</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.openVoltage">开路电压</span><span class="pv">49.2 V</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.shortCircuitCurrent">短路电流</span><span class="pv">10.3 A</span></div>
+    <div class="prod-slider">
+      <div class="slider-pages">
+        <div class="slide on">
+          <div class="pcard" onclick="openM('v1')">
+            <div class="pcard-img">🌤<div class="pcard-glow"></div></div>
+            <div class="pcard-body">
+              <div class="pcard-tag" data-i18n="product.tag.mono">单晶硅组件</div>
+              <div class="pcard-name" data-i18n="product.name.pv400m">PV-400M 单晶组件</div>
+              <div class="pcard-params">
+                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">400 Wp</span></div>
+                <div class="prow"><span class="pk" data-i18n="product.param.openVoltage">开路电压</span><span class="pv">49.2 V</span></div>
+                <div class="prow"><span class="pk" data-i18n="product.param.shortCircuitCurrent">短路电流</span><span class="pv">10.3 A</span></div>
+              </div>
+              <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
+            </div>
           </div>
-            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
+          <div class="pcard" onclick="openM('v2')">
+            <div class="pcard-img">☀️<div class="pcard-glow"></div></div>
+            <div class="pcard-body">
+              <div class="pcard-tag" data-i18n="product.tag.bifacial">双面双玻组件</div>
+              <div class="pcard-name" data-i18n="product.name.pv550d">PV-550D 双面组件</div>
+              <div class="pcard-params">
+                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">550 Wp</span></div>
+                <div class="prow"><span class="pk" data-i18n="product.param.openVoltage">开路电压</span><span class="pv">53.6 V</span></div>
+                <div class="prow"><span class="pk" data-i18n="product.param.shortCircuitCurrent">短路电流</span><span class="pv">13.8 A</span></div>
+              </div>
+              <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="pcard" onclick="openM('v3')">
+            <div class="pcard-img">🔋<div class="pcard-glow"></div></div>
+            <div class="pcard-body">
+              <div class="pcard-tag" data-i18n="product.tag.poly">多晶硅组件</div>
+              <div class="pcard-name" data-i18n="product.name.pv330p">PV-330P 多晶组件</div>
+              <div class="pcard-params">
+                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">330 Wp</span></div>
+                <div class="prow"><span class="pk" data-i18n="product.param.openVoltage">开路电压</span><span class="pv">45.8 V</span></div>
+                <div class="prow"><span class="pk" data-i18n="product.param.shortCircuitCurrent">短路电流</span><span class="pv">9.6 A</span></div>
+              </div>
+              <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
+            </div>
+          </div>
+          <div class="pcard" onclick="openM('v4')">
+            <div class="pcard-img">🌞<div class="pcard-glow"></div></div>
+            <div class="pcard-body">
+              <div class="pcard-tag" data-i18n="product.tag.topcon">TOPCon N型大板</div>
+              <div class="pcard-name" data-i18n="product.name.pv700t">PV-700T 旗舰组件</div>
+              <div class="pcard-params">
+                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">700 Wp</span></div>
+                <div class="prow"><span class="pk" data-i18n="product.param.openVoltage">开路电压</span><span class="pv">63.2 V</span></div>
+                <div class="prow"><span class="pk" data-i18n="product.param.shortCircuitCurrent">短路电流</span><span class="pv">15.2 A</span></div>
+              </div>
+              <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="pcard" onclick="openM('v2')">
-        <div class="pcard-img">☀️<div class="pcard-glow"></div></div>
-        <div class="pcard-body">
-            <div class="pcard-tag" data-i18n="product.tag.bifacial">双面双玻组件</div>
-            <div class="pcard-name" data-i18n="product.name.pv550d">PV-550D 双面组件</div>
-          <div class="pcard-params">
-              <div class="prow"><span class="pk" data-i18n="product.param.ratedPower">额定功率</span><span class="pv">550 Wp</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.openVoltage">开路电压</span><span class="pv">53.6 V</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.shortCircuitCurrent">短路电流</span><span class="pv">13.8 A</span></div>
-          </div>
-            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
-        </div>
-      </div>
-      <div class="pcard" onclick="openM('v3')">
-        <div class="pcard-img">🔋<div class="pcard-glow"></div></div>
-        <div class="pcard-body">
-            <div class="pcard-tag" data-i18n="product.tag.poly">多晶硅组件</div>
-            <div class="pcard-name" data-i18n="product.name.pv330p">PV-330P 多晶组件</div>
-          <div class="pcard-params">
-              <div class="prow"><span class="pk" data-i18n="product.param.ratedPower">额定功率</span><span class="pv">330 Wp</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.openVoltage">开路电压</span><span class="pv">45.8 V</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.shortCircuitCurrent">短路电流</span><span class="pv">9.6 A</span></div>
-          </div>
-            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
-        </div>
-      </div>
-      <div class="pcard" onclick="openM('v4')">
-        <div class="pcard-img">🌞<div class="pcard-glow"></div></div>
-        <div class="pcard-body">
-            <div class="pcard-tag" data-i18n="product.tag.topcon">TOPCon N型大板</div>
-            <div class="pcard-name" data-i18n="product.name.pv700t">PV-700T 旗舰组件</div>
-          <div class="pcard-params">
-              <div class="prow"><span class="pk" data-i18n="product.param.ratedPower">额定功率</span><span class="pv">700 Wp</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.openVoltage">开路电压</span><span class="pv">63.2 V</span></div>
-              <div class="prow"><span class="pk" data-i18n="product.param.shortCircuitCurrent">短路电流</span><span class="pv">15.2 A</span></div>
-          </div>
-            <div class="pcard-more" data-i18n="product.viewDetails">查看详细参数</div>
-        </div>
+      <div class="page-dots">
+        <button class="dot on" onclick="switchSlide(this,0)" type="button"></button>
+        <button class="dot" onclick="switchSlide(this,1)" type="button"></button>
       </div>
     </div>
   </div>
@@ -1547,7 +1581,23 @@ function switchTab(id,btn){
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('on')});
   document.querySelectorAll('.tp').forEach(function(p){p.classList.remove('on')});
   btn.classList.add('on');
-  document.getElementById('tp-'+id).classList.add('on');
+  var section = document.getElementById('tp-'+id);
+  section.classList.add('on');
+  section.querySelectorAll('.slide').forEach(function(s,i){
+    s.classList.toggle('on', i===0);
+  });
+  section.querySelectorAll('.page-dots .dot').forEach(function(d,i){
+    d.classList.toggle('on', i===0);
+  });
+}
+function switchSlide(btn,index){
+  var container = btn.closest('.tp');
+  if(!container) return;
+  container.querySelectorAll('.page-dots .dot').forEach(function(d){d.classList.remove('on')});
+  container.querySelectorAll('.slide').forEach(function(s){s.classList.remove('on')});
+  btn.classList.add('on');
+  var slides = container.querySelectorAll('.slide');
+  if(slides[index]) slides[index].classList.add('on');
 }
 function submitForm(pre,okId){
   var n=document.getElementById(pre+'1').value.trim();
