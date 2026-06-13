@@ -543,12 +543,15 @@ footer{
 table.spec{width:100%;border-collapse:collapse}
 table.spec tr{border-bottom:1px solid var(--border)}
 table.spec tr:last-child{border-bottom:none}
-table.spec td{padding:10px 4px;font-size:13px}
+table.spec td{padding:6px 4px;font-size:13px}
 table.spec td:first-child{color:var(--text3);width:50%}
 table.spec td:last-child{color:var(--text);font-weight:500;text-align:right}
 .case-sec{margin-bottom:18px}
 .case-sec-t{font-size:13px;font-weight:500;color:var(--blue3);margin-bottom:7px}
 .case-sec-p{font-size:14px;color:var(--text2);line-height:1.85}
+.madv-list{margin:4px 0 0 0;padding-left:20px;color:var(--text);font-size:13px;line-height:2}
+.madv-list li{margin-bottom:2px}
+.mvalue-img{width:100%;margin-top:20px;border-radius:8px;display:block}
 </style>
 </head>
 <body>
@@ -2078,23 +2081,45 @@ function openM(id){
   document.getElementById('m-tag').textContent=translateText(d.tag, lang);
   document.getElementById('m-name').innerHTML=translateText(d.name, lang);
   var html='';
-  if(d.s){
-    var inT=false;
-    d.s.forEach(function(r){
-      if(r[1]===null){
-        if(inT)html+='</table>';
-        html+='<div class="mspec-sec">'+r[0]+'</div><table class="spec">';
-        inT=true;
-      }else{
-        html+='<tr><td>'+translateText(r[0], lang)+'</td><td>'+translateText(r[1], lang)+'</td></tr>';
-      }
-    });
-    if(inT)html+='</table>';
+  var isPump=document.querySelector('#tp-pumps.on');
+  if(!isPump){
+    if(d.s){
+      var inT=false;
+      d.s.forEach(function(r){
+        if(r[1]===null){
+          if(inT)html+='</table>';
+          html+='<div class="mspec-sec">'+r[0]+'</div><table class="spec">';
+          inT=true;
+        }else{
+          html+='<tr><td>'+translateText(r[0], lang)+'</td><td>'+translateText(r[1], lang)+'</td></tr>';
+        }
+      });
+      if(inT)html+='</table>';
+    }
+    if(d.cs){
+      d.cs.forEach(function(s){
+        html+='<div class="case-sec"><div class="case-sec-t">'+translateText(s.t, lang)+'</div><div class="case-sec-p">'+translateText(s.p, lang)+'</div></div>';
+      });
+    }
   }
-  if(d.cs){
-    d.cs.forEach(function(s){
-      html+='<div class="case-sec"><div class="case-sec-t">'+translateText(s.t, lang)+'</div><div class="case-sec-p">'+translateText(s.p, lang)+'</div></div>';
-    });
+  if(isPump){
+    html+='<div class="mspec-sec">零件材质</div><table class="spec">';
+    html+='<tr><td>泵头</td><td>SS304不锈钢</td></tr>';
+    html+='<tr><td>泵体</td><td>SS201（可选SS304）</td></tr>';
+    html+='<tr><td>叶轮</td><td>螺杆式</td></tr>';
+    html+='<tr><td>轴承</td><td>NSK品牌</td></tr>';
+    html+='<tr><td>电缆</td><td>3米</td></tr>';
+    html+='<tr><td>电机</td><td>永磁同步电机</td></tr>';
+    html+='<tr><td colspan="2" style="color:var(--text);font-weight:500">油冷设计</td></tr>';
+    html+='</table>';
+    html+='<div class="mspec-sec">太阳能水泵优势</div>';
+    html+='<ul class="madv-list">';
+    html+='<li>永磁同步电机（PMSM），效率高</li>';
+    html+='<li>MPPT功能</li>';
+    html+='<li>比普通交流水泵寿命更长</li>';
+    html+='<li>过载保护、欠载保护、堵转保护、热保护</li>';
+    html+='</ul>';
+    html+='<img src="img/value.png" class="mvalue-img" alt="产品参数">';
   }
   document.getElementById('m-body').innerHTML=html;
   document.getElementById('overlay').classList.add('on');
