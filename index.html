@@ -313,7 +313,7 @@ nav{
   display:flex;justify-content:space-between;align-items:center;
   padding:12px 0;border-top:1px solid var(--border);font-size:13px;
 }
-.pk{color:var(--text3);letter-spacing:0.5px}
+.pk{color:#fff;letter-spacing:0.5px;font-weight:700}
 .pv{color:var(--text);font-weight:600;font-size:14px}
 .pcard-more{
   display:flex;align-items:center;justify-content:space-between;
@@ -534,7 +534,7 @@ footer{
 .mclose:hover{color:var(--text)}
 .mbody{padding:28px 32px}
 .mspec-sec{
-  font-size:10px;letter-spacing:2px;color:var(--blue3);
+  font-size:14px;letter-spacing:2px;color:var(--blue3);font-weight:700;
   text-transform:uppercase;margin:20px 0 12px;
   display:flex;align-items:center;gap:8px;
 }
@@ -544,7 +544,7 @@ table.spec{width:100%;border-collapse:collapse}
 table.spec tr{border-bottom:1px solid var(--border)}
 table.spec tr:last-child{border-bottom:none}
 table.spec td{padding:3px 4px;font-size:13px}
-table.spec td:first-child{color:var(--text3);width:auto;white-space:nowrap;padding-right:12px}
+table.spec td:first-child{color:#fff;width:auto;white-space:nowrap;padding-right:12px;font-weight:500;font-size:13px}
 table.spec td:last-child{color:var(--text);font-weight:500}
 .case-sec{margin-bottom:18px}
 .case-sec-t{font-size:13px;font-weight:500;color:var(--blue3);margin-bottom:7px}
@@ -648,18 +648,17 @@ table.spec td:last-child{color:var(--text);font-weight:500}
         <button class="slide-nav slide-next" type="button" onclick="changeSlide(this,1)" aria-label="下一页"></button>
         <div class="slide on">
           <div class="pcard" onclick="openM('v1')">
-            <div class="pcard-img">
-              <img src="img/product-first.png" alt="产品展示图">
+            <div class="pcard-img" style="padding:8px;">
+              <img src="img/product-first.png" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
               <div class="pcard-glow"></div>
             </div>
             <div class="pcard-body">
-              <div class="pcard-tag">SP-120 高效泵</div>
-              <div class="pcard-name">120m³/h 农业灌溉泵</div>
+              <div class="pcard-name">3英寸不锈钢太阳能螺杆泵</div>
               <div class="pcard-params">
                 <div class="prow"><span class="pk">流量</span><span class="pv">120 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">28 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">5.5 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">2200 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">2200 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -673,7 +672,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">180 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">35 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">7.5 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">3200 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">3200 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -689,7 +688,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">250 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">42 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">11 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">4800 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">4800 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -703,7 +702,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">400 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">30 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">15 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">6500 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">6500 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -719,7 +718,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">520 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">33 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">22 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">9200 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">9200 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -733,7 +732,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">650 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">50 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">28 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">11200 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">11200 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -749,7 +748,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">800 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">26 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">30 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">13000 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">13000 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -763,7 +762,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">1000 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">22 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">32 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">13800 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">13800 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -779,7 +778,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">1200 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">40 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">36 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">15000 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">15000 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -793,7 +792,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">1400 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">45 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">42 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">18000 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">18000 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -809,7 +808,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">1600 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">38 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">48 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">22000 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">22000 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -823,7 +822,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">1800 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">32 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">52 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">24000 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">24000 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -839,7 +838,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">2000 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">54 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">68 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">28500 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">28500 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -853,7 +852,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">2200 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">48 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">75 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">30000 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">30000 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -869,7 +868,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">2400 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">40 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">82 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">35000 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">35000 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -883,7 +882,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">2600 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">38 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">88 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">36500 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">36500 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -899,7 +898,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">2800 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">36 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">94 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">39000 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">39000 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -913,7 +912,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">3000 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">34 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">98 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">41000 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">41000 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -929,7 +928,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">3200 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">36 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">102 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">42000 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">42000 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -943,7 +942,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">3400 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">34 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">108 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">43500 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">43500 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -973,13 +972,13 @@ table.spec td:last-child{color:var(--text);font-weight:500}
           <div class="pcard" onclick="openM('v1')">
             <div class="pcard-img">🌤<div class="pcard-glow"></div></div>
             <div class="pcard-body">
-              <div class="pcard-tag">PV-400M 单晶组件</div>
+              <div class="pcard-tag">3英寸不锈钢太阳能螺杆泵（3YYS系列）</div>
               <div class="pcard-name">高效单晶光伏面板</div>
               <div class="pcard-params">
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.40 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">400 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">400 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -993,7 +992,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.55 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">550 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">550 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1009,7 +1008,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.33 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">330 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">330 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1023,7 +1022,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.70 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">700 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">700 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1039,7 +1038,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.50 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">500 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">500 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1053,7 +1052,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.62 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">620 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">620 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1069,7 +1068,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.38 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">380 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">380 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1083,7 +1082,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.45 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">450 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">450 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1099,7 +1098,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.68 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">680 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">680 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1113,7 +1112,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.52 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">520 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">520 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1129,7 +1128,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.48 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">480 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">480 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1143,7 +1142,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.56 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">560 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">560 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1159,7 +1158,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.61 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">610 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">610 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1173,7 +1172,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.72 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">720 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">720 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1189,7 +1188,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.77 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">770 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">770 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1203,7 +1202,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.82 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">820 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">820 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1219,7 +1218,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">0.90 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">900 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">900 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1233,7 +1232,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">1.00 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">1000 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">1000 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1249,7 +1248,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">1.10 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">1100 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">1100 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1263,7 +1262,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
                 <div class="prow"><span class="pk">流量</span><span class="pv">0 m³/h</span></div>
                 <div class="prow"><span class="pk">扬程</span><span class="pv">0 m</span></div>
                 <div class="prow"><span class="pk">功率</span><span class="pv">1.20 kW</span></div>
-                <div class="prow"><span class="pk">光伏板功率</span><span class="pv">1200 Wp</span></div>
+                <div class="prow"><span class="pk">可配光伏板功率</span><span class="pv">1200 Wp</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -1474,7 +1473,7 @@ var DB={
        ['电气参数',null],['额定功率','800 W'],['工作电压','DC 48–96 V'],['电机类型','永磁无刷直流'],
        ['机械参数',null],['泵体材料','316不锈钢'],['防护等级','IP68'],['噪音等级','≤45 dB'],['整机重量','5.5 kg'],
        ['适用场景',null],['主要用途','水产养殖 · 景观循环 · 家用供水']]},
-  v1:{icon:'🌤',tag:'单晶硅组件',name:'PV-400M 单晶组件',
+  v1:{icon:'🌤',tag:'',name:'3英寸不锈钢太阳能螺杆泵（3YYS系列）',
     s:[['STC电气参数',null],['额定功率 (Pmax)','400 Wp'],['组件效率','21.3 %'],['Vmpp (最大功率电压)','41.5 V'],['Impp (最大功率电流)','9.64 A'],['开路电压 (Voc)','49.2 V'],['短路电流 (Isc)','10.3 A'],
        ['机械参数',null],['组件尺寸','1755 × 1038 × 35 mm'],['重量','21.5 kg'],['边框','阳极氧化铝'],
        ['环境及质保',null],['工作温度','-40 – +85 ℃'],['最大系统电压','1500 V DC'],['产品质保','15 年'],['线性功率质保','25 年']]},
@@ -1890,7 +1889,7 @@ var I18N={
     'product.tag.centrifugal':'地面离心泵',
     'product.tag.multiStage':'高扬程多级泵',
     'product.tag.circulation':'小型循环泵',
-    'product.tag.mono':'单晶硅组件',
+    'product.tag.mono':'',
     'product.tag.bifacial':'双面双玻组件',
     'product.tag.poly':'多晶硅组件',
     'product.tag.topcon':'TOPCon N型大板',
@@ -1898,7 +1897,7 @@ var I18N={
     'product.name.sp250':'SP-250 大流量地面泵',
     'product.name.sp400':'SP-400 高扬程多级泵',
     'product.name.sp080':'SP-080 循环水泵',
-    'product.name.pv400m':'PV-400M 单晶组件',
+    'product.name.pv400m':'3英寸不锈钢太阳能螺杆泵（3YYS系列）',
     'product.name.pv550d':'PV-550D 双面组件',
     'product.name.pv330p':'PV-330P 多晶组件',
     'product.name.pv700t':'PV-700T 旗舰组件',
@@ -2110,16 +2109,18 @@ function openM(id){
     html+='<tr><td>轴承</td><td>NSK品牌</td></tr>';
     html+='<tr><td>电缆</td><td>3米</td></tr>';
     html+='<tr><td>电机</td><td>永磁同步电机</td></tr>';
-    html+='<tr><td colspan="2" style="color:var(--text);font-weight:500">油冷设计</td></tr>';
+
     html+='</table>';
-    html+='<div class="mspec-sec">太阳能水泵优势</div>';
+    html+='<div class="mspec-sec">油冷设计太阳能水泵优势</div>';
     html+='<ul class="madv-list">';
     html+='<li>永磁同步电机（PMSM），效率高</li>';
     html+='<li>MPPT功能</li>';
     html+='<li>比普通交流水泵寿命更长</li>';
     html+='<li>过载保护、欠载保护、堵转保护、热保护</li>';
     html+='</ul>';
+    html+='<div class="mspec-sec">参数以及部分型号</div>';
     html+='<img src="img/value.png" class="mvalue-img" alt="产品参数">';
+    html+='<div style="font-size:16px;font-weight:700;color:var(--blue3);text-align:center;margin-top:16px;letter-spacing:2px;">更多型号请联系我们</div>';
   }
   document.getElementById('m-body').innerHTML=html;
   document.getElementById('overlay').classList.add('on');
