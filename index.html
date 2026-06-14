@@ -664,7 +664,10 @@ table.spec td:last-child{color:var(--text);font-weight:500}
             </div>
           </div>
           <div class="pcard" onclick="openM('v2')">
-            <div class="pcard-img">⚙️<div class="pcard-glow"></div></div>
+            <div class="pcard-img" style="padding:8px;">
+              <img src="img/2.1.3inch.png" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <div class="pcard-glow"></div>
+            </div>
             <div class="pcard-body">
               <div class="pcard-tag">SP-180 野外泵</div>
               <div class="pcard-name">180m³/h 离网供水</div>
@@ -1477,7 +1480,7 @@ var DB={
     s:[['STC电气参数',null],['额定功率 (Pmax)','400 Wp'],['组件效率','21.3 %'],['Vmpp (最大功率电压)','41.5 V'],['Impp (最大功率电流)','9.64 A'],['开路电压 (Voc)','49.2 V'],['短路电流 (Isc)','10.3 A'],
        ['机械参数',null],['组件尺寸','1755 × 1038 × 35 mm'],['重量','21.5 kg'],['边框','阳极氧化铝'],
        ['环境及质保',null],['工作温度','-40 – +85 ℃'],['最大系统电压','1500 V DC'],['产品质保','15 年'],['线性功率质保','25 年']]},
-  v2:{icon:'☀️',tag:'双面双玻组件',name:'PV-550D 双面组件',
+  v2:{icon:'☀️',pumpImg:'img/2.2.3inch.png',tag:'双面双玻组件',name:'PV-550D 双面组件',
     s:[['STC电气参数',null],['正面额定功率','550 Wp'],['双面增益','+10–25 %'],['组件效率','22.1 %'],['Vmpp','42.3 V'],['Impp','13.0 A'],['开路电压 (Voc)','53.6 V'],['短路电流 (Isc)','13.8 A'],
        ['机械参数',null],['组件尺寸','2256 × 1133 × 30 mm'],['重量','32 kg'],['前后盖板','3.2mm钢化玻璃'],
        ['质保',null],['产品质保','15 年'],['线性功率质保','30 年']]},
@@ -2119,7 +2122,7 @@ function openM(id){
     html+='<li>过载保护、欠载保护、堵转保护、热保护</li>';
     html+='</ul>';
     html+='<div class="mspec-sec">参数以及部分型号</div>';
-    html+='<img src="img/value.png" class="mvalue-img" alt="产品参数">';
+    html+='<img src="'+(d.pumpImg||'img/value.png')+'" class="mvalue-img" alt="产品参数">';
     html+='<div style="font-size:16px;font-weight:700;color:var(--blue3);text-align:center;margin-top:16px;letter-spacing:2px;">更多型号请联系我们</div>';
   }
   document.getElementById('m-body').innerHTML=html;
