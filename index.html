@@ -637,11 +637,12 @@ table.spec td:last-child{color:var(--text);font-weight:500}
   </div>
   <div class="gold-line"></div>
   <div class="prod-tabs">
-    <button class="tab-btn on" onclick="switchTab('pumps',this)" data-i18n="products.tab.pumps">太阳能水泵</button>
-    <button class="tab-btn" onclick="switchTab('pvs',this)" data-i18n="products.tab.pvs">光伏组件</button>
+    <button class="tab-btn on" onclick="switchTab('deep',this)">深井太阳能泵</button>
+    <button class="tab-btn" onclick="switchTab('land',this)">陆地太阳能泵</button>
+    <button class="tab-btn" onclick="switchTab('pvs',this)">光伏板</button>
   </div>
 
-  <div id="tp-pumps" class="tp on">
+  <div id="tp-deep" class="tp on">
     <div class="prod-slider">
       <div class="slider-pages">
         <button class="slide-nav slide-prev" type="button" onclick="changeSlide(this,-1)" aria-label="上一页"></button>
@@ -779,9 +780,27 @@ table.spec td:last-child{color:var(--text);font-weight:500}
             </div>
           </div>
         </div>
-        <div class="slide">
-          <div class="pcard" onclick="openM('v1')">
-            <div class="pcard-img">💧<div class="pcard-glow"></div></div>
+      </div>
+      <div class="page-dots">
+        <button class="dot on" onclick="switchSlide(this,0)" type="button"></button>
+        <button class="dot" onclick="switchSlide(this,1)" type="button"></button>
+        <button class="dot" onclick="switchSlide(this,2)" type="button"></button>
+        <button class="dot" onclick="switchSlide(this,3)" type="button"></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="tp-land" class="tp">
+    <div class="prod-slider">
+      <div class="slider-pages">
+        <button class="slide-nav slide-prev" type="button" onclick="changeSlide(this,-1)" aria-label="上一页"></button>
+        <button class="slide-nav slide-next" type="button" onclick="changeSlide(this,1)" aria-label="下一页"></button>
+        <div class="slide on">
+          <div class="pcard" onclick="openM('lp1')">
+            <div class="pcard-img" style="padding:8px;">
+              <img src="img/SCPM1inch.jpg" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <div class="pcard-glow"></div>
+            </div>
             <div class="pcard-body">
               <div class="pcard-name">1200m³/h 井灌泵组</div>
               <div class="pcard-params">
@@ -793,8 +812,11 @@ table.spec td:last-child{color:var(--text);font-weight:500}
               <div class="pcard-more">查看详细参数</div>
             </div>
           </div>
-          <div class="pcard" onclick="openM('v2')">
-            <div class="pcard-img">⚙️<div class="pcard-glow"></div></div>
+          <div class="pcard" onclick="openM('lp2')">
+            <div class="pcard-img" style="padding:8px;">
+              <img src="img/9.1.1SQBchange.jpg" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <div class="pcard-glow"></div>
+            </div>
             <div class="pcard-body">
               <div class="pcard-name">1400m³/h 大型泵组</div>
               <div class="pcard-params">
@@ -808,8 +830,11 @@ table.spec td:last-child{color:var(--text);font-weight:500}
           </div>
         </div>
         <div class="slide">
-          <div class="pcard" onclick="openM('v3')">
-            <div class="pcard-img">🌊<div class="pcard-glow"></div></div>
+          <div class="pcard" onclick="openM('lp3')">
+            <div class="pcard-img" style="padding:8px;">
+              <img src="img/10.3.1SJET.png" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <div class="pcard-glow"></div>
+            </div>
             <div class="pcard-body">
               <div class="pcard-name">1600m³/h 工业循环</div>
               <div class="pcard-params">
@@ -821,8 +846,11 @@ table.spec td:last-child{color:var(--text);font-weight:500}
               <div class="pcard-more">查看详细参数</div>
             </div>
           </div>
-          <div class="pcard" onclick="openM('v4')">
-            <div class="pcard-img">☀️<div class="pcard-glow"></div></div>
+          <div class="pcard" onclick="openM('lp4')">
+            <div class="pcard-img" style="padding:8px;">
+              <img src="img/10.4.1SZB .png" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <div class="pcard-glow"></div>
+            </div>
             <div class="pcard-body">
               <div class="pcard-name">1800m³/h 重大流量</div>
               <div class="pcard-params">
@@ -836,8 +864,11 @@ table.spec td:last-child{color:var(--text);font-weight:500}
           </div>
         </div>
         <div class="slide">
-          <div class="pcard" onclick="openM('v1')">
-            <div class="pcard-img">💧<div class="pcard-glow"></div></div>
+          <div class="pcard" onclick="openM('lp5')">
+            <div class="pcard-img" style="padding:8px;">
+              <img src="img/12.5.1SJP.png" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <div class="pcard-glow"></div>
+            </div>
             <div class="pcard-body">
               <div class="pcard-name">2000m³/h 高扬程泵</div>
               <div class="pcard-params">
@@ -955,9 +986,6 @@ table.spec td:last-child{color:var(--text);font-weight:500}
         <button class="dot" onclick="switchSlide(this,3)" type="button"></button>
         <button class="dot" onclick="switchSlide(this,4)" type="button"></button>
         <button class="dot" onclick="switchSlide(this,5)" type="button"></button>
-        <button class="dot" onclick="switchSlide(this,6)" type="button"></button>
-        <button class="dot" onclick="switchSlide(this,7)" type="button"></button>
-        <button class="dot" onclick="switchSlide(this,8)" type="button"></button>
       </div>
     </div>
   </div>
@@ -1452,6 +1480,11 @@ var DB={
        ['电气参数',null],['额定功率','800 W'],['工作电压','DC 48–96 V'],['电机类型','永磁无刷直流'],
        ['机械参数',null],['泵体材料','316不锈钢'],['防护等级','IP68'],['噪音等级','≤45 dB'],['整机重量','5.5 kg'],
        ['适用场景',null],['主要用途','水产养殖 · 景观循环 · 家用供水']]},
+  lp1:{icon:'💧',tag:'陆地太阳能泵',name:'1200m³/h 井灌泵组',pumpImg:'img/8.1.2SCPM.png'},
+  lp2:{icon:'⚙️',tag:'陆地太阳能泵',name:'1400m³/h 大型泵组',pumpImg:'img/9.2.2SQB.png'},
+  lp3:{icon:'🌊',tag:'陆地太阳能泵',name:'1600m³/h 工业循环',pumpImg:'img/10.3.2SJET.png'},
+  lp4:{icon:'☀️',tag:'陆地太阳能泵',name:'1800m³/h 重大流量',pumpImg:'img/10.4.2SZB.png'},
+  lp5:{icon:'💧',tag:'陆地太阳能泵',name:'2000m³/h 高扬程泵',pumpImg:'img/12.5.2SJP.png'},
   v1:{icon:'🌤',tag:'',name:'3英寸不锈钢太阳能螺杆泵（3YYS系列）',
     s:[['STC电气参数',null],['额定功率 (Pmax)','400 Wp'],['组件效率','21.3 %'],['Vmpp (最大功率电压)','41.5 V'],['Impp (最大功率电流)','9.64 A'],['开路电压 (Voc)','49.2 V'],['短路电流 (Isc)','10.3 A'],
        ['机械参数',null],['组件尺寸','1755 × 1038 × 35 mm'],['重量','21.5 kg'],['边框','阳极氧化铝'],
@@ -2059,7 +2092,7 @@ function openM(id){
   document.getElementById('m-tag').textContent=translateText(d.tag, lang);
   document.getElementById('m-name').innerHTML=translateText(d.name, lang);
   var html='';
-  var isPump=document.querySelector('#tp-pumps.on');
+  var isPump=document.querySelector('#tp-deep.on, #tp-land.on');
   if(!isPump){
     if(d.s){
       var inT=false;
