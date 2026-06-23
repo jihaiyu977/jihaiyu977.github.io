@@ -716,7 +716,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
           </div>
         </div>
         <div class="slide">
-          <div class="pcard" onclick="openM('v1')">
+          <div class="pcard" onclick="openM('v5')">
             <div class="pcard-img" style="padding:0;">
               <img src="img/5.4inch.jpg" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
               <div class="pcard-glow"></div>
@@ -732,13 +732,13 @@ table.spec td:last-child{color:var(--text);font-weight:500}
               <div class="pcard-more">查看详细参数</div>
             </div>
           </div>
-          <div class="pcard" onclick="openM('v2')">
+          <div class="pcard" onclick="openM('v6')">
             <div class="pcard-img" style="padding:0;">
               <img src="img/6.34inch.png" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
               <div class="pcard-glow"></div>
             </div>
             <div class="pcard-body">
-              <div class="pcard-name">3/4英寸交直流潜水太阳能泵（TTA）</div>
+              <div class="pcard-name">3/4英寸交直流潜水太阳能泵（YYA）</div>
               <div class="pcard-params">
                 <div class="prow"><span class="pk">最大流量</span><span class="pv">30 m³/h</span></div>
                 <div class="prow"><span class="pk">最大扬程</span><span class="pv">250 m</span></div>
@@ -802,12 +802,12 @@ table.spec td:last-child{color:var(--text);font-weight:500}
               <div class="pcard-glow"></div>
             </div>
             <div class="pcard-body">
-              <div class="pcard-name">1200m³/h 井灌泵组</div>
+              <div class="pcard-name">SCPM陆地太阳能泵</div>
               <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">1200 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">40 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">36 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">15000 Wp</span></div>
+                <div class="prow"><span class="pk">最大流量</span><span class="pv">53 m³/h</span></div>
+                <div class="prow"><span class="pk">最大扬程</span><span class="pv">35 m</span></div>
+                <div class="prow"><span class="pk">最大功率</span><span class="pv">2200 W</span></div>
+                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">2900 W</span></div>
               </div>
               <div class="pcard-more">查看详细参数</div>
             </div>
@@ -818,7 +818,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
               <div class="pcard-glow"></div>
             </div>
             <div class="pcard-body">
-              <div class="pcard-name">1400m³/h 大型泵组</div>
+              <div class="pcard-name">SQB陆地太阳能泵</div>
               <div class="pcard-params">
                 <div class="prow"><span class="pk">最大流量</span><span class="pv">1400 m³/h</span></div>
                 <div class="prow"><span class="pk">最大扬程</span><span class="pv">45 m</span></div>
@@ -1480,7 +1480,7 @@ var DB={
        ['电气参数',null],['额定功率','800 W'],['工作电压','DC 48–96 V'],['电机类型','永磁无刷直流'],
        ['机械参数',null],['泵体材料','316不锈钢'],['防护等级','IP68'],['噪音等级','≤45 dB'],['整机重量','5.5 kg'],
        ['适用场景',null],['主要用途','水产养殖 · 景观循环 · 家用供水']]},
-  lp1:{icon:'💧',tag:'陆地太阳能泵',name:'1200m³/h 井灌泵组',pumpImg:'img/8.1.2SCPM.png'},
+  lp1:{icon:'💧',tag:'陆地太阳能泵',name:'SCPM陆地太阳能泵',pumpImg:'img/8.1.2SCPM.png',pumpParts:[['出水口','不锈钢/铸铁'],['泵体','不锈钢/铸铁'],['叶轮','不锈钢/黄铜'],['电机壳体','压铸铝'],['轴承','NSK'],['螺丝','不锈钢'],['电机','无刷直流'],['控制器外壳','压铸铝（IP67）']]},
   lp2:{icon:'⚙️',tag:'陆地太阳能泵',name:'1400m³/h 大型泵组',pumpImg:'img/9.2.2SQB.png'},
   lp3:{icon:'🌊',tag:'陆地太阳能泵',name:'1600m³/h 工业循环',pumpImg:'img/10.3.2SJET.png'},
   lp4:{icon:'☀️',tag:'陆地太阳能泵',name:'1800m³/h 重大流量',pumpImg:'img/10.4.2SZB.png'},
@@ -1489,18 +1489,20 @@ var DB={
     s:[['STC电气参数',null],['额定功率 (Pmax)','400 Wp'],['组件效率','21.3 %'],['Vmpp (最大功率电压)','41.5 V'],['Impp (最大功率电流)','9.64 A'],['开路电压 (Voc)','49.2 V'],['短路电流 (Isc)','10.3 A'],
        ['机械参数',null],['组件尺寸','1755 × 1038 × 35 mm'],['重量','21.5 kg'],['边框','阳极氧化铝'],
        ['环境及质保',null],['工作温度','-40 – +85 ℃'],['最大系统电压','1500 V DC'],['产品质保','15 年'],['线性功率质保','25 年']]},
-  v2:{icon:'☀️',pumpImg:'img/2.2.3inch.png',tag:'双面双玻组件',name:'PV-550D 双面组件',
+  v2:{icon:'☀️',pumpImg:'img/2.2.3inch.png',pumpParts:[['泵头','铜/SS304'],['泵体','—'],['叶轮','SS304'],['轴承','NSK'],['电缆','3米'],['电机','永磁同步']],tag:'',name:'3英寸太阳能不锈钢叶轮泵（3YYD系列）',
     s:[['STC电气参数',null],['正面额定功率','550 Wp'],['双面增益','+10–25 %'],['组件效率','22.1 %'],['Vmpp','42.3 V'],['Impp','13.0 A'],['开路电压 (Voc)','53.6 V'],['短路电流 (Isc)','13.8 A'],
        ['机械参数',null],['组件尺寸','2256 × 1133 × 30 mm'],['重量','32 kg'],['前后盖板','3.2mm钢化玻璃'],
        ['质保',null],['产品质保','15 年'],['线性功率质保','30 年']]},
-  v3:{icon:'🔋',tag:'多晶硅组件',name:'PV-330P 多晶组件',
+  v3:{icon:'🔋',tag:'',name:'4/6英寸太阳能不锈钢叶轮泵（4YYD/6YYD）',pumpParts:[['泵头','SS304'],['泵体','SS304'],['叶轮','SS304'],['轴承','NSK'],['电缆','3米'],['电机','永磁同步']],
     s:[['STC电气参数',null],['额定功率','330 Wp'],['组件效率','17.0 %'],['Vmpp','37.8 V'],['Impp','8.73 A'],['开路电压 (Voc)','45.8 V'],['短路电流 (Isc)','9.6 A'],
        ['机械参数',null],['组件尺寸','1960 × 990 × 40 mm'],['重量','22 kg'],
        ['质保',null],['产品质保','10 年'],['线性功率质保','25 年']]},
-  v4:{icon:'🌞',tag:'TOPCon N型旗舰',name:'PV-700T TOPCon组件',
+  v4:{icon:'🌞',tag:'',name:'3/4英寸太阳能塑料叶轮泵（YYP）',pumpParts:[['泵头','SS304/铜'],['泵体','SS201'],['叶轮','塑料'],['轴承','NSK'],['电机','永磁同步']],
     s:[['STC电气参数',null],['额定功率','700 Wp'],['组件效率','22.8 %'],['Vmpp','53.0 V'],['Impp','13.2 A'],['开路电压 (Voc)','63.2 V'],['短路电流 (Isc)','15.2 A'],
        ['机械参数',null],['组件尺寸','2384 × 1303 × 35 mm'],['重量','38 kg'],['电池片技术','210mm TOPCon N型'],
        ['质保',null],['最大系统电压','1500 V DC'],['产品质保','15 年'],['线性功率质保','30 年']]},
+  v5:{icon:'🌤',tag:'',name:'4英寸交直流切换太阳能泵（YYP A/D）',s:[]},
+  v6:{icon:'🌤',tag:'',name:'3/4英寸交直流潜水太阳能泵（YYA）',s:[]},
   c1:{icon:'🌾',tag:'农业灌溉案例',name:'新疆棉花基地灌溉系统',
     cs:[{t:'项目背景',p:'新疆某大型棉花种植基地，总灌溉面积5000亩。原有柴油机组运维成本极高，且供水不稳定，严重影响棉花品质与产量，急需可靠替代方案。'},
         {t:'解决方案',p:'凯霖团队部署8台SP-250大流量地面泵并联运行，配套160块PV-550D双面组件，系统总装机88kWp，完全离网运行，配备智能分区灌溉控制器实现精准用水。'},
@@ -2114,22 +2116,20 @@ function openM(id){
     }
   }
   if(isPump){
+    var isLandPump=document.querySelector('#tp-land.on');
+    var parts=d.pumpParts||[['泵头','SS304不锈钢'],['泵体','SS201（可选SS304）'],['叶轮','螺杆式'],['轴承','NSK品牌'],['电缆','3米'],['电机','永磁同步电机']];
     html+='<div class="mspec-sec">零件材质</div><table class="spec">';
-    html+='<tr><td>泵头</td><td>SS304不锈钢</td></tr>';
-    html+='<tr><td>泵体</td><td>SS201（可选SS304）</td></tr>';
-    html+='<tr><td>叶轮</td><td>螺杆式</td></tr>';
-    html+='<tr><td>轴承</td><td>NSK品牌</td></tr>';
-    html+='<tr><td>电缆</td><td>3米</td></tr>';
-    html+='<tr><td>电机</td><td>永磁同步电机</td></tr>';
-
+    parts.forEach(function(p){html+='<tr><td>'+p[0]+'</td><td>'+p[1]+'</td></tr>';});
     html+='</table>';
-    html+='<div class="mspec-sec">油冷设计太阳能水泵优势</div>';
-    html+='<ul class="madv-list">';
-    html+='<li>永磁同步电机（PMSM），效率高</li>';
-    html+='<li>MPPT功能</li>';
-    html+='<li>比普通交流水泵寿命更长</li>';
-    html+='<li>过载保护、欠载保护、堵转保护、热保护</li>';
-    html+='</ul>';
+    if(!isLandPump){
+      html+='<div class="mspec-sec">油冷设计太阳能水泵优势</div>';
+      html+='<ul class="madv-list">';
+      html+='<li>永磁同步电机（PMSM），效率高</li>';
+      html+='<li>MPPT功能</li>';
+      html+='<li>比普通交流水泵寿命更长</li>';
+      html+='<li>过载保护、欠载保护、堵转保护、热保护</li>';
+      html+='</ul>';
+    }
     html+='<div class="mspec-sec">参数以及部分型号</div>';
     html+='<img src="'+(d.pumpImg||'img/value.png')+'" class="mvalue-img" alt="产品参数">';
     html+='<div style="font-size:16px;font-weight:700;color:var(--blue3);text-align:center;margin-top:16px;letter-spacing:2px;">更多参数需求请联系我们</div>';
