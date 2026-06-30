@@ -1238,8 +1238,8 @@ table.spec td:last-child{color:var(--text);font-weight:500}
   <div class="gold-line"></div>
   <div class="video-block">
     <div class="video-frame">
-      <video id="factoryVideo" playsinline preload="metadata" poster="img/factory-cover.jpg" onended="onFactoryVideoEnded()">
-        <source src="video/factory.mp4" type="video/mp4">
+      <video id="factoryVideo" playsinline preload="metadata" onended="onFactoryVideoEnded()">
+        <source src="video/usage-scenario.mp4" type="video/mp4">
         <p data-i18n="video.fallback">您的浏览器不支持视频播放，请升级浏览器。</p>
       </video>
       <button class="video-playbtn" onclick="playFactoryVideo()" type="button">
@@ -1278,27 +1278,24 @@ table.spec td:last-child{color:var(--text);font-weight:500}
   <div class="gold-line"></div>
   <div class="case-grid">
     <div class="ccard" onclick="openM('c1')">
-      <div class="ccard-img">🌾<div class="ctag" data-i18n="case.01.tag">农业灌溉</div></div>
+      <div class="ccard-img"><img src="img/14balesitan.1.jpeg" alt="巴基斯坦农业井灌系统" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div>
       <div class="ccard-body">
-        <div class="ccard-title" data-i18n="case.01.title">新疆棉花基地灌溉系统</div>
-        <div class="ccard-excerpt" data-i18n="case.01.excerpt">5000亩棉田，8台SP-250并联，88kWp光伏配套，年节省燃油成本逾30万元，实现完全离网灌溉</div>
-        <div class="cmore" data-i18n="view.detail">查看详情</div>
+        <div class="ccard-title" data-i18n="case.01.title">巴基斯坦农业井灌系统</div>
+        <div class="ccard-excerpt" data-i18n="case.01.excerpt">水源：深井<br>系统：离网光伏+深井泵<br>用途：水稻、小麦、棉花灌溉<br>特点：完全替代柴油与电网，灌溉频率提高（随时抽水）</div>
       </div>
     </div>
     <div class="ccard" onclick="openM('c2')">
-      <div class="ccard-img">🏔<div class="ctag" data-i18n="case.02.tag">偏远供水</div></div>
+      <div class="ccard-img"><img src="img/14feizhou2.jpg" alt="非洲肯尼亚小农灌溉" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div>
       <div class="ccard-body">
-        <div class="ccard-title" data-i18n="case.02.title">西藏高原村落饮水工程</div>
-        <div class="ccard-excerpt" data-i18n="case.02.excerpt">海拔4200米无电网区域，SP-400将山泉引入300人村落，高原低气压环境稳定运行2年以上</div>
-        <div class="cmore" data-i18n="view.detail">查看详情</div>
+        <div class="ccard-title" data-i18n="case.02.title">非洲肯尼亚小农灌溉（典型井水+蔬菜种植）</div>
+        <div class="ccard-excerpt" data-i18n="case.02.excerpt">水源：深井<br>系统：离网光伏 + 潜水泵<br>效果：替代柴油泵（原来柴油成本高），农作物一年可增加 1–2 季种植，农户收益显著提升（研究显示利润提升可达100%以上）。</div>
       </div>
     </div>
     <div class="ccard" onclick="openM('c3')">
-      <div class="ccard-img">🐟<div class="ctag" data-i18n="case.03.tag">水产养殖</div></div>
+      <div class="ccard-img"><img src="img/14yindu.3.jpg" alt="印度农业灌溉" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div>
       <div class="ccard-body">
-        <div class="ccard-title" data-i18n="case.03.title">广东水产养殖循环系统</div>
-        <div class="ccard-excerpt" data-i18n="case.03.excerpt">20口鱼塘SP-080阵列部署，年节省电费15万，溶氧量提升20%，鱼类成活率增加8个百分点</div>
-        <div class="cmore" data-i18n="view.detail">查看详情</div>
+        <div class="ccard-title" data-i18n="case.03.title">印度农业灌溉</div>
+        <div class="ccard-excerpt" data-i18n="case.03.excerpt">政府目标：百万级太阳能水泵计划<br>典型应用：小麦、稻田灌溉，农村饮水供给</div>
       </div>
     </div>
   </div>
@@ -1440,17 +1437,17 @@ var DB={
        ['质保',null],['最大系统电压','1500 V DC'],['产品质保','15 年'],['线性功率质保','30 年']]},
   v5:{icon:'🌤',tag:'',name:'4英寸交直流切换太阳能泵（YYP A/D）',s:[]},
   v6:{icon:'🌤',tag:'',name:'3/4英寸交直流潜水太阳能泵（YYA）',s:[]},
-  c1:{icon:'🌾',tag:'农业灌溉案例',name:'新疆棉花基地灌溉系统',
+  c1:{icon:'🌾',tag:'农业灌溉案例',name:'巴基斯坦农业井灌系统',
     cs:[{t:'项目背景',p:'新疆某大型棉花种植基地，总灌溉面积5000亩。原有柴油机组运维成本极高，且供水不稳定，严重影响棉花品质与产量，急需可靠替代方案。'},
         {t:'解决方案',p:'凯霖团队部署8台SP-250大流量地面泵并联运行，配套160块PV-550D双面组件，系统总装机88kWp，完全离网运行，配备智能分区灌溉控制器实现精准用水。'},
         {t:'运行效果',p:'系统日均供水量达600 m³，满足5000亩棉田峰值灌溉需求。年节约柴油及运维成本超30万元，投资回收期约4年，后续15年运行基本零成本。'},
         {t:'客户反馈',p:'日照充足时全速运行，阴天也能保持60%出力，系统稳定性远超预期。最关键是彻底告别了柴油短缺和运输困难的烦恼，棉花品质也明显提升。'}]},
-  c2:{icon:'🏔',tag:'偏远供水案例',name:'西藏高原村落饮水工程',
+  c2:{icon:'🏔',tag:'偏远供水案例',name:'非洲肯尼亚小农灌溉（典型井水+蔬菜种植）',
     cs:[{t:'项目背景',p:'西藏那曲某村落，海拔4200米，距最近电网超120公里。300余名村民长期依靠人力背水，水源为2公里外山泉，高差约180米，生活极为不便。'},
         {t:'解决方案',p:'安装1台SP-400高扬程多级泵，配套12块PV-400M单晶组件（4.8kWp），配备3kWh铁锂电池组保障夜间及阴天持续供水，全套系统适配高原低气压环境。'},
         {t:'运行效果',p:'系统每日稳定供水约15m³，满足全村生活及牲畜饮水需求。已在高原极端环境下连续运行逾两年，零重大故障，彻底解决了300人的饮水安全问题。'},
         {t:'社会价值',p:'工程获当地政府"民生工程示范项目"认定，已成为西藏周边多个县市无电网供水工程的复制推广模板，凯霖方案累计惠及逾5000名高原牧民。'}]},
-  c3:{icon:'🐟',tag:'水产养殖案例',name:'广东水产养殖循环系统',
+  c3:{icon:'🐟',tag:'水产养殖案例',name:'印度农业灌溉',
     cs:[{t:'项目背景',p:'广东珠三角某规模化水产养殖场，共20口鱼塘，面积约200亩。原有市电增氧循环系统月均电费约1.5万元，全年电费负担超18万，经营压力较大。'},
         {t:'解决方案',p:'为每口鱼塘配置1台SP-080小型循环泵共20台，配套40块PV-400M单晶组件（16kWp），通过智能控制器根据日照强度自动调节各塘水循环强度。'},
         {t:'运行效果',p:'白天完全依靠太阳能驱动，全年节省电费约15万元，鱼塘溶氧量提升20%，鱼类成活率提高8个百分点，养殖综合经济效益提升超25%。'},
@@ -1555,14 +1552,14 @@ var I18N={
     'solution.06.tag2':'Разные напряжения',
     'solution.06.tag3':'Многоязычная документация',
     'case.01.tag':'Сельское хозяйство',
-    'case.01.title':'Ирригационная система для хлопкового поля в Синьцзяне',
-    'case.01.excerpt':'5 000 му хлопка, 8 насосов SP-250, 88 кВт солнечных панелей, экономия дизтоплива более 300 000 юаней в год.',
+    'case.01.title':'Система колодезного орошения для сельского хозяйства в Пакистане',
+    'case.01.excerpt':'Источник воды: глубокая скважина<br>Система: автономная солнечная + скважинный насос<br>Назначение: орошение риса, пшеницы и хлопка<br>Особенности: Полная замена дизеля и электросети, повышение частоты полива (откачка в любое время).',
     'case.02.tag':'Удалённое водоснабжение',
-    'case.02.title':'Проект питьевого водоснабжения в высокогорной деревне Тибета',
-    'case.02.excerpt':'Подъём с высоты 4200 м, система SP-400 подает горный источник в деревню из 300 человек более 2 лет без сбоев.',
+    'case.02.title':'Орошение мелких фермеров в Кении, Африка (скважинная вода + овощеводство)',
+    'case.02.excerpt':'Источник воды: глубокая скважина<br>Система: автономная солнечная + погружной насос<br>Результат: замена дизельных насосов (ранее высокие расходы на дизель); фермеры могут добавить 1–2 сезона выращивания в год, значительно увеличивая доход (исследования показывают рост прибыли более 100%).',
     'case.03.tag':'Аквакультура',
-    'case.03.title':'Циркуляционная система для аквакультуры в Гуандуне',
-    'case.03.excerpt':'20 прудов, 20 насосов SP-080, экономия 150 000 юаней в год, содержание кислорода +20%, выживаемость рыбы +8%.',
+    'case.03.title':'Сельскохозяйственное орошение в Индии',
+    'case.03.excerpt':'Цель правительства: программа на миллион солнечных водяных насосов<br>Типичное применение: орошение пшеницы и риса, снабжение питьевой водой в сельской местности.',
     'option.pumpInquiry':'Запрос по насосам',
     'option.pvInquiry':'Запрос по солнечным панелям',
     'option.systemDesign':'Дизайн системы',
@@ -1722,14 +1719,14 @@ var I18N={
     'solution.06.tag2':'Multi-voltage',
     'solution.06.tag3':'Multilingual docs',
     'case.01.tag':'Agricultural Irrigation',
-    'case.01.title':'Xinjiang Cotton Irrigation Base',
-    'case.01.excerpt':'5,000 mu of cotton with 8 SP-250 pumps and 88kWp PV support, saving over ¥300,000 in fuel costs annually.',
+    'case.01.title':'Pakistan Agricultural Well Irrigation System',
+    'case.01.excerpt':'Water source: deep well<br>System: off-grid PV + deep-well pump<br>Use: rice, wheat and cotton irrigation<br>Features: Fully replaces diesel and grid power, increasing irrigation frequency (pump anytime).',
     'case.02.tag':'Remote Water Supply',
-    'case.02.title':'Tibet Highland Village Drinking Water Project',
-    'case.02.excerpt':'At 4200m elevation and off-grid, SP-400 delivers spring water to a 300-person village reliably for over 2 years.',
+    'case.02.title':'Smallholder Irrigation in Kenya, Africa (typical well water + vegetable farming)',
+    'case.02.excerpt':'Water source: deep well<br>System: off-grid PV + submersible pump<br>Result: replaces diesel pumps (previously high diesel costs); farmers can add 1–2 extra cropping seasons per year, significantly boosting income (studies show profit increases of over 100%).',
     'case.03.tag':'Aquaculture',
-    'case.03.title':'Guangdong Aquaculture Circulation System',
-    'case.03.excerpt':'20 ponds with 20 SP-080 pumps save ¥150,000 a year, improve oxygen by 20%, and increase survival by 8%.',
+    'case.03.title':'India Agricultural Irrigation',
+    'case.03.excerpt':'Government goal: million-scale solar water pump program<br>Typical applications: wheat and paddy irrigation, rural drinking water supply.',
     'option.pumpInquiry':'Pump product inquiry',
     'option.pvInquiry':'PV module inquiry',
     'option.systemDesign':'System design',
@@ -1889,14 +1886,14 @@ var I18N={
     'solution.06.tag2':'多电压',
     'solution.06.tag3':'多语种',
     'case.01.tag':'农业灌溉',
-    'case.01.title':'新疆棉花基地灌溉系统',
-    'case.01.excerpt':'5000亩棉田，8台SP-250并联，88kWp光伏配套，年节省燃油成本逾30万元，实现完全离网灌溉',
+    'case.01.title':'巴基斯坦农业井灌系统',
+    'case.01.excerpt':'水源：深井<br>系统：离网光伏+深井泵<br>用途：水稻、小麦、棉花灌溉<br>特点：完全替代柴油与电网，灌溉频率提高（随时抽水）',
     'case.02.tag':'偏远供水',
-    'case.02.title':'西藏高原村落饮水工程',
-    'case.02.excerpt':'海拔4200米无电网区域，SP-400将山泉引入300人村落，高原低气压环境稳定运行2年以上',
+    'case.02.title':'非洲肯尼亚小农灌溉（典型井水+蔬菜种植）',
+    'case.02.excerpt':'水源：深井<br>系统：离网光伏 + 潜水泵<br>效果：替代柴油泵（原来柴油成本高），农作物一年可增加 1–2 季种植，农户收益显著提升（研究显示利润提升可达100%以上）。',
     'case.03.tag':'水产养殖',
-    'case.03.title':'广东水产养殖循环系统',
-    'case.03.excerpt':'20口鱼塘SP-080阵列部署，年节省电费15万，溶氧量提升20%，鱼类成活率增加8个百分点',
+    'case.03.title':'印度农业灌溉',
+    'case.03.excerpt':'政府目标：百万级太阳能水泵计划<br>典型应用：小麦、稻田灌溉，农村饮水供给',
     'option.pumpInquiry':'水泵产品咨询',
     'option.pvInquiry':'光伏组件咨询',
     'option.systemDesign':'整套系统设计',
