@@ -794,7 +794,7 @@ ul.blog-posts li:last-child {
 
 /* Contact ------------------------------------*/
 #contact {
-	background-color: #07ad87;
+	background-color: #0a3c52;
 	color: #ffffff;
 	margin-bottom: 0px !important;
 	padding-bottom:0 !important;
@@ -804,6 +804,119 @@ ul.blog-posts li:last-child {
 }
 #contact h3.subpage-title span {
 	border-bottom-color:#fff;
+}
+#contact .cont-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+	align-items: stretch;
+	margin-top: 40px;
+}
+#contact .cont-info,
+#contact .cont-form {
+	flex: 1 1 360px;
+	min-width: 320px;
+	padding: 32px;
+	background: rgba(255,255,255,0.08);
+	border: 1px solid rgba(255,255,255,0.18);
+}
+#contact .cont-info {
+	max-width: 440px;
+}
+#contact .cont-info .cinfo-item {
+	display: flex;
+	gap: 18px;
+	margin-bottom: 24px;
+}
+#contact .cont-info .cinfo-icon {
+	width: 52px;
+	height: 52px;
+	border-radius: 12px;
+	background: rgba(255,255,255,0.12);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+}
+#contact .cont-info .cinfo-label {
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	margin-bottom: 6px;
+}
+#contact .cont-info .cinfo-val {
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 6px;
+}
+#contact .cont-info .cinfo-sub {
+	font-size: 13px;
+	color: rgba(255,255,255,0.78);
+}
+#contact .cont-form {
+	background: rgba(255,255,255,0.12);
+}
+#contact .cont-form .form-title {
+	font-size: 28px;
+	margin-bottom: 28px;
+	font-weight: 700;
+}
+#contact .cont-form .frow {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+#contact .cont-form .ff {
+	flex: 1 1 100%;
+}
+#contact .cont-form label {
+	display: block;
+	font-size: 14px;
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+#contact .cont-form input,
+#contact .cont-form textarea,
+#contact .cont-form select {
+	width: 100%;
+	background: rgba(255,255,255,0.08);
+	border: 1px solid rgba(255,255,255,0.24);
+	color: #ffffff;
+	padding: 16px 18px;
+	border-radius: 6px;
+	font-size: 14px;
+}
+#contact .cont-form select {
+	appearance: none;
+}
+#contact .cont-form input::placeholder,
+#contact .cont-form textarea::placeholder {
+	color: rgba(255,255,255,0.66) !important;
+}
+#contact .cont-form .fsub {
+	margin-top: 20px;
+	background: #25d366;
+	color: #0d3021;
+	border: none;
+	padding: 16px 24px;
+	font-size: 15px;
+	font-weight: 700;
+	cursor: pointer;
+	border-radius: 6px;
+}
+#contact .cont-form .fsuccess {
+	margin-top: 16px;
+	color: #b7f0df;
+}
+@media (max-width: 980px) {
+	#contact .cont-grid {
+		flex-direction: column;
+	}
+	#contact .cont-info,
+	#contact .cont-form {
+		max-width: 100%;
+	}
 }
 
 #contact-form input[type="text"], #contact-form input[type="email"] {

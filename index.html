@@ -335,6 +335,7 @@ html[lang="ru"] .vision-stats{bottom:5px;}
   .tab-btn{padding:14px 20px}
   .pcard-body{padding:20px}
   .prow{padding:10px 0}
+  .cont-info{grid-template-columns:1fr}
 }
 
 
@@ -500,8 +501,8 @@ html[lang="ru"] .vision-stats{bottom:5px;}
 
 /* ═══ CONTACT ═══ */
 #contact{background:var(--navy3)}
-.cont-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:60px}
-.cont-info{display:flex;flex-direction:column;gap:24px}
+.cont-grid{display:grid;grid-template-columns:1fr;gap:60px}
+.cont-info{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .cinfo-item{display:flex;gap:14px;align-items:flex-start}
 .cinfo-icon{
   width:44px;height:44px;background:var(--navy4);
@@ -512,6 +513,17 @@ html[lang="ru"] .vision-stats{bottom:5px;}
 .cinfo-label{font-size:11px;letter-spacing:1.5px;color:var(--text3);text-transform:uppercase;margin-bottom:5px}
 .cinfo-val{font-size:15px;color:var(--text)}
 .cinfo-sub{font-size:13px;color:var(--text3);margin-top:2px}
+.cinfo-qr{
+  width:150px;height:150px;margin-top:14px;
+  background:#fff;border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;position:relative;
+}
+.cinfo-qr:not(:has(img))::after{
+  content:'二维码';
+  position:absolute;font-size:12px;color:#999;letter-spacing:1px;
+}
+.cinfo-qr img{position:relative;width:100%;height:100%;object-fit:contain;background:#fff}
 .hours-blk{
   background:var(--navy4);border:1px solid var(--border);
   padding:20px;margin-top:4px;
@@ -1312,48 +1324,32 @@ table.spec td:last-child{color:var(--text);font-weight:500}
   <div class="cont-grid">
     <div class="cont-info">
       <div class="cinfo-item">
-        <div class="cinfo-icon">📞</div>
-        <div><div class="cinfo-label" data-i18n="contact.sales">销售热线</div><div class="cinfo-val" data-i18n="contact.phoneVal">0755-88880123</div><div class="cinfo-sub" data-i18n="contact.hours.weekdays">工作日 09:00 – 18:00</div></div>
+        <div class="cinfo-icon">💬</div>
+        <div>
+          <div class="cinfo-label" data-i18n="contact.whatsapp" style="font-size:18px;font-weight:700">WhatsApp</div>
+          <div class="cinfo-val" data-i18n="contact.whatsappVal" style="font-size:20px">+8613243837086</div>
+          <div class="cinfo-sub" data-i18n="contact.replyTime">24小时内回复</div>
+          <div class="cinfo-qr"><img src="img/whatsapp.png" alt="WhatsApp 二维码"></div>
+        </div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cinfo-icon">💚</div>
+        <div>
+          <div class="cinfo-label" data-i18n="contact.wechat" style="font-size:18px;font-weight:700">WeChat</div>
+          <div class="cinfo-val" style="font-size:20px">KairingTrade</div>
+          <div class="cinfo-sub" data-i18n="contact.scanPrompt">扫码添加，快速响应</div>
+          <div class="cinfo-qr"><img src="img/wechat.png" alt="微信二维码"></div>
+        </div>
       </div>
       <div class="cinfo-item">
         <div class="cinfo-icon">✉</div>
-        <div><div class="cinfo-label" data-i18n="contact.email">商务邮箱</div><div class="cinfo-val">sales@kailin-solar.com</div><div class="cinfo-sub" data-i18n="contact.replyTime">24小时内回复</div></div>
-      </div>
-      <div class="cinfo-item">
-        <div class="cinfo-icon">💬</div>
-        <div><div class="cinfo-label" data-i18n="contact.wechat">微信客服</div><div class="cinfo-val">KailinSolar_Service</div><div class="cinfo-sub" data-i18n="contact.scanPrompt">扫码添加，快速响应</div></div>
-      </div>
-      <div class="cinfo-item">
-        <div class="cinfo-icon">📍</div>
-        <div><div class="cinfo-label" data-i18n="contact.address">公司地址</div><div class="cinfo-val" data-i18n="contact.locationVal">广东省深圳市南山区科技园</div><div class="cinfo-sub" data-i18n="contact.locationDetail">凯霖国际贸易大厦 8楼</div></div>
-      </div>
-      <div class="hours-blk">
-        <div class="hours-title" data-i18n="contact.hoursTitle">服务时间</div>
-        <div class="hrow"><span data-i18n="contact.hours.weekdays">周一 — 周五</span><span>09:00 — 18:00</span></div>
-        <div class="hrow"><span data-i18n="contact.hours.saturday">周六</span><span>09:00 — 12:00</span></div>
-        <div class="hrow"><span data-i18n="contact.hours.sunday">周日 / 节假日</span><span data-i18n="contact.hours.off">在线留言处理</span></div>
-      </div>
-    </div>
-    <div class="cont-form">
-      <div class="form-title" style="margin-bottom:24px" data-i18n="contact.formTitle">在线留言</div>
-      <div class="frow">
-        <div class="ff"><label data-i18n="contact.nameLabel">姓名 *</label><input type="text" id="ct1" data-i18n-placeholder="contact.placeholder.name" placeholder="您的姓名"></div>
-        <div class="ff"><label data-i18n="contact.phoneLabel">联系电话 *</label><input type="tel" id="ct2" data-i18n-placeholder="contact.placeholder.phone" placeholder="138 0000 0000"></div>
-      </div>
-      <div class="frow">
-        <div class="ff"><label data-i18n="contact.emailLabel">邮箱</label><input type="email" id="ct3" data-i18n-placeholder="contact.placeholder.email" placeholder="your@email.com"></div>
-        <div class="ff"><label data-i18n="contact.typeLabel">咨询类型</label>
-          <select id="ct4">
-            <option value="" data-i18n="option.select">请选择</option>
-            <option data-i18n="option.pumpInquiry">水泵产品咨询</option><option data-i18n="option.pvInquiry">光伏组件咨询</option>
-            <option data-i18n="option.systemDesign">整套系统设计</option><option data-i18n="option.exportCooperation">出口采购合作</option>
-            <option data-i18n="option.support">售后技术支持</option><option data-i18n="option.other">其他</option>
-          </select>
+        <div>
+          <div class="cinfo-label" data-i18n="contact.email" style="font-size:18px;font-weight:700">商务邮箱</div>
+          <div class="cinfo-val" style="font-size:20px">Kairingtrade@outlook.com</div>
+          <div class="cinfo-sub" data-i18n="contact.replyTime">24小时内回复</div>
+          <div class="cinfo-qr"><img src="img/youxiang.jpg" alt="邮箱二维码"></div>
         </div>
       </div>
-      <div class="ff"><label data-i18n="contact.messageLabel">留言内容 *</label><textarea id="ct5" data-i18n-placeholder="contact.placeholder.message" placeholder="请描述您的项目需求，我们将在1个工作日内回复…" style="min-height:120px"></textarea></div>
-      <button class="fsub" onclick="submitForm('ct','contact-ok')" data-i18n="contact.submit">提交留言</button>
-      <div class="fsuccess" id="contact-ok" data-i18n="contact.success">✓ 留言已提交！我们会尽快与您联系</div>
     </div>
   </div>
 </section>
@@ -2194,7 +2190,7 @@ var I18N={
     'contact.sub':'销售咨询、技术支持、售后服务，多渠道快速响应',
     'contact.sales':'销售热线',
     'contact.email':'商务邮箱',
-    'contact.wechat':'微信客服',
+    'contact.wechat':'WeChat',
     'contact.address':'公司地址',
     'contact.hoursTitle':'服务时间',
     'contact.formTitle':'在线留言',
