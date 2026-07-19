@@ -277,6 +277,16 @@ html[lang="ru"] .vision-stats{bottom:5px;}
 @media(max-width:1024px){.slide-nav{display:none}}
 .slide{display:none;gap:20px}
 .slide.on{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.pv-catalog{display:grid;grid-template-columns:minmax(220px,30%) minmax(0,1fr);gap:24px;align-items:stretch}
+.pv-image{display:flex;align-items:center;justify-content:center;min-height:360px;background:#fff;border:1px solid var(--border2);overflow:hidden}
+.pv-image img{width:100%;height:100%;object-fit:contain;padding:28px}
+.pv-table-wrap{overflow-x:auto;background:var(--navy2);border:1px solid var(--border2)}
+.pv-table{width:100%;min-width:980px;border-collapse:collapse;color:var(--text);font-size:12px}
+.pv-table th,.pv-table td{padding:12px 10px;border-bottom:1px solid var(--border);text-align:left;vertical-align:middle;white-space:nowrap}
+.pv-table th{background:var(--navy4);color:var(--blue3);font-size:11px;letter-spacing:.5px;font-weight:600}
+.pv-table td:first-child{color:#fff;font-weight:600}
+.pv-table tr:last-child td{border-bottom:none}
+@media(max-width:1024px){.pv-catalog{grid-template-columns:1fr}.pv-image{min-height:280px}.pv-image img{max-height:320px}}
 .pcard{
   display:flex;flex-direction:row;gap:1px;
   background:var(--navy2);cursor:pointer;
@@ -941,300 +951,32 @@ table.spec td:last-child{color:var(--text);font-weight:500}
 
   <div id="tp-pvs" class="tp">
     <div class="prod-slider">
-      <div class="slider-pages">
-        <button class="slide-nav slide-prev" type="button" onclick="changeSlide(this,-1)" aria-label="上一页"></button>
-        <button class="slide-nav slide-next" type="button" onclick="changeSlide(this,1)" aria-label="下一页"></button>
-        <div class="slide on">
-          <div class="pcard" onclick="openM('v1')">
-            <div class="pcard-img">🌤<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">高效单晶光伏面板</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.40 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">400 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-          <div class="pcard" onclick="openM('v2')">
-            <div class="pcard-img">☀️<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">高功率双玻组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.55 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">550 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
+      <div class="pv-catalog">
+        <div class="pv-image">
+          <img src="img/18guangfuban1.png" alt="太阳能光伏板产品图">
         </div>
-        <div class="slide">
-          <div class="pcard" onclick="openM('v3')">
-            <div class="pcard-img">🔋<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">稳健多晶组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.33 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">330 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-          <div class="pcard" onclick="openM('v4')">
-            <div class="pcard-img">🌞<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">旗舰级大功率组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.70 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">700 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
+        <div class="pv-table-wrap">
+          <table class="pv-table">
+            <thead>
+              <tr>
+                <th>产品规格</th><th>电池片数量</th><th>效率</th><th>功率范围(W)</th>
+                <th>电池片尺寸(mm)</th><th>功率公差</th><th>组件尺寸(mm)</th>
+                <th>组件重量</th><th>最高功率</th><th>最大功率点工作电流</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>多晶18v20w</td><td>36</td><td>24%</td><td>20w</td><td>156.75*156.75</td><td>±2%</td><td>350*450*16</td><td>1800</td><td>20</td><td>1.22</td></tr>
+              <tr><td>多晶18v15w</td><td>36</td><td>24%</td><td>15w</td><td>156.75*156.75</td><td>±2%</td><td>350*350*16</td><td>1300</td><td>15</td><td>0.83</td></tr>
+              <tr><td>多晶18v30w</td><td>36</td><td>24%</td><td>30w</td><td>156.75*156.75</td><td>±2%</td><td>350*600*16</td><td>2500</td><td>30</td><td>1.67</td></tr>
+              <tr><td>单晶18v20w</td><td>36</td><td>24%</td><td>20w</td><td>156.75*156.75</td><td>±2%</td><td>350*350*16</td><td>1300</td><td>20</td><td>1.22</td></tr>
+              <tr><td>单晶18v25w</td><td>36</td><td>24%</td><td>25w</td><td>156.75*156.75</td><td>±2%</td><td>350*450*16</td><td>1800</td><td>25</td><td>1.52</td></tr>
+              <tr><td>单晶18v35w</td><td>36</td><td>24%</td><td>35w</td><td>156.75*156.75</td><td>±2%</td><td>350*600*16</td><td>2500</td><td>35</td><td>2.13</td></tr>
+              <tr><td>DC5521连接线</td><td>36</td><td>24%</td><td>20-28</td><td>-</td><td>-</td><td>2*0.3</td><td>300</td><td>-</td><td>-</td></tr>
+              <tr><td>3米鳄鱼夹连接线</td><td>36</td><td>24%</td><td>150-200</td><td>-</td><td>-</td><td>2*0.3</td><td>300</td><td>-</td><td>-</td></tr>
+              <tr><td>1米电缆</td><td>36</td><td>24%</td><td>20-28</td><td>-</td><td>-</td><td>2*0.75</td><td>300</td><td>-</td><td>-</td></tr>
+            </tbody>
+          </table>
         </div>
-        <div class="slide">
-          <div class="pcard" onclick="openM('v1')">
-            <div class="pcard-img">🌤<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">高转换率单晶组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.50 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">500 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-          <div class="pcard" onclick="openM('v2')">
-            <div class="pcard-img">☀️<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">大板高功率组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.62 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">620 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="pcard" onclick="openM('v3')">
-            <div class="pcard-img">🔋<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">自清洁耐候组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.38 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">380 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-          <div class="pcard" onclick="openM('v4')">
-            <div class="pcard-img">🌞<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">高稳定性组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.45 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">450 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="pcard" onclick="openM('v1')">
-            <div class="pcard-img">🌤<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">低衰减N型组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.68 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">680 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-          <div class="pcard" onclick="openM('v2')">
-            <div class="pcard-img">☀️<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">柔性弯折组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.52 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">520 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="pcard" onclick="openM('v3')">
-            <div class="pcard-img">🔋<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">高效大型光伏板</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.48 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">480 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-          <div class="pcard" onclick="openM('v4')">
-            <div class="pcard-img">🌞<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">轻量化组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.56 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">560 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="pcard" onclick="openM('v1')">
-            <div class="pcard-img">🌤<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">高效单晶组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.61 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">610 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-          <div class="pcard" onclick="openM('v2')">
-            <div class="pcard-img">☀️<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">高稳定组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.72 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">720 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="pcard" onclick="openM('v3')">
-            <div class="pcard-img">🔋<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">全景高效组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.77 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">770 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-          <div class="pcard" onclick="openM('v4')">
-            <div class="pcard-img">🌞<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">柔性高功率组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.82 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">820 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="pcard" onclick="openM('v1')">
-            <div class="pcard-img">🌤<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">超大功率组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">0.90 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">900 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-          <div class="pcard" onclick="openM('v2')">
-            <div class="pcard-img">☀️<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">超大功率组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">1.00 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">1000 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="pcard" onclick="openM('v3')">
-            <div class="pcard-img">🔋<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">大型高效组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">1.10 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">1100 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-          <div class="pcard" onclick="openM('v4')">
-            <div class="pcard-img">🌞<div class="pcard-glow"></div></div>
-            <div class="pcard-body">
-              <div class="pcard-name">超级高效组件</div>
-              <div class="pcard-params">
-                <div class="prow"><span class="pk">最大流量</span><span class="pv">0 m³/h</span></div>
-                <div class="prow"><span class="pk">最大扬程</span><span class="pv">0 m</span></div>
-                <div class="prow"><span class="pk">最大功率</span><span class="pv">1.20 kW</span></div>
-                <div class="prow"><span class="pk">最大适配光伏板功率</span><span class="pv">1200 Wp</span></div>
-              </div>
-              <div class="pcard-more">查看详细参数</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="page-dots">
-        <button class="dot on" onclick="switchSlide(this,0)" type="button"></button>
-        <button class="dot" onclick="switchSlide(this,1)" type="button"></button>
-        <button class="dot" onclick="switchSlide(this,2)" type="button"></button>
-        <button class="dot" onclick="switchSlide(this,3)" type="button"></button>
-        <button class="dot" onclick="switchSlide(this,4)" type="button"></button>
-        <button class="dot" onclick="switchSlide(this,5)" type="button"></button>
-        <button class="dot" onclick="switchSlide(this,6)" type="button"></button>
-        <button class="dot" onclick="switchSlide(this,7)" type="button"></button>
-        <button class="dot" onclick="switchSlide(this,8)" type="button"></button>
       </div>
     </div>
   </div>
