@@ -112,6 +112,14 @@ nav{
   margin-bottom:36px;text-transform:uppercase;
 }
 .vision-badge::before,.vision-badge::after{content:'';width:20px;height:1px;background:var(--blue3)}
+.vision-product{
+  font-family:'Noto Serif SC',serif;
+  font-size:58px;font-weight:600;line-height:1.25;
+  letter-spacing:-0.5px;margin-bottom:8px;
+  background:linear-gradient(135deg,var(--blue3),var(--sky));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
 .vision-headline{
   font-family:'Noto Serif SC',serif;
   font-size:58px;font-weight:600;line-height:1.25;
@@ -189,7 +197,7 @@ html[lang="ru"] .vision-stats{bottom:5px;}
 .sec-head{margin-bottom:60px}
 .sec-eye{
   display:inline-flex;align-items:center;gap:10px;
-  font-size:11px;letter-spacing:3px;color:var(--blue3);
+  font-size:16px;letter-spacing:3px;color:var(--blue3);
   margin-bottom:14px;text-transform:uppercase;
 }
 .sec-eye::before{content:'';width:24px;height:1px;background:var(--blue3)}
@@ -640,7 +648,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
   <div class="nav-links">
     <a href="#company" data-i18n="nav.company">公司介绍</a>
     <a href="#products" data-i18n="nav.products">产品展示</a>
-    <a href="#video" data-i18n="nav.video">工厂视频</a>
+    <a href="#video" data-i18n="nav.video">案例视频</a>
     <a href="#solutions" data-i18n="nav.solutions">解决方案</a>
     <a href="#contact" data-i18n="nav.contact">联系我们</a>
   </div>
@@ -657,6 +665,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
   <div class="vision-bg"></div>
   <div class="vision-content">
     <div class="vision-badge" data-i18n="vision.badge">深圳市凯霖国际贸易有限公司</div>
+    <div class="vision-product" data-i18n="vision.product">太阳能水泵</div>
     <h1 class="vision-headline" data-i18n="vision.headline">
       让<em>新能源</em>驱动农业发展<br>让<em>科技</em>创造更高价值
     </h1>
@@ -679,7 +688,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
   <div class="sec-head">
     <div class="sec-eye" data-i18n="company.eye">公司介绍</div>
     <h2 class="sec-title" data-i18n="company.title">专注清洁能源 · <strong>推动农业现代化</strong></h2>
-    <p class="sec-sub" data-i18n="company.sub">深圳市凯霖国际贸易有限公司，专业从事太阳能水利设备研发、制造与国际贸易</p>
+    <p class="sec-sub" data-i18n="company.sub">深圳市凯霖国际贸易有限公司，专业从事太阳能水泵设备研发、制造与国际贸易</p>
   </div>
   <div class="gold-line"></div>
   <div class="inner">
@@ -985,15 +994,15 @@ table.spec td:last-child{color:var(--text);font-weight:500}
 <!-- FACTORY VIDEO -->
 <section id="video" class="sec">
   <div class="sec-head">
-    <div class="sec-eye" data-i18n="video.eye">工厂视频</div>
-    <h2 class="sec-title" data-i18n="video.title">工厂生产与质检实景</h2>
-    <p class="sec-sub" data-i18n="video.sub">展示我们的制造现场、装配流程和出厂检测标准</p>
+    <div class="sec-eye" data-i18n="video.eye">案例视频</div>
+    <h2 class="sec-title" data-i18n="video.title">真实项目应用与运行效果展示</h2>
+    <p class="sec-sub" data-i18n="video.sub">展示产品在不同场景中的实际应用案例，安装过程、运行效果及客户使用反馈</p>
   </div>
   <div class="gold-line"></div>
   <div class="video-block">
     <div class="video-frame">
       <video id="factoryVideo" playsinline preload="metadata" onended="onFactoryVideoEnded()">
-        <source src="video/usage-scenario.mp4" type="video/mp4">
+        <source src="video/factory.mp4" type="video/mp4">
         <p data-i18n="video.fallback">您的浏览器不支持视频播放，请升级浏览器。</p>
       </video>
       <button class="video-playbtn" onclick="playFactoryVideo()" type="button">
@@ -1199,17 +1208,18 @@ var I18N={
     'nav.company':'О компании',
     'nav.products':'Продукция',
     'nav.solutions':'Решения',
-    'nav.video':'Видео завода',
+    'nav.video':'Видео кейсов',
     'nav.contact':'Контакты',
     'nav.brand':'Shenzhen Kailin International <br>Trading Co., Ltd.',
     'nav.quote':'Получить прайс',
-    'video.eye':'Фабричное видео',
-    'video.title':'Производство и контроль качества на заводе',
-    'video.sub':'Видео с нашего производства, сборки и контроля качества',
+    'video.eye':'Видео кейсов',
+    'video.title':'Реальные проекты и результаты работы',
+    'video.sub':'Практические примеры применения продукции в различных условиях: монтаж, работа и отзывы клиентов',
     'video.note':'Если видео не отображается, обновите браузер.',
     'video.play':'Воспроизвести видео',
     'video.fallback':'Ваш браузер не поддерживает воспроизведение видео. Пожалуйста, обновите браузер.',
     'vision.badge':'Shenzhen Kailin International',
+    'vision.product':'Солнечные водяные насосы',
     'vision.headline':'Пусть <em>возобновляемая энергия</em> движет сельским хозяйством<br>Пусть <em>технологии</em> создают большую ценность',
     'vision.tagline':'EMPOWERING AGRICULTURE WITH CLEAN ENERGY',
     'vision.scroll':'Исследовать дальше',
@@ -1502,17 +1512,18 @@ var I18N={
     'nav.company':'Company',
     'nav.products':'Products',
     'nav.solutions':'Solutions',
-    'nav.video':'Factory Video',
+    'nav.video':'Case Videos',
     'nav.contact':'Contact',
     'nav.brand':'Shenzhen Kailin International Trading Co., Ltd.',
     'nav.quote':'Get Quote',
-    'video.eye':'Factory Video',
-    'video.title':'Factory Production & Inspection',
-    'video.sub':'See our manufacturing facility, assembly process, and quality checks',
+    'video.eye':'Case Videos',
+    'video.title':'Real Project Applications & Performance',
+    'video.sub':'See real-world applications of our products in different scenarios, including installation, operation, and customer feedback',
     'video.note':'If the video does not load, please refresh or use a modern browser.',
     'video.play':'Play Video',
     'video.fallback':'Your browser does not support video playback. Please update your browser.',
     'vision.badge':'Shenzhen Kailin International',
+    'vision.product':'Solar Water Pumps',
     'vision.headline':'Let <em>clean energy</em> power agriculture<br>Let <em>technology</em> create greater value',
     'vision.tagline':'EMPOWERING AGRICULTURE WITH CLEAN ENERGY',
     'vision.scroll':'Explore down',
@@ -1805,23 +1816,24 @@ var I18N={
     'nav.company':'公司介绍',
     'nav.products':'产品展示',
     'nav.solutions':'解决方案',
-    'nav.video':'工厂视频',
+    'nav.video':'案例视频',
     'nav.contact':'联系我们',
     'nav.brand':'深圳市凯霖国际贸易有限公司',
     'nav.quote':'获取报价',
-    'video.eye':'工厂视频',
-    'video.title':'工厂生产与质检实景',
-    'video.sub':'展示我们的制造现场、装配流程和出厂检测标准',
+    'video.eye':'案例视频',
+    'video.title':'真实项目应用与运行效果展示',
+    'video.sub':'展示产品在不同场景中的实际应用案例，安装过程、运行效果及客户使用反馈',
     'video.note':'如浏览器不支持视频，请升级浏览器或刷新页面。',
     'video.play':'播放视频',
     'video.fallback':'您的浏览器不支持视频播放，请升级浏览器。',
     'vision.badge':'深圳市凯霖国际贸易有限公司',
+    'vision.product':'太阳能水泵',
     'vision.headline':'让<em>新能源</em>驱动农业发展<br>让<em>科技</em>创造更高价值',
     'vision.tagline':'EMPOWERING AGRICULTURE WITH CLEAN ENERGY',
     'vision.scroll':'向下探索',
     'company.eye':'公司介绍',
     'company.title':'专注清洁能源 · <strong>推动农业现代化</strong>',
-    'company.sub':'深圳市凯霖国际贸易有限公司，专业从事太阳能水利设备研发、制造与国际贸易',
+    'company.sub':'深圳市凯霖国际贸易有限公司，专业从事太阳能水泵设备研发、制造与国际贸易',
     'company.badgeLabel':'Years Experience',
     'company.paragraph1':'深圳市凯霖国际贸易有限公司成立于深圳，是国内领先的太阳能水利系统解决方案提供商。凭借十五年深耕行业的经验，我们将先进光伏技术与水泵系统深度融合，为全球客户提供从设备供应到系统集成的一站式服务。',
     'company.paragraph2':'公司核心产品涵盖直流无刷太阳能水泵、高效单多晶光伏组件及完整的离网供水系统。产品广泛应用于农业灌溉、偏远村落饮水、牧场供水、水产养殖等领域，出口至东南亚、中东、非洲、南美洲等30余个国家和地区。',
