@@ -52,10 +52,18 @@
   --border:rgba(30,122,224,0.15);
   --border2:rgba(30,122,224,0.3);
   --border3:rgba(30,122,224,0.5);
+  --nav-h:76px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:calc(var(--nav-h) + 12px);
+  -webkit-text-size-adjust:100%;
+  overflow-x:hidden;
+}
+img,video,svg{max-width:100%}
 body{font-family:'Noto Sans SC',sans-serif;font-weight:300;background:var(--navy);color:var(--text);overflow-x:hidden;line-height:1.7;opacity:0;transition:opacity .2s ease}
+body.menu-open,body.modal-open{overflow:hidden}
 body.ready{opacity:1}
 body.ready{opacity:1}
 ::-webkit-scrollbar{width:4px}
@@ -66,12 +74,29 @@ body.ready{opacity:1}
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 64px;height:76px;
+  padding:0 64px;height:var(--nav-h);
   background:rgba(5,14,31,0.94);
   backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
 }
-.nav-brand{display:flex;flex-direction:column;gap:2px}
+.nav-brand{display:flex;flex-direction:column;gap:2px;justify-content:center;min-width:0}
+.nav-brand-text{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px;letter-spacing:4px;color:var(--blue3);
+  line-height:1.15;
+}
+.nav-toggle{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:44px;height:44px;padding:10px;margin-right:-8px;
+  background:transparent;border:none;cursor:pointer;
+}
+.nav-toggle span{
+  display:block;width:100%;height:2px;background:var(--text);
+  border-radius:2px;transition:transform .25s,opacity .2s;
+}
+nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+nav.open .nav-toggle span:nth-child(2){opacity:0}
+nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .nav-links{display:flex;gap:32px}
 .lang-switcher{display:flex;gap:8px;align-items:center;margin-left:24px}
 .lang-btn{
@@ -90,6 +115,7 @@ nav{
 }
 .lang-btn.on{background:var(--blue3);border-color:var(--blue3);color:#fff}
 .lang-btn:hover{color:#fff;border-color:var(--blue3)}
+.lang-btn{white-space:nowrap}
 .nav-brand-en{
   font-family:'Bebas Neue',sans-serif;
   font-size:22px;letter-spacing:4px;color:var(--blue3);
@@ -100,6 +126,7 @@ nav{
 .nav-links a{
   font-size:13px;letter-spacing:1.5px;color:var(--text2);
   text-decoration:none;transition:color .2s;position:relative;
+  white-space:nowrap;
 }
 .nav-links a::after{
   content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;
@@ -110,14 +137,14 @@ nav{
 .nav-btn{
   background:var(--blue);color:#fff;border:none;
   padding:10px 24px;font-size:13px;letter-spacing:1.5px;
-  cursor:pointer;font-family:'Noto Sans SC',sans-serif;font-weight:500;
+  cursor:pointer;font-family:'Noto Sans SC',sans-serif;font-weight:500;white-space:nowrap;
   transition:background .2s;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);
 }
 .nav-btn:hover{background:var(--blue2)}
 
 /* ═══ HERO / VISION ═══ */
 #vision{
-  min-height:100vh;position:relative;
+  min-height:100vh;min-height:100svh;position:relative;
   display:flex;align-items:center;justify-content:center;
   text-align:center;overflow:hidden;
 }
@@ -316,7 +343,8 @@ html[lang="ru"] .vision-stats{bottom:5px;}
 .pv-catalog{display:grid;grid-template-columns:minmax(220px,30%) minmax(0,1fr);gap:24px;align-items:stretch}
 .pv-image{display:flex;align-items:center;justify-content:center;min-height:360px;background:#fff;border:1px solid var(--border2);overflow:hidden}
 .pv-image img{width:100%;height:100%;object-fit:contain;padding:28px}
-.pv-table-wrap{overflow-x:auto;background:var(--navy2);border:1px solid var(--border2)}
+.pv-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--navy2);border:1px solid var(--border2)}
+.tbl-hint{display:none;margin-top:10px;font-size:12px;color:var(--text3);letter-spacing:1px;text-align:center}
 .pv-table{width:100%;min-width:980px;border-collapse:collapse;color:var(--text);font-size:12px}
 .pv-table th,.pv-table td{padding:12px 10px;border-bottom:1px solid var(--border);text-align:left;vertical-align:middle;white-space:nowrap}
 .pv-table th{background:var(--navy4);color:var(--blue3);font-size:11px;letter-spacing:.5px;font-weight:600}
@@ -343,7 +371,7 @@ html[lang="ru"] .vision-stats{bottom:5px;}
   font-size:60px;position:relative;overflow:hidden;padding:32px;
 }
 .pcard-img img{
-  max-width:100%;height:auto;display:block;object-fit:contain;
+  width:100%;height:100%;max-height:100%;display:block;object-fit:contain;
 }
 .pcard-glow{
   position:absolute;inset:0;
@@ -630,6 +658,7 @@ footer{
   display:flex;align-items:flex-start;justify-content:space-between;
   gap:16px;
 }
+.mhead>div:first-child{min-width:0;flex:1}
 .mhead-icon{
   width:60px;height:60px;background:var(--navy3);
   border:1px solid var(--border2);
@@ -664,6 +693,198 @@ table.spec td:last-child{color:var(--text);font-weight:500}
 .madv-list{margin:4px 0 0 0;padding-left:20px;color:var(--text);font-size:13px;line-height:2}
 .madv-list li{margin-bottom:2px}
 .mvalue-img{width:100%;margin-top:20px;border-radius:8px;display:block}
+.mvalue-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* ═══ RESPONSIVE — TABLET ═══ */
+@media(max-width:1024px){
+  nav{padding:0 24px}
+  .nav-links{gap:20px}
+  .pcard-img{aspect-ratio:16/9;max-height:360px}
+  .sec{padding:80px 32px}
+  .vision-headline,.vision-product{font-size:44px}
+  .vision-stats{left:32px;right:32px;bottom:60px}
+  .vstat-n{font-size:36px}
+  .sec-title{font-size:32px}
+  #company .inner{gap:48px}
+  .sol-grid{grid-template-columns:repeat(2,1fr)}
+  .case-grid{grid-template-columns:repeat(2,1fr)}
+  .cont-info{grid-template-columns:repeat(2,1fr)}
+  .frow{grid-template-columns:1fr}
+  footer{padding:32px}
+  .pv-table{min-width:900px}
+}
+
+/* ═══ RESPONSIVE — NARROW DESKTOP NAV ═══ */
+@media(min-width:1101px) and (max-width:1400px){
+  nav{padding:0 28px}
+  .nav-links{gap:20px}
+  .lang-switcher{margin-left:14px;gap:6px}
+  .nav-brand-text{font-size:19px;letter-spacing:2.5px}
+  .nav-btn{padding:10px 18px}
+}
+
+/* ═══ RESPONSIVE — COLLAPSIBLE NAV ═══ */
+@media(max-width:1100px){
+  :root{--nav-h:60px}
+  nav{
+    flex-wrap:wrap;height:auto;padding:0 16px;gap:0;
+    max-height:var(--nav-h);overflow:hidden;
+    transition:max-height .3s ease;
+  }
+  nav.open{max-height:100vh;max-height:100svh;overflow-y:auto;background:rgba(5,14,31,0.985)}
+  .nav-brand{height:var(--nav-h);flex:1 1 0;min-width:0;order:1;overflow:hidden}
+  .nav-brand-text{
+    font-size:17px;letter-spacing:2px;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .lang-switcher{order:2;margin-left:0;gap:6px;height:var(--nav-h)}
+  .lang-btn{padding:7px 10px;font-size:12px}
+  .nav-toggle{display:flex;order:3;height:var(--nav-h)}
+  .nav-links{
+    order:4;width:100%;flex-direction:column;gap:0;
+    padding:4px 0 0;border-top:1px solid var(--border);
+  }
+  .nav-links a{
+    display:block;padding:15px 2px;font-size:15px;letter-spacing:1px;
+    color:var(--text);border-bottom:1px solid var(--border);
+  }
+  .nav-links a::after{display:none}
+  .nav-btn{order:5;width:100%;margin:18px 0 22px;padding:14px;font-size:14px}
+}
+
+/* ═══ RESPONSIVE — MOBILE ═══ */
+@media(max-width:768px){
+  /* — VISION — */
+  #vision{
+    min-height:100svh;
+    padding:calc(var(--nav-h) + 44px) 0 48px;
+    flex-direction:column;align-items:stretch;justify-content:center;gap:32px;
+  }
+  .vision-content{padding:0 20px}
+  .vision-badge{font-size:10px;letter-spacing:2px;padding:6px 14px;margin-bottom:24px}
+  .vision-product,.vision-headline{font-size:28px;line-height:1.3;letter-spacing:0}
+  .vision-sub{font-size:14px;letter-spacing:2px}
+  .vision-tagline{font-size:11px;letter-spacing:2px;margin-bottom:32px}
+  .vision-divider{margin:20px auto}
+  .vision-btns{flex-direction:column;align-items:center;gap:12px}
+  .btn-p,.btn-o{width:100%;max-width:280px;text-align:center}
+  html[lang] .vision-stats{
+    position:relative;z-index:1;left:auto;right:auto;bottom:auto;
+    display:grid;grid-template-columns:1fr 1fr;gap:18px 12px;
+    margin:0 20px;padding-top:22px;
+  }
+  .vstat-n{font-size:24px}
+  .vstat-u{font-size:12px}
+  .vstat-l{font-size:9px;letter-spacing:1px}
+
+  /* — SECTION COMMON — */
+  .sec{padding:60px 20px}
+  .sec-head{margin-bottom:36px}
+  .sec-eye{font-size:13px}
+  .sec-title{font-size:24px}
+  .sec-sub{font-size:14px}
+  .gold-line{margin-bottom:36px}
+
+  /* — COMPANY — */
+  #company .inner{grid-template-columns:1fr;gap:36px}
+  .co-img-frame{aspect-ratio:16/10}
+  .co-img-badge{padding:14px 18px;bottom:-10px;right:-10px}
+  .co-img-badge-n{font-size:32px}
+  .co-feats{grid-template-columns:1fr}
+
+  /* — PRODUCTS — */
+  .prod-tabs{flex-wrap:wrap;gap:8px;margin-bottom:28px}
+  .tab-btn{padding:10px 16px;font-size:12px;letter-spacing:1px}
+  .slide.on{grid-template-columns:1fr}
+  .pcard{min-height:auto}
+  .pcard-img{min-width:0;width:100%;padding:16px;aspect-ratio:4/3;max-height:300px}
+  .pcard-img img{max-height:100%}
+  .pcard-body{padding:20px}
+  .pcard-name{font-size:16px}
+  .prow{font-size:12px;padding:10px 0}
+  .pv-catalog{grid-template-columns:1fr;gap:16px}
+  .pv-image{min-height:0;aspect-ratio:4/3}
+  .pv-image img{padding:16px}
+  .pv-table-wrap{margin:0 -20px;border-left:none;border-right:none}
+  .pv-table{min-width:700px;font-size:11px}
+  .pv-table th,.pv-table td{padding:8px 6px}
+  .tbl-hint{display:block}
+  .page-dots{gap:4px;margin-top:4px}
+  .dot{width:12px;height:12px;background-clip:content-box;border:6px solid transparent;box-sizing:content-box}
+
+  /* — VIDEO — */
+  .video-frame{border-radius:16px}
+  .video-playbtn{
+    width:auto;height:auto;min-height:52px;max-width:86%;
+    padding:12px 22px 12px 46px;border-radius:999px;font-size:13px;
+    text-align:center;line-height:1.3;
+  }
+  .video-playbtn::before{left:26px;top:50%;font-size:17px}
+  .video-playbtn span{margin-left:0}
+  .video-note{font-size:13px;padding:0 8px}
+
+  /* — SOLUTIONS — */
+  .sol-grid{grid-template-columns:1fr}
+  .scard{padding:24px 20px}
+  .scard::before{font-size:48px;top:10px;right:14px}
+  .scard-title{font-size:16px}
+  .scard-desc{font-size:12px}
+
+  /* — CASES — */
+  .case-grid{grid-template-columns:1fr}
+  .ccard-img{height:180px}
+
+  /* — CONTACT — */
+  .cont-grid{gap:36px}
+  .cont-info{grid-template-columns:1fr;gap:20px}
+  .cinfo-item{flex-direction:column;gap:12px}
+  .cinfo-qr{width:120px;height:120px}
+  .cont-form{padding:24px 20px}
+  .form-box{padding:24px 20px}
+
+  /* — FOOTER — */
+  footer{flex-direction:column;align-items:center;text-align:center;padding:28px 20px;gap:12px}
+  .foot-links{justify-content:center;flex-wrap:wrap}
+
+  /* — MODAL — */
+  .overlay{padding:12px 8px}
+  .mbox{max-height:90vh;max-height:90svh}
+  .mhead{padding:18px 16px 14px;gap:10px}
+  .mhead-icon{width:44px;height:44px;font-size:20px}
+  .mname{font-size:17px;line-height:1.4}
+  .mbody{padding:20px 16px}
+  table.spec td{font-size:12px;padding:6px 4px}
+  table.spec td:first-child{white-space:normal;word-break:break-word}
+  .mvalue-img{min-width:560px}
+  .mspec-sec{font-size:12px}
+}
+
+/* ═══ RESPONSIVE — LARGE PHONE / SMALL TABLET ═══ */
+@media(min-width:600px) and (max-width:768px){
+  .vision-product,.vision-headline{font-size:38px}
+  html[lang] .vision-stats{grid-template-columns:repeat(4,1fr)}
+  .sec-title{font-size:28px}
+  .co-feats{grid-template-columns:1fr 1fr}
+  .sol-grid,.case-grid{grid-template-columns:repeat(2,1fr)}
+  .cont-info{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ═══ RESPONSIVE — SMALL MOBILE ═══ */
+@media(max-width:480px){
+  .vision-product,.vision-headline{font-size:24px}
+  html[lang] .vision-stats{gap:14px 10px;margin:0 16px}
+  .vstat-n{font-size:20px}
+  .sec{padding:52px 16px}
+  .sec-title{font-size:22px}
+  .tab-btn{padding:8px 12px;font-size:11px}
+  .prod-tabs{gap:6px}
+  .pcard-name{font-size:15px}
+  .scard::before{font-size:40px}
+  .cinfo-val{font-size:14px;word-break:break-word}
+  .pv-table-wrap{margin:0 -16px}
+  .nav-brand-text{font-size:16px;letter-spacing:2px}
+  .lang-btn{padding:6px 8px;font-size:11px}
+}
 </style>
 </head>
 <body>
@@ -673,7 +894,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
   <div class="nav-brand">
     <div class="nav-brand-text" data-i18n="nav.brand">KAILIN INTERNATIONAL</div>
   </div>
-  <div class="nav-links">
+  <div class="nav-links" id="navLinks">
     <a href="#company" data-i18n="nav.company">公司介绍</a>
     <a href="#products" data-i18n="nav.products">产品展示</a>
     <a href="#video" data-i18n="nav.video">案例视频</a>
@@ -686,6 +907,9 @@ table.spec td:last-child{color:var(--text);font-weight:500}
     <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh', this)">中文</button>
   </div>
   <button class="nav-btn" onclick="scroll2('contact')" data-i18n="nav.quote">获取报价</button>
+  <button class="nav-toggle" type="button" id="navToggle" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- VISION -->
@@ -759,7 +983,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
         <div class="slide on">
           <div class="pcard" onclick="openM('v1')">
             <div class="pcard-img" style="padding:0;">
-              <img src="img/1.1.3inch.png" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <img src="img/1.1.3inch.png" alt="产品展示图">
               <div class="pcard-glow"></div>
             </div>
             <div class="pcard-body">
@@ -775,7 +999,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
           </div>
           <div class="pcard" onclick="openM('v2')">
             <div class="pcard-img" style="padding:8px;">
-              <img src="img/2.1.3inch.png" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <img src="img/2.1.3inch.png" alt="产品展示图">
               <div class="pcard-glow"></div>
             </div>
             <div class="pcard-body">
@@ -793,7 +1017,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
         <div class="slide">
           <div class="pcard" onclick="openM('v3')">
             <div class="pcard-img" style="padding:0;">
-              <img src="img/3.146inch.png" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <img src="img/3.146inch.png" alt="产品展示图">
               <div class="pcard-glow"></div>
             </div>
             <div class="pcard-body">
@@ -809,7 +1033,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
           </div>
           <div class="pcard" onclick="openM('v4')">
             <div class="pcard-img" style="padding:0;">
-              <img src="img/4.134inch.jpg" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <img src="img/4.134inch.jpg" alt="产品展示图">
               <div class="pcard-glow"></div>
             </div>
             <div class="pcard-body">
@@ -827,7 +1051,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
         <div class="slide">
           <div class="pcard" onclick="openM('v5')">
             <div class="pcard-img" style="padding:0;">
-              <img src="img/5.4inch.jpg" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <img src="img/5.4inch.jpg" alt="产品展示图">
               <div class="pcard-glow"></div>
             </div>
             <div class="pcard-body">
@@ -843,7 +1067,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
           </div>
           <div class="pcard" onclick="openM('v6')">
             <div class="pcard-img" style="padding:0;">
-              <img src="img/6.34inch.png" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <img src="img/6.34inch.png" alt="产品展示图">
               <div class="pcard-glow"></div>
             </div>
             <div class="pcard-body">
@@ -861,7 +1085,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
         <div class="slide">
           <div class="pcard" onclick="openM('v7')">
             <div class="pcard-img" style="padding:0;">
-              <img src="img/7.16810inch.png" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <img src="img/7.16810inch.png" alt="产品展示图">
               <div class="pcard-glow"></div>
             </div>
             <div class="pcard-body">
@@ -894,7 +1118,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
         <div class="slide on">
           <div class="pcard" onclick="openM('lp1')">
             <div class="pcard-img" style="padding:8px;">
-              <img src="img/SCPM1inch.jpg" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <img src="img/SCPM1inch.jpg" alt="产品展示图">
               <div class="pcard-glow"></div>
             </div>
             <div class="pcard-body">
@@ -910,7 +1134,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
           </div>
           <div class="pcard" onclick="openM('lp2')">
             <div class="pcard-img" style="padding:8px;">
-              <img src="img/9.1.1SQBchange.jpg" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <img src="img/9.1.1SQBchange.jpg" alt="产品展示图">
               <div class="pcard-glow"></div>
             </div>
             <div class="pcard-body">
@@ -928,7 +1152,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
         <div class="slide">
           <div class="pcard" onclick="openM('lp3')">
             <div class="pcard-img" style="padding:8px;">
-              <img src="img/10.3.1SJET.png" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <img src="img/10.3.1SJET.png" alt="产品展示图">
               <div class="pcard-glow"></div>
             </div>
             <div class="pcard-body">
@@ -944,7 +1168,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
           </div>
           <div class="pcard" onclick="openM('lp4')">
             <div class="pcard-img" style="padding:8px;">
-              <img src="img/10.4.1SZB .png" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <img src="img/10.4.1SZB .png" alt="产品展示图">
               <div class="pcard-glow"></div>
             </div>
             <div class="pcard-body">
@@ -962,7 +1186,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
         <div class="slide">
           <div class="pcard" onclick="openM('lp5')">
             <div class="pcard-img" style="padding:8px;">
-              <img src="img/12.5.1SJP.png" alt="产品展示图" style="width:100%;height:100%;object-fit:contain;">
+              <img src="img/12.5.1SJP.png" alt="产品展示图">
               <div class="pcard-glow"></div>
             </div>
             <div class="pcard-body">
@@ -998,7 +1222,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
               <tr>
                 <th>产品规格</th><th>电池片数量</th><th>效率</th><th>功率范围(W)</th>
                 <th>电池片尺寸(mm)</th><th>功率公差</th><th>组件尺寸(mm)</th>
-                <th>组件重量</th><th>最高功率</th><th>最大功率点工作电流</th>
+                <th>组件重量(g)</th><th>最高功率</th><th>最大功率点工作电流</th>
               </tr>
             </thead>
             <tbody>
@@ -1015,6 +1239,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
           </table>
         </div>
       </div>
+      <div class="tbl-hint" data-i18n="hint.swipeTable">← 左右滑动查看完整参数 →</div>
     </div>
   </div>
 </section>
@@ -1117,7 +1342,7 @@ table.spec td:last-child{color:var(--text);font-weight:500}
           <div class="cinfo-label" data-i18n="contact.wechat" style="font-size:18px;font-weight:700">WeChat</div>
           <div class="cinfo-val" style="font-size:20px">KairingTrade</div>
           <div class="cinfo-sub" data-i18n="contact.replyTime">24小时内回复</div>
-          <div class="cinfo-qr"><img src="img/wechat.png" alt="微信二维码"></div>
+          <div class="cinfo-qr"><img src="img/wechat-qr.png" alt="微信二维码"></div>
         </div>
       </div>
       <div class="cinfo-item">
@@ -1244,6 +1469,8 @@ var I18N={
     'video.title':'Реальные проекты и результаты работы',
     'video.sub':'Практические примеры применения продукции в различных условиях: монтаж, работа и отзывы клиентов',
     'video.note':'Если видео не отображается, обновите браузер.',
+    'hint.swipeTable':'← Прокрутите таблицу вправо/влево →',
+    '左右滑动查看完整参数':'← Прокрутите вправо/влево, чтобы увидеть все параметры →',
     'video.play':'Воспроизвести видео',
     'video.fallback':'Ваш браузер не поддерживает воспроизведение видео. Пожалуйста, обновите браузер.',
     'vision.badge':'Shenzhen Kailin International',
@@ -1354,6 +1581,7 @@ var I18N={
     'contact.scanPrompt':'Добавьте в WeChat для быстрой связи',
     '请填写姓名和联系电话':'Пожалуйста, укажите имя и телефон',
     '提交中…':'Отправка…',
+    'solutions.eye':'Решения',
     'solutions.title':'Системные решения для <strong>различных сцен</strong>',
     'solutions.sub':'От орошения до удаленного водоснабжения — мы предлагаем проектирование для каждого сценария',
     'cases.eye':'Кейсы',
@@ -1398,6 +1626,31 @@ var I18N={
     'hint.solar':'КПД до 22%+, интеллектуальный трекинг MPPT',
     'view.detail':'Подробные характеристики',
     'button.request':'Получить прайс',
+    /* — таблица фотомодулей — */
+    '产品规格':'Спецификация',
+    '电池片数量':'Кол-во элементов',
+    '效率':'КПД',
+    '功率范围(W)':'Диапазон мощности (Вт)',
+    '电池片尺寸(mm)':'Размер элемента (мм)',
+    '功率公差':'Допуск мощности',
+    '组件尺寸(mm)':'Размер модуля (мм)',
+    '组件重量(g)':'Вес модуля (г)',
+    '最高功率':'Макс. мощность',
+    '最大功率点工作电流':'Ток в точке макс. мощности',
+    '多晶18v20w':'Поли 18В 20Вт',
+    '多晶18v15w':'Поли 18В 15Вт',
+    '多晶18v30w':'Поли 18В 30Вт',
+    '单晶18v20w':'Моно 18В 20Вт',
+    '单晶18v25w':'Моно 18В 25Вт',
+    '单晶18v35w':'Моно 18В 35Вт',
+    'DC5521连接线':'Кабель DC5521',
+    '3米鳄鱼夹连接线':'Кабель 3 м с зажимами «крокодил»',
+    '1米电缆':'Кабель 1 м',
+    '15w':'15 Вт',
+    '20w':'20 Вт',
+    '25w':'25 Вт',
+    '30w':'30 Вт',
+    '35w':'35 Вт',
     '深井太阳能泵':'Глубинные солнечные насосы',
     '陆地太阳能泵':'Наземные солнечные насосы',
     '光伏板':'Солнечные модули',
@@ -1548,6 +1801,8 @@ var I18N={
     'video.title':'Real Project Applications & Performance',
     'video.sub':'See real-world applications of our products in different scenarios, including installation, operation, and customer feedback',
     'video.note':'If the video does not load, please refresh or use a modern browser.',
+    'hint.swipeTable':'← Swipe the table to see all columns →',
+    '左右滑动查看完整参数':'← Swipe to see all specifications →',
     'video.play':'Play Video',
     'video.fallback':'Your browser does not support video playback. Please update your browser.',
     'vision.badge':'Shenzhen Kailin International',
@@ -1658,6 +1913,7 @@ var I18N={
     'contact.scanPrompt':'Scan to add on WeChat for faster contact',
     '请填写姓名和联系电话':'Please fill in name and phone',
     '提交中…':'Submitting…',
+    'solutions.eye':'Solutions',
     'solutions.title':'System solutions for <strong>diverse scenarios</strong>',
     'solutions.sub':'From agricultural irrigation to remote water supply, we provide targeted system designs',
     'cases.eye':'Case Studies',
@@ -1702,6 +1958,31 @@ var I18N={
     'hint.solar':'Solar conversion efficiency up to 22%+, MPPT tracking',
     'view.detail':'View details',
     'button.request':'Get Quote',
+    /* — PV module table — */
+    '产品规格':'Specification',
+    '电池片数量':'Number of cells',
+    '效率':'Efficiency',
+    '功率范围(W)':'Power range (W)',
+    '电池片尺寸(mm)':'Cell size (mm)',
+    '功率公差':'Power tolerance',
+    '组件尺寸(mm)':'Module size (mm)',
+    '组件重量(g)':'Module weight (g)',
+    '最高功率':'Max. power',
+    '最大功率点工作电流':'Current at max. power point',
+    '多晶18v20w':'Poly 18V 20W',
+    '多晶18v15w':'Poly 18V 15W',
+    '多晶18v30w':'Poly 18V 30W',
+    '单晶18v20w':'Mono 18V 20W',
+    '单晶18v25w':'Mono 18V 25W',
+    '单晶18v35w':'Mono 18V 35W',
+    'DC5521连接线':'DC5521 cable',
+    '3米鳄鱼夹连接线':'3 m alligator-clip cable',
+    '1米电缆':'1 m cable',
+    '15w':'15 W',
+    '20w':'20 W',
+    '25w':'25 W',
+    '30w':'30 W',
+    '35w':'35 W',
     '深井太阳能泵':'Deep-well solar pumps',
     '陆地太阳能泵':'Surface solar pumps',
     '光伏板':'Solar panels',
@@ -1852,6 +2133,7 @@ var I18N={
     'video.title':'真实项目应用与运行效果展示',
     'video.sub':'展示产品在不同场景中的实际应用案例，安装过程、运行效果及客户使用反馈',
     'video.note':'如浏览器不支持视频，请升级浏览器或刷新页面。',
+    'hint.swipeTable':'← 左右滑动查看完整参数 →',
     'video.play':'播放视频',
     'video.fallback':'您的浏览器不支持视频播放，请升级浏览器。',
     'vision.badge':'深圳市凯霖国际贸易有限公司',
@@ -1962,6 +2244,7 @@ var I18N={
     'contact.scanPrompt':'扫码添加，快速响应',
     '请填写姓名和联系电话':'请填写姓名和联系电话',
     '提交中…':'提交中…',
+    'solutions.eye':'解决方案',
     'solutions.title':'面向<strong>多元场景</strong>的系统方案',
     'solutions.sub':'从农业灌溉到偏远供水，我们为各类应用场景提供针对性系统设计',
     'cases.eye':'案例展示',
@@ -2076,7 +2359,37 @@ window.addEventListener('DOMContentLoaded', function(){
   var btn = document.querySelector('.lang-btn[data-lang="' + lang + '"]');
   if(!btn) btn = document.querySelector('.lang-btn[data-lang="ru"]');
   setLanguage(lang, btn);
+
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', closeMenu);
+  });
+  window.addEventListener('resize', function(){
+    if(window.innerWidth > 1100) closeMenu();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(); closeM(); }
+  });
+  enableSwipe();
 });
+
+/* — SWIPE BETWEEN PRODUCT SLIDES ON TOUCH DEVICES — */
+function enableSwipe(){
+  document.querySelectorAll('.slider-pages').forEach(function(pages){
+    var x0=null,y0=null;
+    pages.addEventListener('touchstart', function(e){
+      x0=e.touches[0].clientX; y0=e.touches[0].clientY;
+    }, {passive:true});
+    pages.addEventListener('touchend', function(e){
+      if(x0===null) return;
+      var dx=e.changedTouches[0].clientX-x0;
+      var dy=e.changedTouches[0].clientY-y0;
+      x0=null;
+      if(Math.abs(dx)<50 || Math.abs(dx)<Math.abs(dy)) return;
+      var ref=pages.querySelector('.slide-nav') || pages.querySelector('.slide');
+      if(ref) changeSlide(ref, dx<0 ? 1 : -1);
+    }, {passive:true});
+  });
+}
 
 function openM(id){
   var d=DB[id];
@@ -2123,15 +2436,39 @@ function openM(id){
     }
     html+='<div class="mspec-sec">'+translateText('参数以及部分型号', lang)+'</div>';
     var pImg=(d.pumpImgByLang&&d.pumpImgByLang[lang])||d.pumpImg||'img/value.png';
-    html+='<img src="'+pImg+'" class="mvalue-img" alt="产品参数">';
+    html+='<div class="mvalue-wrap"><img src="'+pImg+'" class="mvalue-img" alt="产品参数"></div>';
+    html+='<div class="tbl-hint">'+translateText('左右滑动查看完整参数', lang)+'</div>';
     html+='<div style="font-size:16px;font-weight:700;color:var(--blue3);text-align:center;margin-top:16px;letter-spacing:2px;">'+translateText('更多参数需求请联系我们', lang)+'</div>';
   }
   document.getElementById('m-body').innerHTML=html;
   document.getElementById('overlay').classList.add('on');
+  document.body.classList.add('modal-open');
+  closeMenu();
 }
-function closeM(){document.getElementById('overlay').classList.remove('on')}
+function closeM(){
+  document.getElementById('overlay').classList.remove('on');
+  document.body.classList.remove('modal-open');
+}
 function closeBg(e){if(e.target===document.getElementById('overlay'))closeM()}
-function scroll2(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function scroll2(id){closeMenu();document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+
+/* — MOBILE MENU — */
+function toggleMenu(){
+  var nav=document.querySelector('nav');
+  var open=!nav.classList.contains('open');
+  nav.classList.toggle('open',open);
+  document.body.classList.toggle('menu-open',open);
+  var t=document.getElementById('navToggle');
+  if(t)t.setAttribute('aria-expanded',open?'true':'false');
+}
+function closeMenu(){
+  var nav=document.querySelector('nav');
+  if(!nav||!nav.classList.contains('open'))return;
+  nav.classList.remove('open');
+  document.body.classList.remove('menu-open');
+  var t=document.getElementById('navToggle');
+  if(t)t.setAttribute('aria-expanded','false');
+}
 function switchTab(id,btn){
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('on')});
   document.querySelectorAll('.tp').forEach(function(p){p.classList.remove('on')});
