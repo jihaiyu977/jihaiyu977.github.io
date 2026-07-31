@@ -1,10 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.kairing.cn/</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.kairing.cn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.kairing.cn/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.kairing.cn/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.kairing.cn/"/>
+    <image:image>
+      <image:loc>https://www.kairing.cn/img/og-cover.jpg</image:loc>
+      <image:title>Солнечные водяные насосы Kailin International</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.kairing.cn/img/1.1.3inch.png</image:loc>
+      <image:title>3-дюймовый винтовой солнечный насос из нержавеющей стали</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.kairing.cn/img/18guangfuban1.jpg</image:loc>
+      <image:title>Солнечные фотомодули 18 В</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.kairing.cn/?lang=en</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.kairing.cn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.kairing.cn/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.kairing.cn/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.kairing.cn/"/>
+  </url>
+  <url>
+    <loc>https://www.kairing.cn/?lang=zh</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.kairing.cn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.kairing.cn/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.kairing.cn/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.kairing.cn/"/>
   </url>
 </urlset>

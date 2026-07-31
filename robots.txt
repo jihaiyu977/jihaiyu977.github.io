@@ -1,4 +1,15 @@
 User-agent: *
 Allow: /
 
+# 允许抓取 CSS/JS/图片，否则谷歌无法正确渲染页面
+Allow: /css/
+Allow: /js/
+Allow: /img/
+Allow: /video/
+
+# 无需索引的历史模板文件
+Disallow: /*.xls$
+Disallow: /*.ps1$
+Disallow: /*.py$
+
 Sitemap: https://www.kairing.cn/sitemap.xml
