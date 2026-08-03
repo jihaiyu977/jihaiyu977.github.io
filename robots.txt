@@ -7,9 +7,10 @@ Allow: /js/
 Allow: /img/
 Allow: /video/
 
-# 无需索引的历史模板文件
+# 无需索引的内部文件
 Disallow: /*.xls$
 Disallow: /*.ps1$
 Disallow: /*.py$
+Disallow: /*.md$
 
 Sitemap: https://www.kairing.cn/sitemap.xml
